@@ -1,23 +1,8 @@
-import { EventsExplorer } from "@/components/events/EventsExplorer";
-import { getKolobrzegEventsCache, toApiResponse } from "@/lib/kolobrzeg-events/server";
+import { EventsExplorerSkeleton } from "@/components/events/EventsExplorerSkeleton";
+import { WydarzeniaEventsLoader } from "@/components/sections/WydarzeniaEventsLoader";
+import { Suspense } from "react";
 
-export async function WydarzeniaSection() {
-  let initialData;
-  try {
-    const cache = await getKolobrzegEventsCache();
-    initialData = toApiResponse(cache);
-  } catch (err) {
-    const message =
-      err instanceof Error ? err.message : "Nie udało się załadować wydarzeń z Kołobrzegu.";
-    initialData = {
-      events: [],
-      fetchedAt: new Date().toISOString(),
-      expiresAt: new Date().toISOString(),
-      error: message,
-      sourceNote: "Dane z kalendarza UM Kołobrzeg (i-kolobrzeg.pl).",
-    };
-  }
-
+export function WydarzeniaSection() {
   return (
     <section id="wydarzenia-kolobrzeg" className="section-padding bg-cream">
       <div className="mx-auto max-w-7xl">
@@ -28,9 +13,9 @@ export async function WydarzeniaSection() {
           Kołobrzegu i okolicy.
         </p>
 
-        <div className="mt-10">
-          <EventsExplorer initialData={initialData} />
-        </div>
+        <Suspense fallback={<EventsExplorerSkeleton />}>
+          <WydarzeniaEventsLoader />
+        </Suspense>
       </div>
     </section>
   );

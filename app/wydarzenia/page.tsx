@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo-pages";
 
 export const metadata = pageMetadata("wydarzenia");
 
-export default async function WydarzeniaPage() {
+export default function WydarzeniaPage() {
   return (
     <>
       <div className="page-container mx-auto max-w-7xl pt-[calc(var(--header-height)+1.5rem)] pb-4">

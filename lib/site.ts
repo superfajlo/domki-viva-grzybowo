@@ -21,14 +21,14 @@ export const CONTACT = {
 
 export const NAV_ITEMS = [
   { label: "Start", href: "/" },
-  { label: "Oferta", href: "/oferta/" },
-  { label: "Cennik", href: "/cennik/" },
-  { label: "Galeria", href: "/galeria/" },
-  { label: "Atrakcje okolicy", href: "/atrakcje-okolicy/" },
-  { label: "Wydarzenia", href: "/wydarzenia/" },
+  { label: "Oferta", href: "/oferta" },
+  { label: "Cennik", href: "/cennik" },
+  { label: "Galeria", href: "/galeria" },
+  { label: "Atrakcje okolicy", href: "/atrakcje-okolicy" },
+  { label: "Wydarzenia", href: "/wydarzenia" },
   { label: "Wirtualny spacer", href: "/#wirtualny-spacer" },
-  { label: "Regulamin obiektu", href: "/regulamin-obiektu/" },
-  { label: "Kontakt", href: "/kontakt/" },
+  { label: "Regulamin obiektu", href: "/regulamin-obiektu" },
+  { label: "Kontakt", href: "/kontakt" },
 ] as const;
 
 export const COTTAGES = [
