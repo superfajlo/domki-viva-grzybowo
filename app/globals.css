@@ -1,0 +1,253 @@
+@import "tailwindcss";
+
+/* Paleta: słońce, plaża, logo Viva */
+:root {
+  --primary: #f7c600;
+  --secondary: #ffb800;
+  --accent-glow: #ffd84d;
+  --amber-hover: #e5a800;
+  --amber-deep: #c98900;
+
+  --background: #fff9e8;
+  --surface: #ffffff;
+  --sand: #fff3d6;
+  --sand-dark: #e8ddb5;
+
+  --ink: #2b2b2b;
+  --ink-muted: #666666;
+
+  /* Aliasy – kompatybilność z komponentami */
+  --cream: var(--background);
+  --viva-yellow: var(--primary);
+  --brand-deep: var(--ink);
+  --brand: var(--secondary);
+  --brand-mid: var(--primary);
+  --brand-light: var(--accent-glow);
+  --ocean-deep: var(--ink);
+  --ocean: var(--secondary);
+  --ocean-light: var(--accent-glow);
+  --coral: var(--secondary);
+  --accent: var(--secondary);
+  --accent-hover: var(--amber-hover);
+  --seafoam: var(--accent-glow);
+  --warm-dark: #2b2b2b;
+  --warm-dark-mid: #5c4a20;
+  --header-height: 4.25rem;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent-glow: var(--accent-glow);
+  --color-amber-hover: var(--amber-hover);
+  --color-amber-deep: var(--amber-deep);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-cream: var(--background);
+  --color-sand: var(--sand);
+  --color-sand-dark: var(--sand-dark);
+  --color-viva-yellow: var(--primary);
+  --color-brand-deep: var(--ink);
+  --color-brand: var(--secondary);
+  --color-brand-mid: var(--primary);
+  --color-brand-light: var(--accent-glow);
+  --color-ocean-deep: var(--ink);
+  --color-ocean: var(--secondary);
+  --color-ocean-light: var(--accent-glow);
+  --color-coral: var(--secondary);
+  --color-accent: var(--secondary);
+  --color-seafoam: var(--accent-glow);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-warm-dark: var(--warm-dark);
+  --color-warm-dark-mid: var(--warm-dark-mid);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Dostępność – widoczny focus klawiatury */
+:where(a, button, input, textarea, select, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+/* Przyciski CTA – złoto-żółty gradient */
+@layer components {
+  .page-container {
+    @apply mx-auto w-full max-w-full px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-cta {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3 text-base font-semibold text-ink shadow-lg transition duration-300 sm:px-8 sm:py-3.5;
+    box-shadow: 0 4px 20px rgba(247, 198, 0, 0.35);
+  }
+
+  .btn-cta:hover {
+    @apply from-secondary to-amber-hover brightness-105;
+    box-shadow: 0 6px 24px rgba(229, 168, 0, 0.45);
+  }
+
+  .btn-cta:disabled {
+    @apply cursor-wait opacity-70;
+  }
+
+  .btn-cta-outline {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full border-2 border-secondary px-6 py-3 text-base font-semibold text-ink transition duration-300 sm:px-8 sm:py-3.5;
+  }
+
+  .btn-cta-outline:hover {
+    @apply border-amber-hover bg-primary/20 text-ink;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-sand-dark bg-surface shadow-sm;
+  }
+
+  .premium-frame {
+    @apply rounded-3xl border border-sand-dark p-1 shadow-xl;
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent-glow));
+    box-shadow: 0 8px 32px rgba(247, 198, 0, 0.2);
+  }
+
+  .premium-frame-inner {
+    @apply rounded-[22px] bg-surface;
+  }
+
+  .premium-glow-bg {
+    background: radial-gradient(ellipse at top, rgba(255, 216, 77, 0.15) 0%, transparent 55%);
+  }
+
+  .section-dark-warm {
+    @apply bg-gradient-to-br from-warm-dark via-warm-dark-mid to-warm-dark text-white;
+  }
+
+  .icon-gold-bg {
+    @apply flex items-center justify-center rounded-full bg-primary/15 text-secondary;
+  }
+
+  .text-gold {
+    @apply text-secondary;
+  }
+
+  .badge-gold {
+    @apply inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-4 py-2 text-xs font-bold uppercase tracking-wide text-ink shadow-md;
+  }
+}
+
+.sand-grain {
+  position: relative;
+}
+
+.sand-grain::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+@keyframes wave-drift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.wave-layer {
+  animation: wave-drift 12s linear infinite;
+}
+
+.wave-layer-slow {
+  animation: wave-drift 18s linear infinite;
+}
+
+.wave-layer-fast {
+  animation: wave-drift 8s linear infinite;
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.float-soft {
+  animation: float-soft 5s ease-in-out infinite;
+}
+
+.section-padding {
+  @apply px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24;
+}
+
+.section-title {
+  @apply font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl lg:text-4xl;
+}
+
+.section-lead {
+  @apply mt-3 max-w-2xl text-base text-ink-muted sm:text-lg;
+}
+
+.pricing-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pricing-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.pricing-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(255, 216, 77, 0.12) 50%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.pricing-card:hover::after {
+  opacity: 1;
+}
