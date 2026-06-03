@@ -29,7 +29,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     href: "http://visitkolobrzeg.com/atrakcje/molo",
     icon: "🌊",
     image: "/images/atrakcje/molo-kolobrzeg.webp",
-    imageAlt: "Molo w Kołobrzegu nad Bałtykiem",
+    imageAlt: "Molo w Kołobrzegu nocą – iluminacja i spacer nad morzem",
   },
   {
     id: "latarnia",
@@ -39,7 +39,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     href: "https://latarnia.kolobrzeg.eu/",
     icon: "🗼",
     image: "/images/atrakcje/latarnia-kolobrzeg.webp",
-    imageAlt: "Latarnia morska w Kołobrzegu",
+    imageAlt: "Latarnia morska w Kołobrzegu nocą – widok na wieżę i latarnię",
   },
   {
     id: "port",
@@ -49,7 +49,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     href: "https://dladziecikolobrzeg.pl/atrakcje/port-morski-w-kolobrzegu-pasazerski-zwiedzanie-i-informacje/",
     icon: "⚓",
     image: "/images/atrakcje/port-kolobrzeg.webp",
-    imageAlt: "Port morski w Kołobrzegu",
+    imageAlt: "Port morski w Kołobrzegu – latarnia, falochrony i wejście do portu",
   },
   {
     id: "muzeum",
@@ -77,7 +77,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     href: "http://www.piraci-parsety.pl/",
     icon: "🛶",
     image: "/images/atrakcje/splywy-parseta.webp",
-    imageAlt: "Spływy kajakowe rzeką Parsęta",
+    imageAlt: "Spływ kajakowy Parsętą – rzeka wśród lasu",
   },
   {
     id: "piotrus",
@@ -87,7 +87,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     href: "http://sala-zabaw-piotrus-pan.pl/",
     icon: "🎠",
     image: "/images/atrakcje/piotrus-pan.webp",
-    imageAlt: "Sala zabaw Piotruś Pan w okolicy Grzybowa",
+    imageAlt: "Wnętrze sali zabaw Piotruś Pan – place zabaw i konstrukcje dla dzieci",
   },
   {
     id: "basen",
@@ -97,7 +97,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     href: "https://www.sport.kolobrzeg.pl/strona-2566-basen.html",
     icon: "🏊",
     image: "/images/atrakcje/basen-kolobrzeg.webp",
-    imageAlt: "Basen i aquapark w Kołobrzegu",
+    imageAlt: "Basen i aquapark w Kołobrzegu – kryty basen z torami pływackimi",
   },
   {
     id: "rower",
@@ -107,6 +107,6 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     href: "https://www.osrodekprzystan.pl/gmina-kolobrzeg-raj-dla-rowerzystow-mapa-tras-rowerowych/",
     icon: "🚴",
     image: "/images/atrakcje/sciezka-rowerowa.webp",
-    imageAlt: "Nadmorska ścieżka rowerowa w regionie Grzybowo i Kołobrzeg",
+    imageAlt: "Nadmorska ścieżka rowerowa wzdłuż Bałtyku – drewniany deptak",
   },
 ];
