@@ -1,3 +1,4 @@
+import type { Transporter } from "nodemailer";
 import { CONTACT } from "./site";
 
 export const CONTACT_FORM_SUCCESS_MESSAGE =
@@ -189,4 +190,39 @@ export function formatClientReplyTo(body: ContactPayload): string {
   const name = body.name.trim().replace(/"/g, "'");
   const email = body.email.trim();
   return `"${name}" <${email}>`;
+}
+
+/** Wysyłka maila – HTML jako główna treść (Onet / Outlook lepiej ją renderują). */
+export async function sendContactMail(
+  transporter: Transporter,
+  options: { smtpUser: string; ownerEmail: string; body: ContactPayload },
+) {
+  const { smtpUser, ownerEmail, body } = options;
+  const text = formatContactEmail(body);
+  const html = formatContactEmailHtml(body);
+  const clientName = body.name.trim();
+
+  return transporter.sendMail({
+    from: {
+      name: CONTACT_MAIL_FROM_NAME,
+      address: smtpUser,
+    },
+    to: ownerEmail,
+    replyTo: formatClientReplyTo(body),
+    subject: `Domki VIVA – zapytanie od ${clientName}`,
+    encoding: "utf-8",
+    alternatives: [
+      {
+        contentType: "text/html; charset=UTF-8",
+        content: html,
+      },
+      {
+        contentType: "text/plain; charset=UTF-8",
+        content: text,
+      },
+    ],
+    headers: {
+      "X-Domki-Viva-Mail": "contact-v2",
+    },
+  });
 }

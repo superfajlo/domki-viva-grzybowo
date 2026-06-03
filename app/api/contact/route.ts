@@ -1,11 +1,8 @@
 import { CONTACT } from "@/lib/site";
 import {
-  CONTACT_MAIL_FROM_NAME,
-  formatClientReplyTo,
-  formatContactEmail,
-  formatContactEmailHtml,
   getContactToEmail,
   getValidationErrorMessage,
+  sendContactMail,
   validateContactPayload,
   type ContactPayload,
 } from "@/lib/contact-email";
@@ -48,19 +45,12 @@ export async function POST(request: Request) {
   }
 
   const transporter = createMailTransporter();
-  const text = formatContactEmail(body);
-  const html = formatContactEmailHtml(body);
-  const replyTo = formatClientReplyTo(body);
-  const clientName = body.name.trim();
 
   try {
-    await transporter.sendMail({
-      from: `"${CONTACT_MAIL_FROM_NAME}" <${smtpUser}>`,
-      to: ownerEmail,
-      replyTo,
-      subject: `Domki VIVA – zapytanie od ${clientName}`,
-      text,
-      html,
+    await sendContactMail(transporter, {
+      smtpUser,
+      ownerEmail,
+      body,
     });
   } catch (err) {
     console.error("Contact form send error:", err);
