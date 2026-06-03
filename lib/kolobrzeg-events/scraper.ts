@@ -6,6 +6,7 @@ import {
 import type { KolobrzegEvent } from "./types";
 
 const USER_AGENT = "Mozilla/5.0 (compatible; DomkiViva/1.0; +https://domkiviva.pl)";
+const MAX_LOCATION_FETCH = 30;
 
 export function stripHtml(html: string): string {
   return html
@@ -16,7 +17,6 @@ export function stripHtml(html: string): string {
     .replace(/&quot;/g, '"')
     .replace(/&amp;/g, "&")
     .replace(/&oacute;/g, "ó")
-    .replace(/&nbsp;/g, " ")
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
     .replace(/\s+/g, " ")
     .trim();
@@ -43,7 +43,7 @@ function buildSortKey(isoDate: string, time?: string): number {
   return new Date(y, mo - 1, d, hh, mm).getTime();
 }
 
-function isCurrentOrFuture(isoDate: string, time?: string): boolean {
+export function isCurrentOrFuture(isoDate: string, time?: string): boolean {
   const today = todayInWarsaw();
   if (isoDate > today) return true;
   if (isoDate < today) return false;
@@ -95,10 +95,9 @@ function parseListingBlock(
   if (!isCurrentOrFuture(isoDate, time)) return null;
 
   const img = block.match(/<img[^>]+src="([^"]+)"/)?.[1];
-  const id = href.replace(/[^\w-]+/g, "-").slice(0, 120);
 
   return {
-    id,
+    id: href.replace(/[^\w-]+/g, "-").slice(0, 120),
     title,
     date: isoDate,
     time,
@@ -127,7 +126,7 @@ async function mapPool<T, R>(
   concurrency: number,
   fn: (item: T) => Promise<R>,
 ): Promise<R[]> {
-  const results: R[] = [];
+  const results: R[] = new Array(items.length);
   let i = 0;
   async function worker() {
     while (i < items.length) {
@@ -135,49 +134,73 @@ async function mapPool<T, R>(
       results[idx] = await fn(items[idx]);
     }
   }
-  await Promise.all(Array.from({ length: Math.min(concurrency, items.length) }, worker));
+  await Promise.all(
+    Array.from({ length: Math.min(concurrency, items.length) }, () => worker()),
+  );
   return results;
 }
 
+async function scrapeCategory(
+  source: (typeof KOLOBRZEG_EVENT_SOURCES)[number],
+): Promise<KolobrzegEvent[]> {
+  const found: KolobrzegEvent[] = [];
+  const seen = new Set<string>();
+
+  const firstHtml = await fetchHtml(categoryPageUrl(source.categoryId, 1));
+  const maxPage = detectMaxPage(firstHtml, source.categoryId);
+
+  for (let page = 1; page <= maxPage; page++) {
+    const html =
+      page === 1 ? firstHtml : await fetchHtml(categoryPageUrl(source.categoryId, page));
+    const blocks = html.match(/<li class="zaj-wrapper"[\s\S]*?<\/li>/g) || [];
+
+    for (const block of blocks) {
+      const parsed = parseListingBlock(block, source);
+      if (!parsed || seen.has(parsed.detailUrl)) continue;
+      seen.add(parsed.detailUrl);
+      found.push({ ...parsed, location: undefined });
+    }
+  }
+
+  return found;
+}
+
 export type ScrapeOptions = {
-  /** Pobieranie adresu z podstrony szczegółów – wolne; domyślnie wyłączone. */
+  /** Pobierz miejsce z podstrony (max 30 wydarzeń, równolegle). */
   includeLocations?: boolean;
 };
 
 export async function scrapeKolobrzegEvents(
   options: ScrapeOptions = {},
 ): Promise<KolobrzegEvent[]> {
-  const includeLocations = options.includeLocations ?? false;
+  const includeLocations = options.includeLocations ?? true;
   const byUrl = new Map<string, KolobrzegEvent>();
 
-  for (const source of KOLOBRZEG_EVENT_SOURCES) {
-    const firstHtml = await fetchHtml(categoryPageUrl(source.categoryId, 1));
-    const maxPage = detectMaxPage(firstHtml, source.categoryId);
+  const perCategory = await Promise.all(
+    KOLOBRZEG_EVENT_SOURCES.map((source) => scrapeCategory(source)),
+  );
 
-    for (let page = 1; page <= maxPage; page++) {
-      const html = page === 1 ? firstHtml : await fetchHtml(categoryPageUrl(source.categoryId, page));
-      const blocks = html.match(/<li class="zaj-wrapper"[\s\S]*?<\/li>/g) || [];
-
-      for (const block of blocks) {
-        const parsed = parseListingBlock(block, source);
-        if (!parsed) continue;
-        if (!byUrl.has(parsed.detailUrl)) {
-          byUrl.set(parsed.detailUrl, { ...parsed, location: undefined });
-        }
+  for (const list of perCategory) {
+    for (const event of list) {
+      if (!byUrl.has(event.detailUrl)) {
+        byUrl.set(event.detailUrl, event);
       }
     }
   }
 
-  let list = [...byUrl.values()];
+  let list = [...byUrl.values()].sort((a, b) => a.sortKey - b.sortKey);
 
   if (includeLocations && list.length > 0) {
-    list = await mapPool(list, 4, async (event) => {
+    const subset = list.slice(0, MAX_LOCATION_FETCH);
+    const withLoc = await mapPool(subset, 5, async (event) => {
       const location = await fetchEventLocation(event.detailUrl);
       return { ...event, location };
     });
+    const locMap = new Map(withLoc.map((e) => [e.detailUrl, e]));
+    list = list.map((e) => locMap.get(e.detailUrl) ?? e);
   }
 
-  return list.sort((a, b) => a.sortKey - b.sortKey);
+  return list;
 }
 
 export function countByCategory(events: KolobrzegEvent[]): Record<EventSourceId, number> {

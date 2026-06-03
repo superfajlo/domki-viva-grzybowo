@@ -5,16 +5,12 @@ import { EVENTS_CACHE_TTL_MS, KOLOBRZEG_EVENT_SOURCES } from "./constants";
 import { scrapeKolobrzegEvents } from "./scraper";
 import type { EventsApiResponse, EventsCachePayload } from "./types";
 
-const SCRAPE_TIMEOUT_MS = 45_000;
+/** Vercel maxDuration 60s – zapas na scraping 7 kategorii równolegle. */
+const SCRAPE_TIMEOUT_MS = 55_000;
 
-/** Cache w pamięci – główny store (działa na Vercel/serverless). */
 let memoryCache: EventsCachePayload | null = null;
 let refreshPromise: Promise<EventsCachePayload> | null = null;
 
-/**
- * Opcjonalny zapis na dysk tylko w katalogu zapisywalnym (nigdy .cache w projekcie).
- * Na Vercel: /tmp/events-cache. Lokalnie: katalog tymczasowy OS.
- */
 function getOptionalDiskCachePath(): string | null {
   if (process.env.VERCEL === "1") {
     return "/tmp/events-cache/kolobrzeg-events.json";
@@ -27,20 +23,22 @@ async function readDiskCache(): Promise<EventsCachePayload | null> {
   if (!file) return null;
   try {
     const raw = await fs.readFile(file, "utf8");
-    return JSON.parse(raw) as EventsCachePayload;
+    const parsed = JSON.parse(raw) as EventsCachePayload;
+    return parsed.events?.length ? parsed : null;
   } catch {
     return null;
   }
 }
 
 async function writeDiskCache(payload: EventsCachePayload): Promise<void> {
+  if (!payload.events.length) return;
   const file = getOptionalDiskCachePath();
   if (!file) return;
   try {
     await fs.mkdir(path.dirname(file), { recursive: true });
     await fs.writeFile(file, JSON.stringify(payload), "utf8");
   } catch {
-    /* Tylko pamięć – brak crasha na read-only FS */
+    /* pamięć wystarczy */
   }
 }
 
@@ -51,6 +49,10 @@ function setMemoryCache(payload: EventsCachePayload): EventsCachePayload {
 
 function isExpired(payload: EventsCachePayload): boolean {
   return Date.now() > new Date(payload.expiresAt).getTime();
+}
+
+function isValidCache(payload: EventsCachePayload | null): payload is EventsCachePayload {
+  return Boolean(payload?.events?.length);
 }
 
 function emptyPayload(error?: string): EventsCachePayload {
@@ -66,7 +68,10 @@ function emptyPayload(error?: string): EventsCachePayload {
 
 function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
   return new Promise((resolve, reject) => {
-    const timer = setTimeout(() => reject(new Error("Przekroczono czas pobierania wydarzeń.")), ms);
+    const timer = setTimeout(
+      () => reject(new Error("Przekroczono czas pobierania wydarzeń. Spróbuj ponownie za chwilę.")),
+      ms,
+    );
     promise
       .then((v) => {
         clearTimeout(timer);
@@ -100,16 +105,27 @@ function buildPayload(events: Awaited<ReturnType<typeof scrapeKolobrzegEvents>>)
 async function refreshCache(): Promise<EventsCachePayload> {
   try {
     const events = await withTimeout(
-      scrapeKolobrzegEvents({ includeLocations: false }),
+      scrapeKolobrzegEvents({ includeLocations: true }),
       SCRAPE_TIMEOUT_MS,
     );
+
+    if (!events.length) {
+      const previous = memoryCache || (await readDiskCache());
+      if (isValidCache(previous)) {
+        return setMemoryCache({ ...previous, error: "Brak aktualnych wydarzeń w kalendarzu." });
+      }
+      return setMemoryCache(
+        emptyPayload("Nie znaleziono aktualnych wydarzeń na i-kolobrzeg.pl."),
+      );
+    }
+
     const payload = buildPayload(events);
     await writeDiskCache(payload);
     return setMemoryCache(payload);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Nie udało się pobrać wydarzeń.";
     const previous = memoryCache || (await readDiskCache());
-    if (previous?.events.length) {
+    if (isValidCache(previous)) {
       return setMemoryCache({ ...previous, error: message });
     }
     return setMemoryCache(emptyPayload(message));
@@ -117,27 +133,13 @@ async function refreshCache(): Promise<EventsCachePayload> {
 }
 
 export async function getKolobrzegEventsCache(force = false): Promise<EventsCachePayload> {
-  if (!force && memoryCache && !isExpired(memoryCache) && memoryCache.events.length > 0) {
-    return memoryCache;
+  if (!force && isValidCache(memoryCache) && !isExpired(memoryCache!)) {
+    return memoryCache!;
   }
 
   const diskCache = await readDiskCache();
-  if (!force && diskCache && !isExpired(diskCache) && diskCache.events.length > 0) {
+  if (!force && isValidCache(diskCache) && !isExpired(diskCache)) {
     return setMemoryCache(diskCache);
-  }
-
-  // Stale – zwróć od razu, odśwież w tle (bez blokowania odpowiedzi)
-  if (!force) {
-    const stale = memoryCache?.events.length ? memoryCache : diskCache;
-    if (stale?.events.length) {
-      setMemoryCache(stale);
-      if (!refreshPromise) {
-        refreshPromise = refreshCache().finally(() => {
-          refreshPromise = null;
-        });
-      }
-      return stale;
-    }
   }
 
   if (!refreshPromise) {
@@ -148,11 +150,11 @@ export async function getKolobrzegEventsCache(force = false): Promise<EventsCach
 
   const result = await refreshPromise;
 
-  if (result.events.length > 0) {
+  if (isValidCache(result)) {
     return result;
   }
 
-  if (diskCache?.events.length) {
+  if (isValidCache(diskCache)) {
     return setMemoryCache(diskCache);
   }
 
@@ -161,7 +163,7 @@ export async function getKolobrzegEventsCache(force = false): Promise<EventsCach
 
 export function toApiResponse(payload: EventsCachePayload, stale = false): EventsApiResponse {
   return {
-    events: payload.events,
+    events: payload.events ?? [],
     fetchedAt: payload.fetchedAt,
     expiresAt: payload.expiresAt,
     stale,

@@ -5,9 +5,7 @@ export async function WydarzeniaEventsLoader() {
   let initialData = null;
   try {
     const cache = await getKolobrzegEventsCache();
-    if (cache.events.length > 0) {
-      initialData = toApiResponse(cache);
-    }
+    initialData = toApiResponse(cache);
   } catch {
     initialData = null;
   }
