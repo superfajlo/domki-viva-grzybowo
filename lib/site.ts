@@ -1,5 +1,10 @@
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://domkiviva.pl";
+/** Kanoniczny adres strony (sitemap, robots, Open Graph, JSON-LD). */
+const DEFAULT_SITE_URL = "https://www.grzybowo-noclegi.pl";
+
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_URL).replace(
+  /\/+$/,
+  "",
+);
 
 /** SEO strony głównej – nie zmieniać bez potrzeby */
 export const HOME_SEO = {
@@ -130,8 +135,12 @@ export const VIVA_DRONE_YOUTUBE_ID = "ZKmK1X9qkPE";
 export const VIVA_DRONE_YOUTUBE_URL = `https://www.youtube.com/watch?v=${VIVA_DRONE_YOUTUBE_ID}`;
 export const VIVA_DRONE_EMBED_URL = `https://www.youtube-nocookie.com/embed/${VIVA_DRONE_YOUTUBE_ID}?rel=0&modestbranding=1`;
 
-export const VIVA_VIRTUAL_TOUR_URL =
-  "http://grzybowo-noclegi.pl/wirtualnyspacer/Kolor/ViVa.html";
+/**
+ * Wirtualny spacer na Twojej domenie.
+ * Proxy (stary serwer) dopóki brak ViVa_skin.xml w public/ – patrz docs/WDROZENIE-DOMENA-GSC.md
+ * Pełna instalacja: npm run install:viva-tour upload/spacer.zip → VIVA_TOUR_USE_PROXY=false
+ */
+export const VIVA_VIRTUAL_TOUR_URL = "/wirtualnyspacer/Kolor/ViVa.html";
 
 export const VIRTUAL_TOUR_SEO_PHRASES = [
   "wirtualny spacer Grzybowo",

@@ -46,6 +46,16 @@ yarn-error.log*
 .env.production.local
 !.env.example
 
+# duże uploady (spacer ZIP) – tylko folder upload/ w repo
+/upload/*
+!/upload/.gitkeep
+
+# spacer Panotour – wgrywany skryptem install:viva-tour (setki MB)
+/public/wirtualnyspacer/
+
+# JPG źródłowe galerii (WebP w repo / deploy)
+/public/images/viva/*.jpg
+
 # vercel
 .vercel
 

@@ -1,6 +1,7 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
@@ -17,10 +18,15 @@ const body = Source_Sans_3({
   display: "swap",
 });
 
+const googleVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();
+
 /** Domyślne meta – strona główna nadpisuje w page.tsx (HOME_SEO) */
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://domkiviva.pl"),
+  metadataBase: new URL(SITE_URL),
   robots: { index: true, follow: true },
+  ...(googleVerification
+    ? { verification: { google: googleVerification } }
+    : {}),
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "any" }],
     apple: [{ url: "/images/logo.png", type: "image/png" }],

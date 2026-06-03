@@ -41,11 +41,10 @@ export function OkolicaAtrakcjeSection() {
                   📅
                 </span>
                 <h3 className="mt-4 font-display text-2xl font-bold text-ink sm:text-3xl">
-                  Wydarzenia
+                  Wydarzenia w okolicy
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-muted sm:text-base">
-                  Koncerty, kino, sport, kultura i inne imprezy w Kołobrzegu – przejdź do
-                  kategorii z linkami do oficjalnego kalendarza.
+                  Sprawdź co ciekawego może czekać cię w okolicy. Każdy znajdzie coś dla siebie.
                 </p>
               </div>
               <a
