@@ -72,6 +72,9 @@ const NOT_PROVIDED = "nie podano";
 /** Nazwa nadawcy w skrzynce odbiorczej (From). */
 export const CONTACT_MAIL_FROM_NAME = "Domki VIVA";
 
+/** Temat wiadomości z formularza. */
+export const CONTACT_MAIL_SUBJECT = "noclegi zapytanie";
+
 function escapeHtml(value: string): string {
   return value
     .replace(/&/g, "&amp;")
@@ -200,7 +203,6 @@ export async function sendContactMail(
   const { smtpUser, ownerEmail, body } = options;
   const text = formatContactEmail(body);
   const html = formatContactEmailHtml(body);
-  const clientName = body.name.trim();
 
   return transporter.sendMail({
     from: {
@@ -209,7 +211,7 @@ export async function sendContactMail(
     },
     to: ownerEmail,
     replyTo: formatClientReplyTo(body),
-    subject: `Domki VIVA – zapytanie od ${clientName}`,
+    subject: CONTACT_MAIL_SUBJECT,
     encoding: "utf-8",
     alternatives: [
       {
