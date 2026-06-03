@@ -1,12 +1,13 @@
 "use client";
 
+import { EventCategoryFallback } from "@/components/events/EventCategoryFallback";
 import {
   KOLOBRZEG_EVENT_CATEGORIES,
   type EventCategoryId,
 } from "@/lib/kolobrzeg-events/constants";
 import type { EventsApiResponse, KolobrzegEvent } from "@/lib/kolobrzeg-events/types";
 import Image from "next/image";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 function formatEventDate(date: string, time?: string): string {
   const d = new Date(`${date}T12:00:00`);
@@ -87,41 +88,55 @@ function SkeletonCard() {
   );
 }
 
-type EventsExplorerProps = {
-  initialData: EventsApiResponse;
+const EMPTY_RESPONSE: EventsApiResponse = {
+  events: [],
+  fetchedAt: "",
+  expiresAt: "",
+  sourceNote: "Dane z kalendarza UM Kołobrzeg (i-kolobrzeg.pl).",
 };
 
-export function EventsExplorer({ initialData }: EventsExplorerProps) {
+type EventsExplorerProps = {
+  initialData?: EventsApiResponse | null;
+};
+
+export function EventsExplorer({ initialData = null }: EventsExplorerProps) {
   const [filter, setFilter] = useState<EventCategoryId>("all");
-  const [data, setData] = useState<EventsApiResponse>(initialData);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(initialData.error ?? null);
+  const [data, setData] = useState<EventsApiResponse | null>(initialData);
+  const [loading, setLoading] = useState(!initialData?.events?.length);
+  const [error, setError] = useState<string | null>(initialData?.error ?? null);
 
   const load = useCallback(async (refresh = false) => {
-    if (refresh) setLoading(true);
+    setLoading(true);
+    setError(null);
     try {
       const url = refresh ? "/api/events?refresh=1" : "/api/events";
       const res = await fetch(url);
       const json = (await res.json()) as EventsApiResponse;
-      if (!res.ok) {
-        setError(json.error ?? "Nie udało się załadować wydarzeń.");
-        setData(json);
-        return;
-      }
       setData(json);
       setError(json.error ?? null);
     } catch {
       setError("Brak połączenia z serwerem. Spróbuj ponownie za chwilę.");
+      setData(EMPTY_RESPONSE);
     } finally {
       setLoading(false);
     }
   }, []);
 
+  useEffect(() => {
+    if (!initialData?.events?.length) {
+      load();
+    }
+  }, [initialData?.events?.length, load]);
+
+  const events = data?.events ?? [];
   const filtered = useMemo(() => {
-    if (!data?.events) return [];
-    if (filter === "all") return data.events;
-    return data.events.filter((e) => e.categoryId === filter);
-  }, [data, filter]);
+    if (!events.length) return [];
+    if (filter === "all") return events;
+    return events.filter((e) => e.categoryId === filter);
+  }, [events, filter]);
+
+  const noEventsAtAll = !loading && events.length === 0;
+  const noEventsInFilter = !loading && events.length > 0 && filtered.length === 0;
 
   return (
     <div>
@@ -152,22 +167,6 @@ export function EventsExplorer({ initialData }: EventsExplorerProps) {
         </div>
       )}
 
-      {!loading && error && filtered.length === 0 && (
-        <div className="mt-10 rounded-2xl border border-sand-dark bg-surface px-6 py-10 text-center">
-          <p className="text-ink">{error}</p>
-          <button type="button" onClick={() => load(true)} className="btn-cta mt-6">
-            Spróbuj ponownie
-          </button>
-        </div>
-      )}
-
-      {!loading && !error && filtered.length === 0 && (
-        <p className="mt-10 rounded-2xl border border-sand-dark bg-surface px-6 py-10 text-center text-ink-muted">
-          Brak aktualnych wydarzeń w wybranej kategorii. Sprawdź ponownie później lub wybierz
-          „Wszystkie”.
-        </p>
-      )}
-
       {!loading && filtered.length > 0 && (
         <>
           <p className="mt-6 text-sm text-ink-muted">
@@ -187,10 +186,31 @@ export function EventsExplorer({ initialData }: EventsExplorerProps) {
         </>
       )}
 
+      {noEventsInFilter && (
+        <p className="mt-10 rounded-2xl border border-sand-dark bg-surface px-6 py-10 text-center text-ink-muted">
+          Brak aktualnych wydarzeń w wybranej kategorii. Wybierz „Wszystkie” lub sprawdź kalendarz na
+          i-kolobrzeg.pl.
+        </p>
+      )}
+
+      {noEventsAtAll && (
+        <>
+          {error ? (
+            <div className="mt-8 rounded-2xl border border-sand-dark bg-surface px-6 py-5 text-center">
+              <p className="text-sm text-ink-muted">{error}</p>
+              <button type="button" onClick={() => load(true)} className="btn-cta mt-4">
+                Odśwież kalendarz
+              </button>
+            </div>
+          ) : null}
+          <EventCategoryFallback />
+        </>
+      )}
+
       {data?.sourceNote && !loading && (
         <p className="mt-10 text-center text-xs text-ink-muted">
           {data.sourceNote}
-          {data.fetchedAt && (
+          {data.fetchedAt ? (
             <>
               {" "}
               · ostatnia aktualizacja:{" "}
@@ -200,7 +220,7 @@ export function EventsExplorer({ initialData }: EventsExplorerProps) {
                 timeStyle: "short",
               })}
             </>
-          )}
+          ) : null}
         </p>
       )}
     </div>

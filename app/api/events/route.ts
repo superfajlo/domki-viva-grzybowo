@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 export async function GET(request: Request) {
   const force = new URL(request.url).searchParams.get("refresh") === "1";
@@ -10,7 +11,9 @@ export async function GET(request: Request) {
   try {
     const cache = await getKolobrzegEventsCache(force);
     const stale = Date.now() > new Date(cache.expiresAt).getTime();
-    return NextResponse.json(toApiResponse(cache, stale), {
+    const body = toApiResponse(cache, stale);
+    return NextResponse.json(body, {
+      status: 200,
       headers: {
         "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=7200",
       },
@@ -26,7 +29,7 @@ export async function GET(request: Request) {
         error: message,
         sourceNote: "Dane z kalendarza UM Kołobrzeg (i-kolobrzeg.pl).",
       },
-      { status: 503 },
+      { status: 200 },
     );
   }
 }

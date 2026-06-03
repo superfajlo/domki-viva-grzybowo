@@ -83,8 +83,8 @@ function parseListingBlock(
   const href = block.match(/href="(\/wydarzenie-[^"]+)"/)?.[1];
   if (!href) return null;
 
-  const titleRaw = block.match(/<span class="title">([\s\S]*?)<\/span>\s*<span class="tresc"/)?.[1];
-  const title = stripHtml(titleRaw || "");
+  const titleBlock = block.match(/<span class="title">([\s\S]*?)<\/span>/i)?.[1];
+  const title = stripHtml(titleBlock || "");
   if (!title) return null;
 
   const dateRaw = block.match(/kali_data_od">[\s\S]*?<span>(\d{2}-\d{2}-\d{4})<\/span>/)?.[1];
@@ -139,7 +139,15 @@ async function mapPool<T, R>(
   return results;
 }
 
-export async function scrapeKolobrzegEvents(): Promise<KolobrzegEvent[]> {
+export type ScrapeOptions = {
+  /** Pobieranie adresu z podstrony szczegółów – wolne; domyślnie wyłączone. */
+  includeLocations?: boolean;
+};
+
+export async function scrapeKolobrzegEvents(
+  options: ScrapeOptions = {},
+): Promise<KolobrzegEvent[]> {
+  const includeLocations = options.includeLocations ?? false;
   const byUrl = new Map<string, KolobrzegEvent>();
 
   for (const source of KOLOBRZEG_EVENT_SOURCES) {
@@ -153,22 +161,23 @@ export async function scrapeKolobrzegEvents(): Promise<KolobrzegEvent[]> {
       for (const block of blocks) {
         const parsed = parseListingBlock(block, source);
         if (!parsed) continue;
-        const existing = byUrl.get(parsed.detailUrl);
-        if (!existing) {
+        if (!byUrl.has(parsed.detailUrl)) {
           byUrl.set(parsed.detailUrl, { ...parsed, location: undefined });
         }
       }
     }
   }
 
-  const list = [...byUrl.values()];
+  let list = [...byUrl.values()];
 
-  const withLocations = await mapPool(list, 4, async (event) => {
-    const location = await fetchEventLocation(event.detailUrl);
-    return { ...event, location };
-  });
+  if (includeLocations && list.length > 0) {
+    list = await mapPool(list, 4, async (event) => {
+      const location = await fetchEventLocation(event.detailUrl);
+      return { ...event, location };
+    });
+  }
 
-  return withLocations.sort((a, b) => a.sortKey - b.sortKey);
+  return list.sort((a, b) => a.sortKey - b.sortKey);
 }
 
 export function countByCategory(events: KolobrzegEvent[]): Record<EventSourceId, number> {
