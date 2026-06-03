@@ -2,7 +2,7 @@ import { EventsCategoryTiles } from "@/components/events/EventsCategoryTiles";
 
 export function WydarzeniaSection() {
   return (
-    <section id="wydarzenia-kolobrzeg" className="section-padding bg-cream">
+    <section id="wydarzenia-kolobrzeg" className="section-padding bg-cream !pt-0">
       <div className="mx-auto max-w-7xl">
         <h1 className="section-title">Wydarzenia w okolicy</h1>
         <p className="section-lead max-w-3xl">

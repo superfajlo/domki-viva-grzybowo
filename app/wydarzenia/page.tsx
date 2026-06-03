@@ -8,7 +8,7 @@ export const metadata = pageMetadata("wydarzenia");
 export default function WydarzeniaPage() {
   return (
     <>
-      <div className="page-container mx-auto max-w-7xl pt-[calc(var(--header-height)+1.5rem)] pb-4">
+      <div className="page-container mx-auto max-w-7xl pt-[calc(var(--header-height)+0.75rem)] pb-2">
         <Breadcrumbs
           items={[
             { label: "Start", href: "/" },
