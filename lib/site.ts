@@ -119,6 +119,9 @@ export const AREA_SEO_PHRASES = [
 export const BEACH_LIVE_CAMERA_URL =
   "https://grzybowo.pl/strona-278-widok_z_kamery_na_plazy_w_grzybowie.html";
 export const KOLOBRZEG_360_URL = "https://www.kolobrzeg360.pl/";
+/** Kołobrzeg z lotu ptaka – YouTube */
+export const KOLOBRZEG_BIRDS_EYE_YOUTUBE_URL =
+  "https://www.youtube.com/watch?v=-1UATP_5anE";
 
 /** Oficjalny kalendarz wydarzeń Gminy Kołobrzeg */
 export const GMINA_EVENTS_URL = "https://www.gmina.kolobrzeg.pl/wydarzenia.html";

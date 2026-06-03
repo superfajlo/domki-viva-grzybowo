@@ -4,6 +4,7 @@ import { CameraIcon } from "@/components/icons/CameraIcon";
 import {
   BEACH_LIVE_CAMERA_URL,
   KOLOBRZEG_360_URL,
+  KOLOBRZEG_BIRDS_EYE_YOUTUBE_URL,
   VIRTUAL_TOUR_SEO_PHRASES,
   VIVA_VIRTUAL_TOUR_URL,
 } from "@/lib/site";
@@ -82,7 +83,7 @@ export function WirtualnySpacerSection() {
           </div>
         </article>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <article className="group flex min-h-[240px] flex-col justify-between rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-sm transition hover:bg-white/20">
             <div>
               <span className="icon-gold-bg h-14 w-14 rounded-2xl text-2xl shadow-lg">
@@ -129,6 +130,28 @@ export function WirtualnySpacerSection() {
               className="btn-cta-outline mt-6 w-full sm:w-fit !px-6 !py-3 !text-sm text-white border-accent-glow/80 hover:border-amber-hover hover:bg-primary/25 hover:text-white"
             >
               Otwórz Kołobrzeg 360°
+            </a>
+          </article>
+
+          <article className="group flex min-h-[240px] flex-col justify-between rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-sm transition hover:bg-white/20">
+            <div>
+              <span className="icon-gold-bg h-14 w-14 rounded-2xl text-2xl" aria-hidden>
+                🛩️
+              </span>
+              <h3 className="mt-4 font-display text-2xl font-bold uppercase tracking-wide">
+                Kołobrzeg z lotu ptaka
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-cream/90">
+                Zobacz Kołobrzeg i wybrzeże z perspektywy lotu ptaka – film na YouTube.
+              </p>
+            </div>
+            <a
+              href={KOLOBRZEG_BIRDS_EYE_YOUTUBE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-cta-outline mt-6 w-full sm:w-fit !px-6 !py-3 !text-sm text-white border-accent-glow/80 hover:border-amber-hover hover:bg-primary/25 hover:text-white"
+            >
+              Obejrzyj na YouTube
             </a>
           </article>
         </div>
