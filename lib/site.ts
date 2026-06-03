@@ -136,8 +136,7 @@ export const AREA_ATTRACTIONS = [
   },
   {
     title: "Wydarzenia sezonowe",
-    description:
-      "Festiwale, koncerty i imprezy plenerowe – aktualny kalendarz publikuje Gmina Kołobrzeg (gmina.kolobrzeg.pl).",
+    description: "Festiwale, koncerty i imprezy plenerowe w sezonie letnim w regionie.",
   },
   {
     title: "Spacery nad morzem",
@@ -252,7 +251,7 @@ export const FAQ_ITEMS = [
   {
     question: "Gdzie mogę sprawdzić wydarzenia w sezonie?",
     answer:
-      "Aktualny kalendarz imprez i festynów publikuje Gmina Kołobrzeg na stronie gmina.kolobrzeg.pl/wydarzenia.html – przycisk „Sprawdź wydarzenia” na stronie Atrakcje okolicy.",
+      "Aktualny kalendarz imprez i festynów znajdziesz na podstronie Wydarzenia – tam też link do oficjalnego kalendarza gminy, gdy automatyczne pobieranie nie zadziała.",
   },
 ] as const;
 

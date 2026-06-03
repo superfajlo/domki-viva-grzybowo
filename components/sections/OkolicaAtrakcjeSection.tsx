@@ -1,4 +1,3 @@
-import { GminaEventsCard } from "@/components/events/GminaEventsCard";
 import { CameraIcon } from "@/components/icons/CameraIcon";
 import { GrzybowoMap } from "@/components/GrzybowoMap";
 import {
@@ -59,8 +58,6 @@ export function OkolicaAtrakcjeSection() {
             </article>
           ))}
         </div>
-
-        <GminaEventsCard className="mt-12" />
 
         {/* Kamera na żywo – plaża */}
         <article className="premium-frame relative mt-12 overflow-hidden">

@@ -1,5 +1,4 @@
 import { EventsExplorerSkeleton } from "@/components/events/EventsExplorerSkeleton";
-import { GminaEventsCard } from "@/components/events/GminaEventsCard";
 import { WydarzeniaEventsLoader } from "@/components/sections/WydarzeniaEventsLoader";
 import { Suspense } from "react";
 
@@ -11,10 +10,8 @@ export function WydarzeniaSection() {
         <p className="section-lead max-w-3xl">
           Podczas pobytu w Domkach Viva możesz na bieżąco sprawdzać koncerty, wydarzenia
           sportowe, seanse kinowe, spektakle teatralne i inne atrakcje odbywające się w
-          Kołobrzegu i okolicy. Kalendarz gminy znajdziesz także poniżej.
+          Kołobrzegu i okolicy.
         </p>
-
-        <GminaEventsCard className="mt-10" />
 
         <Suspense fallback={<EventsExplorerSkeleton />}>
           <WydarzeniaEventsLoader />
