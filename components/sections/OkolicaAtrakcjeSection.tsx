@@ -1,10 +1,10 @@
 import { CameraIcon } from "@/components/icons/CameraIcon";
 import { GrzybowoMap } from "@/components/GrzybowoMap";
-import Link from "next/link";
 import {
   AREA_ATTRACTIONS,
   AREA_SEO_PHRASES,
   BEACH_LIVE_CAMERA_URL,
+  GMINA_EVENTS_URL,
   KOLOBRZEG_360_URL,
 } from "@/lib/site";
 
@@ -75,9 +75,14 @@ export function OkolicaAtrakcjeSection() {
                   kategorii z linkami do oficjalnego kalendarza.
                 </p>
               </div>
-              <Link href="/wydarzenia" className="btn-cta shrink-0 text-center">
+              <a
+                href={GMINA_EVENTS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-cta shrink-0 text-center"
+              >
                 Sprawdź wydarzenia
-              </Link>
+              </a>
             </div>
           </div>
         </article>

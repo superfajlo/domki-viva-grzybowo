@@ -163,6 +163,9 @@ export const BEACH_LIVE_CAMERA_URL =
   "https://grzybowo.pl/strona-278-widok_z_kamery_na_plazy_w_grzybowie.html";
 export const KOLOBRZEG_360_URL = "https://www.kolobrzeg360.pl/";
 
+/** Oficjalny kalendarz wydarzeń Gminy Kołobrzeg */
+export const GMINA_EVENTS_URL = "https://www.gmina.kolobrzeg.pl/wydarzenia.html";
+
 /** Mapa turystyczna Grzybowa – załącznik właściciela */
 export const GRZYBOWO_MAP = {
   src: "/images/atrakcje/mapa-grzybowo.webp",
