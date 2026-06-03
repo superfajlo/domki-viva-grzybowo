@@ -47,9 +47,9 @@ export const HOME_HUB_LINKS = [
   },
   {
     href: "/wydarzenia",
-    title: "Wydarzenia w Kołobrzegu",
-    description: "Aktualny kalendarz koncertów, kina, sportu i kultury – automatycznie z i-kolobrzeg.pl.",
-    cta: "Zobacz wydarzenia",
+    title: "Wydarzenia w okolicy",
+    description: "Koncerty, kino, sport, kultura, teatr i stand-up – linki do kalendarza Kołobrzegu.",
+    cta: "Sprawdź wydarzenia",
   },
   {
     href: "/kontakt/",

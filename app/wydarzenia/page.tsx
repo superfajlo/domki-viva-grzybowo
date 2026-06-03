@@ -12,7 +12,7 @@ export default function WydarzeniaPage() {
         <Breadcrumbs
           items={[
             { label: "Start", href: "/" },
-            { label: "Wydarzenia" },
+            { label: "Wydarzenia w okolicy" },
           ]}
         />
       </div>

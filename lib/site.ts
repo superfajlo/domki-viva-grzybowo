@@ -25,7 +25,7 @@ export const NAV_ITEMS = [
   { label: "Cennik", href: "/cennik" },
   { label: "Galeria", href: "/galeria" },
   { label: "Atrakcje okolicy", href: "/atrakcje-okolicy" },
-  { label: "Wydarzenia", href: "/wydarzenia" },
+  { label: "Wydarzenia w okolicy", href: "/wydarzenia" },
   { label: "Wirtualny spacer", href: "/#wirtualny-spacer" },
   { label: "Regulamin obiektu", href: "/regulamin-obiektu" },
   { label: "Kontakt", href: "/kontakt" },
@@ -163,9 +163,6 @@ export const BEACH_LIVE_CAMERA_URL =
   "https://grzybowo.pl/strona-278-widok_z_kamery_na_plazy_w_grzybowie.html";
 export const KOLOBRZEG_360_URL = "https://www.kolobrzeg360.pl/";
 
-/** Oficjalny kalendarz wydarzeń gminy (Grzybowo i okolica) */
-export const GMINA_EVENTS_URL = "https://www.gmina.kolobrzeg.pl/wydarzenia.html";
-
 /** Mapa turystyczna Grzybowa – załącznik właściciela */
 export const GRZYBOWO_MAP = {
   src: "/images/atrakcje/mapa-grzybowo.webp",
@@ -251,7 +248,7 @@ export const FAQ_ITEMS = [
   {
     question: "Gdzie mogę sprawdzić wydarzenia w sezonie?",
     answer:
-      "Aktualny kalendarz imprez i festynów znajdziesz na podstronie Wydarzenia – tam też link do oficjalnego kalendarza gminy, gdy automatyczne pobieranie nie zadziała.",
+      "Aktualny kalendarz imprez i festynów znajdziesz na podstronie Wydarzenia w okolicy – kategorie prowadzą do oficjalnego kalendarza Kołobrzegu na i-kolobrzeg.pl.",
   },
 ] as const;
 

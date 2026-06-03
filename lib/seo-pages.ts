@@ -68,10 +68,10 @@ export const SEO_PAGES = {
   },
   wydarzenia: {
     path: "/wydarzenia/",
-    title: "Wydarzenia w Kołobrzegu | Domki Viva Grzybowo",
+    title: "Wydarzenia w okolicy | Domki Viva Grzybowo",
     description:
-      "Aktualne wydarzenia w Kołobrzegu – koncerty, kino, sport, kultura, teatr i stand-up. Sprawdź kalendarz imprez podczas pobytu w Domkach Viva w Grzybowie nad morzem.",
-    h1: "Aktualne wydarzenia w Kołobrzegu",
+      "Wydarzenia w okolicy Grzybowa i Kołobrzegu – koncerty, kino, sport, kultura, teatr i stand-up. Linki do oficjalnego kalendarza i-kolobrzeg.pl.",
+    h1: "Wydarzenia w okolicy",
     primaryKeyword: "wydarzenia Kołobrzeg",
     secondaryKeywords: [
       "koncerty Kołobrzeg",

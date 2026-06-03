@@ -1,5 +1,6 @@
 import { CameraIcon } from "@/components/icons/CameraIcon";
 import { GrzybowoMap } from "@/components/GrzybowoMap";
+import Link from "next/link";
 import {
   AREA_ATTRACTIONS,
   AREA_SEO_PHRASES,
@@ -58,6 +59,28 @@ export function OkolicaAtrakcjeSection() {
             </article>
           ))}
         </div>
+
+        <article className="premium-frame mt-12">
+          <div className="premium-frame-inner bg-gradient-to-br from-surface via-surface to-primary/5 p-6 sm:p-8">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-xl">
+                <span className="icon-gold-bg h-14 w-14 rounded-2xl text-3xl" aria-hidden>
+                  📅
+                </span>
+                <h3 className="mt-4 font-display text-2xl font-bold text-ink sm:text-3xl">
+                  Wydarzenia w okolicy
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-muted sm:text-base">
+                  Koncerty, kino, sport, kultura i inne imprezy w Kołobrzegu – przejdź do
+                  kategorii z linkami do oficjalnego kalendarza.
+                </p>
+              </div>
+              <Link href="/wydarzenia" className="btn-cta shrink-0 text-center">
+                Sprawdź wydarzenia
+              </Link>
+            </div>
+          </div>
+        </article>
 
         {/* Kamera na żywo – plaża */}
         <article className="premium-frame relative mt-12 overflow-hidden">
