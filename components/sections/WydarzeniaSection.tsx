@@ -4,7 +4,7 @@ export function WydarzeniaSection() {
   return (
     <section id="wydarzenia-kolobrzeg" className="section-padding bg-cream !pt-0">
       <div className="mx-auto max-w-7xl">
-        <h1 className="section-title">Wydarzenia w okolicy</h1>
+        <h1 className="section-title">Wydarzenia</h1>
         <p className="section-lead max-w-3xl">
           Podczas pobytu w Domkach Viva sprawdź aktualne koncerty, kino, sport, kulturę, teatr i
           stand-up w Kołobrzegu. Wybierz kategorię i przejdź do oficjalnego kalendarza

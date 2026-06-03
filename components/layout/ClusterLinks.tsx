@@ -18,7 +18,7 @@ const RELATED: Record<string, { href: string; label: string }[]> = {
   ],
   atrakcje: [
     { href: "/", label: "Strona główna" },
-    { href: "/wydarzenia/", label: "Wydarzenia w okolicy" },
+    { href: "/wydarzenia/", label: "Wydarzenia" },
     { href: "/kontakt/", label: "Kontakt" },
   ],
   wydarzenia: [

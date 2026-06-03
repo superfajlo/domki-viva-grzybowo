@@ -55,7 +55,7 @@ export const ATRAKCJE_FAQ = [
   {
     question: "Gdzie sprawdzić wydarzenia sezonowe?",
     answer:
-      "Na podstronie Wydarzenia w okolicy znajdziesz linki do kategorii kalendarza Kołobrzegu na i-kolobrzeg.pl.",
+      "Na podstronie Wydarzenia znajdziesz linki do kategorii kalendarza Kołobrzegu na i-kolobrzeg.pl.",
   },
   {
     question: "Czy są atrakcje dla aktywnych turystów?",
