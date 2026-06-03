@@ -93,57 +93,6 @@ export const PRICING = [
   { guests: 5, label: "Domek 5 osób", priceFrom: 250 },
 ] as const;
 
-export const AREA_ATTRACTIONS = [
-  {
-    title: "Szeroka plaża w Grzybowie",
-    description: "Szeroka plaża w Grzybowie, ok. 500 m od Domków Viva – idealna na rodzinne wakacje nad morzem.",
-  },
-  {
-    title: "Kołobrzeg",
-    description: "Historyczne miasto z portem, molo i licznymi atrakcji – szybki dojazd z Grzybowa.",
-  },
-  {
-    title: "Port morski",
-    description: "Port rybacki i turystyczny w Kołobrzegu – rejsy, promenada i nadmorski klimat.",
-  },
-  {
-    title: "Latarnia morska",
-    description: "Widokowy punkt nad Bałtykiem w okolicy – jedna z atrakcji wybrzeża.",
-  },
-  {
-    title: "Molo",
-    description: "Kultowe molo w Kołobrzegu – spacer, widoki i letnia atmosfera nad morzem.",
-  },
-  {
-    title: "Rejsy wycieczkowe",
-    description: "Rejsy statkiem z portu – odkryjcie wybrzeże Bałtyku z perspektywy wody.",
-  },
-  {
-    title: "Trasy rowerowe",
-    description: "Ścieżki rowerowe wzdłuż wybrzeża Bałtyku – aktywny wypoczynek dla całej rodziny.",
-  },
-  {
-    title: "Atrakcje dla dzieci",
-    description: "Parki, place zabaw i rodzinne atrakcje w Grzybowie i okolicach.",
-  },
-  {
-    title: "Restauracje i smażalnie",
-    description: "Smażalnie ryb i restauracje nad morzem – smaki regionu po dniu na plaży.",
-  },
-  {
-    title: "Turystyka rodzinna",
-    description: "Spokojna okolica Grzybowa sprzyja rodzinnym wakacjom nad Bałtykiem.",
-  },
-  {
-    title: "Wydarzenia sezonowe",
-    description: "Festiwale, koncerty i imprezy plenerowe w sezonie letnim w regionie.",
-  },
-  {
-    title: "Spacery nad morzem",
-    description: "Szerokie plaże i promenady – relaksujące spacery o zachodzie słońca.",
-  },
-] as const;
-
 /** SEO sekcji Okolica i atrakcje */
 export const AREA_SEO_PHRASES = [
   "okolica Grzybowo",
@@ -152,11 +101,14 @@ export const AREA_SEO_PHRASES = [
   "co zobaczyć w Grzybowie",
   "co robić w Grzybowie",
   "wakacje Grzybowo",
-  "wydarzenia Grzybowo",
   "noclegi blisko atrakcji",
   "atrakcje nad Bałtykiem",
   "rodzinne atrakcje Grzybowo",
-  "Kołobrzeg 360",
+  "jazda konna Grzybowo",
+  "molo Kołobrzeg",
+  "latarnia morska Kołobrzeg",
+  "park linowy Kołobrzeg",
+  "spływy kajakowe Parsęta",
 ] as const;
 
 export const BEACH_LIVE_CAMERA_URL =

@@ -1,6 +1,8 @@
 "use client";
 
+import { CameraIcon } from "@/components/icons/CameraIcon";
 import {
+  BEACH_LIVE_CAMERA_URL,
   KOLOBRZEG_360_URL,
   VIRTUAL_TOUR_SEO_PHRASES,
   VIVA_VIRTUAL_TOUR_URL,
@@ -48,6 +50,37 @@ export function WirtualnySpacerSection() {
             karcie przyciskiem poniżej.
           </p>
         )}
+
+        <article className="relative mt-10 overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
+          <div
+            className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-primary via-secondary to-accent-glow"
+            aria-hidden
+          />
+          <div className="flex flex-col gap-6 pl-3 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-xl">
+              <span className="icon-gold-bg h-14 w-14 rounded-2xl">
+                <CameraIcon className="h-7 w-7 text-secondary" />
+              </span>
+              <h3 className="mt-4 font-display text-2xl font-bold sm:text-3xl">
+                <span aria-hidden>🎥 </span>
+                Kamera na żywo – Plaża w Grzybowie
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-cream/90 sm:text-base">
+                Sprawdź aktualny widok na plażę w Grzybowie dzięki kamerze online. Zobacz
+                pogodę, stan morza i atmosferę nad Bałtykiem bez wychodzenia z domu.
+              </p>
+            </div>
+            <a
+              href={BEACH_LIVE_CAMERA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-cta inline-flex shrink-0 items-center gap-2"
+            >
+              <CameraIcon className="h-5 w-5" />
+              Zobacz transmisję na żywo
+            </a>
+          </div>
+        </article>
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           <article className="group flex min-h-[240px] flex-col justify-between rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-sm transition hover:bg-white/20">
