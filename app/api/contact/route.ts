@@ -1,5 +1,7 @@
 import { CONTACT } from "@/lib/site";
 import {
+  CONTACT_MAIL_VERSION,
+  getContactMailMeta,
   getContactToEmail,
   getValidationErrorMessage,
   sendContactMail,
@@ -8,6 +10,26 @@ import {
 } from "@/lib/contact-email";
 import { createMailTransporter, getSmtpConfig } from "@/lib/smtp";
 import { NextResponse } from "next/server";
+
+export const dynamic = "force-dynamic";
+
+function noStoreJson(body: unknown, status = 200) {
+  return NextResponse.json(body, {
+    status,
+    headers: {
+      "Cache-Control": "no-store, max-age=0",
+    },
+  });
+}
+
+/** Diagnostyka: otwórz w przeglądarce /api/contact – sprawdź, czy produkcja ma nowy kod. */
+export async function GET() {
+  const { configured } = getSmtpConfig();
+  return noStoreJson({
+    ...getContactMailMeta(),
+    smtpConfigured: configured,
+  });
+}
 
 export async function POST(request: Request) {
   let body: ContactPayload;
@@ -62,5 +84,5 @@ export async function POST(request: Request) {
     );
   }
 
-  return NextResponse.json({ ok: true });
+  return noStoreJson({ ok: true, mailVersion: CONTACT_MAIL_VERSION });
 }

@@ -75,6 +75,17 @@ export const CONTACT_MAIL_FROM_NAME = "Domki VIVA";
 /** Temat wiadomości z formularza. */
 export const CONTACT_MAIL_SUBJECT = "noclegi zapytanie";
 
+/** Wersja szablonu – do diagnostyki (GET /api/contact). */
+export const CONTACT_MAIL_VERSION = 2;
+
+export function getContactMailMeta() {
+  return {
+    version: CONTACT_MAIL_VERSION,
+    fromName: CONTACT_MAIL_FROM_NAME,
+    subject: CONTACT_MAIL_SUBJECT,
+  };
+}
+
 function escapeHtml(value: string): string {
   return value
     .replace(/&/g, "&amp;")
@@ -212,19 +223,10 @@ export async function sendContactMail(
     to: ownerEmail,
     replyTo: formatClientReplyTo(body),
     subject: CONTACT_MAIL_SUBJECT,
-    encoding: "utf-8",
-    alternatives: [
-      {
-        contentType: "text/html; charset=UTF-8",
-        content: html,
-      },
-      {
-        contentType: "text/plain; charset=UTF-8",
-        content: text,
-      },
-    ],
+    text,
+    html,
     headers: {
-      "X-Domki-Viva-Mail": "contact-v2",
+      "X-Domki-Viva-Mail": `contact-v${CONTACT_MAIL_VERSION}`,
     },
   });
 }
