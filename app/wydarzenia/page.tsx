@@ -3,8 +3,6 @@ import { ClusterLinks } from "@/components/layout/ClusterLinks";
 import { WydarzeniaSection } from "@/components/sections/WydarzeniaSection";
 import { pageMetadata } from "@/lib/seo-pages";
 
-export const dynamic = "force-dynamic";
-
 export const metadata = pageMetadata("wydarzenia");
 
 export default function WydarzeniaPage() {

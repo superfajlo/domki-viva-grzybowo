@@ -132,6 +132,13 @@ async function refreshCache(): Promise<EventsCachePayload> {
   }
 }
 
+function shouldScrapeOnThisRequest(force: boolean): boolean {
+  if (force) return true;
+  if (process.env.EVENTS_SCRAPE === "1") return true;
+  if (process.env.VERCEL === "1") return true;
+  return process.env.NODE_ENV !== "development";
+}
+
 export async function getKolobrzegEventsCache(force = false): Promise<EventsCachePayload> {
   if (!force && isValidCache(memoryCache) && !isExpired(memoryCache!)) {
     return memoryCache!;
@@ -140,6 +147,12 @@ export async function getKolobrzegEventsCache(force = false): Promise<EventsCach
   const diskCache = await readDiskCache();
   if (!force && isValidCache(diskCache) && !isExpired(diskCache)) {
     return setMemoryCache(diskCache);
+  }
+
+  if (!shouldScrapeOnThisRequest(force)) {
+    return setMemoryCache(
+      emptyPayload("W trybie deweloperskim pobieranie jest opcjonalne. Użyj /api/events?refresh=1."),
+    );
   }
 
   if (!refreshPromise) {
@@ -168,6 +181,7 @@ export function toApiResponse(payload: EventsCachePayload, stale = false): Event
     expiresAt: payload.expiresAt,
     stale,
     error: payload.error,
-    sourceNote: "Dane z kalendarza UM Kołobrzeg (i-kolobrzeg.pl). Odświeżane automatycznie co 4 godziny.",
+    sourceNote:
+      "Dane z kalendarza UM Kołobrzeg (i-kolobrzeg.pl) oraz wydarzenia gminy (gmina.kolobrzeg.pl). Odświeżane co 4 godziny.",
   };
 }

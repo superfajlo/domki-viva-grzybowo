@@ -136,7 +136,8 @@ export const AREA_ATTRACTIONS = [
   },
   {
     title: "Wydarzenia sezonowe",
-    description: "Festiwale, koncerty i imprezy plenerowe w sezonie letnim w regionie.",
+    description:
+      "Festiwale, koncerty i imprezy plenerowe – aktualny kalendarz publikuje Gmina Kołobrzeg (gmina.kolobrzeg.pl).",
   },
   {
     title: "Spacery nad morzem",
@@ -162,6 +163,9 @@ export const AREA_SEO_PHRASES = [
 export const BEACH_LIVE_CAMERA_URL =
   "https://grzybowo.pl/strona-278-widok_z_kamery_na_plazy_w_grzybowie.html";
 export const KOLOBRZEG_360_URL = "https://www.kolobrzeg360.pl/";
+
+/** Oficjalny kalendarz wydarzeń gminy (Grzybowo i okolica) */
+export const GMINA_EVENTS_URL = "https://www.gmina.kolobrzeg.pl/wydarzenia.html";
 
 /** Mapa turystyczna Grzybowa – załącznik właściciela */
 export const GRZYBOWO_MAP = {
@@ -248,7 +252,7 @@ export const FAQ_ITEMS = [
   {
     question: "Gdzie mogę sprawdzić wydarzenia w sezonie?",
     answer:
-      "Aktualny kalendarz imprez i festynów publikuje gmina – link „Sprawdź aktualne wydarzenia” prowadzi do oficjalnej strony Grzybowa.",
+      "Aktualny kalendarz imprez i festynów publikuje Gmina Kołobrzeg na stronie gmina.kolobrzeg.pl/wydarzenia.html – przycisk „Sprawdź wydarzenia” na stronie Atrakcje okolicy.",
   },
 ] as const;
 

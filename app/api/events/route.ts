@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
 const SOURCE_NOTE =
-  "Dane z kalendarza UM Kołobrzeg (i-kolobrzeg.pl). Odświeżane automatycznie co 4 godziny.";
+  "Dane z kalendarza UM Kołobrzeg (i-kolobrzeg.pl) oraz wydarzenia gminy (gmina.kolobrzeg.pl). Odświeżane co 4 godziny.";
 
 export async function GET(request: Request) {
   const force = new URL(request.url).searchParams.get("refresh") === "1";

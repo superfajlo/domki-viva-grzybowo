@@ -1,6 +1,7 @@
 "use client";
 
 import { EventCategoryFallback } from "@/components/events/EventCategoryFallback";
+import { GminaEventsCard } from "@/components/events/GminaEventsCard";
 import {
   KOLOBRZEG_EVENT_CATEGORIES,
   type EventCategoryId,
@@ -204,21 +205,22 @@ export function EventsExplorer({ initialData = null }: EventsExplorerProps) {
       )}
 
       {showGlobalFallback && (
-        <>
+        <div className="mt-10 space-y-8">
           {error ? (
-            <div className="mt-8 rounded-2xl border border-sand-dark bg-surface px-6 py-5 text-center">
+            <div className="rounded-2xl border border-sand-dark bg-surface px-6 py-5 text-center">
               <p className="text-sm text-ink-muted">{error}</p>
               <button type="button" onClick={() => load(true)} className="btn-cta mt-4">
                 Odśwież kalendarz
               </button>
             </div>
           ) : (
-            <button type="button" onClick={() => load(true)} className="btn-cta-outline mt-8">
+            <button type="button" onClick={() => load(true)} className="btn-cta-outline">
               Spróbuj pobrać wydarzenia ponownie
             </button>
           )}
+          <GminaEventsCard />
           <EventCategoryFallback />
-        </>
+        </div>
       )}
 
       {!loading && events.length > 0 && (
