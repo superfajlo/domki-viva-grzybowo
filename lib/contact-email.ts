@@ -68,26 +68,120 @@ export function validateContactPayload(body: ContactPayload): ContactValidationC
 
 const NOT_PROVIDED = "nie podano";
 
-/** Treść maila do właściciela – wszystkie pola z formularza. */
-export function formatContactEmail(body: ContactPayload) {
+/** Nazwa nadawcy w skrzynce odbiorczej (From). */
+export const CONTACT_MAIL_FROM_NAME = "Domki VIVA";
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function getContactFields(body: ContactPayload) {
   const name = body.name.trim();
   const email = body.email.trim();
   const phone = body.phone.trim();
   const dates = body.dates?.trim() || NOT_PROVIDED;
   const guests = body.guests?.trim() || NOT_PROVIDED;
+  const message = body.message.trim();
+
+  return { name, email, phone, dates, guests, message };
+}
+
+/** Treść maila (plain text) – czytelna wersja zapasowa. */
+export function formatContactEmail(body: ContactPayload) {
+  const { name, email, phone, dates, guests, message } = getContactFields(body);
 
   return [
-    "Nowe zapytanie z formularza kontaktowego – Domki Viva",
+    "DOMKI VIVA – nowe zapytanie z formularza",
+    "────────────────────────────────────",
     "",
-    `Imię i nazwisko: ${name}`,
-    `Telefon: ${phone}`,
-    `E-mail: ${email}`,
-    `Termin pobytu: ${dates}`,
-    `Liczba osób: ${guests}`,
+    "DANE KONTAKTOWE",
+    `  Imię i nazwisko:  ${name}`,
+    `  Telefon:         ${phone}`,
+    `  E-mail:          ${email}`,
     "",
-    "Treść wiadomości:",
-    body.message.trim(),
+    "POBYT",
+    `  Termin:          ${dates}`,
+    `  Liczba osób:     ${guests}`,
+    "",
+    "WIADOMOŚĆ",
+    "────────────────────────────────────",
+    message,
+    "",
+    "Odpowiedz używając „Odpowiedz” – trafi do klienta.",
   ].join("\n");
+}
+
+/** Treść maila (HTML) – układ dopasowany do kolorystyki strony. */
+export function formatContactEmailHtml(body: ContactPayload): string {
+  const { name, email, phone, dates, guests, message } = getContactFields(body);
+  const messageHtml = escapeHtml(message).replace(/\n/g, "<br>");
+
+  const row = (label: string, value: string, valueIsLink = false) => {
+    const safe = escapeHtml(value);
+    const cell = valueIsLink
+      ? `<a href="mailto:${safe}" style="color:#c98900;text-decoration:none;font-weight:600;">${safe}</a>`
+      : `<span style="color:#2b2b2b;font-weight:600;">${safe}</span>`;
+    return `
+      <tr>
+        <td style="padding:10px 16px 10px 0;color:#666666;font-size:13px;vertical-align:top;width:130px;white-space:nowrap;">${label}</td>
+        <td style="padding:10px 0;font-size:15px;line-height:1.4;">${cell}</td>
+      </tr>`;
+  };
+
+  return `<!DOCTYPE html>
+<html lang="pl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"></head>
+<body style="margin:0;padding:0;background-color:#fff9e8;font-family:Segoe UI,Helvetica,Arial,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#fff9e8;padding:24px 12px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #e8ddb5;box-shadow:0 4px 24px rgba(43,43,43,0.08);">
+          <tr>
+            <td style="background:linear-gradient(135deg,#f7c600 0%,#ffb800 100%);padding:28px 32px;text-align:center;">
+              <p style="margin:0;font-size:26px;font-weight:700;letter-spacing:0.04em;color:#2b2b2b;">DOMKI VIVA</p>
+              <p style="margin:8px 0 0;font-size:14px;color:#5c4a20;">Nowe zapytanie z formularza kontaktowego</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:28px 32px 8px;">
+              <p style="margin:0 0 12px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#c98900;">Dane kontaktowe</p>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                ${row("Imię i nazwisko", name)}
+                ${row("Telefon", phone)}
+                ${row("E-mail", email, true)}
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:8px 32px 28px;">
+              <p style="margin:0 0 12px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#c98900;">Pobyt</p>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                ${row("Termin", dates)}
+                ${row("Liczba osób", guests)}
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 32px 32px;">
+              <p style="margin:0 0 12px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#c98900;">Wiadomość</p>
+              <div style="background:#fff3d6;border:1px solid #e8ddb5;border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.55;color:#2b2b2b;">${messageHtml}</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:16px 32px 24px;background:#fff9e8;border-top:1px solid #e8ddb5;text-align:center;">
+              <p style="margin:0;font-size:12px;color:#666666;line-height:1.5;">Odpowiedz na ten e-mail – wiadomość trafi bezpośrednio do klienta.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
 }
 
 /** Reply-To: dane klienta – właściciel może odpowiedzieć jednym kliknięciem. */

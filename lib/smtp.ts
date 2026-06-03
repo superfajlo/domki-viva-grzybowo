@@ -11,7 +11,7 @@ export function getSmtpConfig() {
   const host = process.env.SMTP_HOST?.trim() || ONET_SMTP_HOST;
   const port = Number(process.env.SMTP_PORT ?? String(ONET_SMTP_PORT));
   const user = process.env.SMTP_USER?.trim();
-  const pass = process.env.SMTP_PASS;
+  const pass = process.env.SMTP_PASS?.trim();
 
   return {
     host,

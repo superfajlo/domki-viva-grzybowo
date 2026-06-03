@@ -10,7 +10,8 @@
     "optimize:gallery": "node scripts/optimize-gallery-viva.mjs",
     "optimize:hero": "node scripts/optimize-hero.mjs",
     "optimize:og": "node scripts/optimize-og.mjs",
-    "optimize:atrakcje": "node scripts/optimize-attractions.mjs"
+    "optimize:atrakcje": "node scripts/optimize-attractions.mjs",
+    "check:smtp": "node scripts/check-env-smtp.mjs"
   },
   "dependencies": {
     "next": "16.2.7",

@@ -1,7 +1,9 @@
 import { CONTACT } from "@/lib/site";
 import {
+  CONTACT_MAIL_FROM_NAME,
   formatClientReplyTo,
   formatContactEmail,
+  formatContactEmailHtml,
   getContactToEmail,
   getValidationErrorMessage,
   validateContactPayload,
@@ -47,15 +49,18 @@ export async function POST(request: Request) {
 
   const transporter = createMailTransporter();
   const text = formatContactEmail(body);
+  const html = formatContactEmailHtml(body);
   const replyTo = formatClientReplyTo(body);
+  const clientName = body.name.trim();
 
   try {
     await transporter.sendMail({
-      from: `"Formularz Domki Viva" <${smtpUser}>`,
+      from: `"${CONTACT_MAIL_FROM_NAME}" <${smtpUser}>`,
       to: ownerEmail,
       replyTo,
-      subject: `Zapytanie z formularza – ${body.name.trim()}`,
+      subject: `Domki VIVA – zapytanie od ${clientName}`,
       text,
+      html,
     });
   } catch (err) {
     console.error("Contact form send error:", err);
