@@ -10,10 +10,10 @@
     "optimize:gallery": "node scripts/optimize-gallery-viva.mjs",
     "optimize:hero": "node scripts/optimize-hero.mjs",
     "optimize:og": "node scripts/optimize-og.mjs",
+    "generate:brand-assets": "node scripts/generate-favicons-og.mjs",
     "optimize:atrakcje": "node scripts/optimize-attractions.mjs",
     "check:smtp": "node scripts/check-env-smtp.mjs",
     "download:gallery": "node scripts/download-images.mjs",
-    "optimize:gallery": "node scripts/optimize-gallery-viva.mjs",
     "mirror:viva-tour": "node scripts/mirror-viva-tour.mjs",
     "install:viva-tour": "node scripts/install-viva-tour.mjs"
   },
@@ -33,6 +33,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
     "tailwindcss": "^4",
+    "to-ico": "^1.1.5",
     "typescript": "^5"
   }
 }

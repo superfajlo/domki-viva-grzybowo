@@ -28,8 +28,29 @@ export const metadata: Metadata = {
     ? { verification: { google: googleVerification } }
     : {}),
   icons: {
-    icon: [{ url: "/favicon.ico", sizes: "any" }],
-    apple: [{ url: "/images/logo.png", type: "image/png" }],
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  openGraph: {
+    type: "website",
+    locale: "pl_PL",
+    siteName: "Domki Viva Grzybowo",
+    images: [
+      {
+        url: "/images/og-domki-viva.webp",
+        width: 1200,
+        height: 630,
+        alt: "Domki Viva Grzybowo – noclegi nad morzem",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/og-domki-viva.webp"],
   },
 };
 
