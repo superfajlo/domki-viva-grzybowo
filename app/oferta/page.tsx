@@ -15,7 +15,7 @@ export default function OfertaPage() {
     <>
       <PageIntro
         h1={seo.h1}
-        lead="Komfortowe domki letniskowe w Grzybowie nad morzem – od 2 do 5 osób, z aneksem kuchennym, łazienką i udogodnieniami dla rodzin. Obiekt położony ok. 500 m od plaży, w cichej okolicy blisko Kołobrzegu."
+        lead="Komfortowe, murowane domki letniskowe z antresolą (37 m²) w Grzybowie nad morzem – zakwaterowanie dla 2–5 osób. Na parterze i antresoli: aneks kuchenny, łazienka, sprzęt plażowy i bogate wyposażenie. Obiekt ok. 500 m od morza, w spokojnej okolicy – w pobliżu sklep, przystanek autobusowy, poczta, apteka i kościół; szybki dojazd do Kołobrzegu."
         breadcrumbs={[
           { label: "Start", href: "/" },
           { label: "Oferta" },

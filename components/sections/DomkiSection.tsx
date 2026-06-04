@@ -6,9 +6,11 @@ export function DomkiSection() {
       <div className="mx-auto max-w-7xl">
         <h2 className="section-title">Domki w Grzybowie nad morzem</h2>
         <p className="section-lead">
-          Oferujemy noclegi w Grzybowie w domkach letniskowych dla 2, 3, 4 i 5 osób – każdy z
-          własnym aneksem kuchennym, łazienką i bogatym wyposażeniem. Idealne na rodzinne
-          wakacje nad Bałtykiem, blisko plaży i Kołobrzegu.
+          Oferujemy noclegi w Grzybowie w murowanych domkach letniskowych z antresolą (37 m²) dla
+          2, 3, 4 i 5 osób – każdy z własnym aneksem kuchennym, łazienką oraz wyposażeniem
+          parteru i antresoli, w tym sprzętem plażowym. Idealne na rodzinne wakacje nad Bałtykiem,
+          ok. 500 m od morza; w okolicy sklep, autobus, poczta, apteka i kościół, a Kołobrzeg w
+          zasięgu krótkiej przejażdżki.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">

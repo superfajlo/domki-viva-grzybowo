@@ -63,31 +63,67 @@ export const COTTAGES = [
   },
 ] as const;
 
+/** Kafelki sekcji Udogodnienia na stronie /oferta/ */
 export const AMENITIES = [
   {
-    title: "500 m do plaży",
-    description: "Krótka spacerowa trasa do plaży w Grzybowie nad morzem.",
-    icon: "beach",
+    emoji: "📶",
+    title: "Bezpłatne Wi-Fi",
+    description: "Internet bez dodatkowych opłat – wygodny kontakt i planowanie wycieczek.",
   },
   {
-    title: "Aneks kuchenny",
-    description: "W każdym domku własny aneks do przygotowania posiłków.",
-    icon: "kitchen",
+    emoji: "🚗",
+    title: "Bezpłatny parking",
+    description: "Miejsca parkingowe przy domkach – bez opłat za parkowanie.",
   },
   {
-    title: "Bogate wyposażenie",
-    description: "Wszystko, czego potrzebujecie na komfortowy pobyt.",
-    icon: "comfort",
+    emoji: "🛝",
+    title: "Plac zabaw dla dzieci",
+    description: "Plac zabaw na terenie obiektu – bezpieczna zabawa dla najmłodszych.",
   },
   {
-    title: "Rodzinna atmosfera",
-    description: "Spokojny obiekt idealny na rodzinne wakacje nad morzem.",
-    icon: "family",
+    emoji: "🔥",
+    title: "Ogród i grill",
+    description: "Zielony ogród z możliwością wspólnego grillowania.",
   },
   {
-    title: "Blisko Kołobrzegu",
-    description: "Szybki dojazd do portu, molo i atrakcji Kołobrzegu.",
-    icon: "city",
+    emoji: "🏖️",
+    title: "Sprzęt plażowy w każdym domku",
+    description: "Parawany, leżaki i akcesoria plażowe – gotowe na dzień nad morzem.",
+  },
+  {
+    emoji: "🧺",
+    title: "Pralka w każdym domku",
+    description: "Pralka w każdym domku – wygodnie na dłuższe wakacje z rodziną.",
+  },
+  {
+    emoji: "🍳",
+    title: "Aneks kuchenny z pełnym wyposażeniem",
+    description: "Lodówka, płyta, naczynia i podstawowe AGD – samodzielne posiłki na miejscu.",
+  },
+  {
+    emoji: "📺",
+    title: "TV",
+    description: "Telewizor w salonie na parterze – wieczorny relaks po plaży.",
+  },
+  {
+    emoji: "👕",
+    title: "Żelazko i deska do prasowania",
+    description: "Żelazko i deska w wyposażeniu – porządek podczas pobytu.",
+  },
+  {
+    emoji: "🌊",
+    title: "500 m od plaży",
+    description: "Kilka minut spacerem do plaży w Grzybowie nad Bałtykiem.",
+  },
+  {
+    emoji: "🌳",
+    title: "Spokojna okolica",
+    description: "Cicha, zielona okolica – wypoczynek z dala od zgiełku.",
+  },
+  {
+    emoji: "👨‍👩‍👧‍👦",
+    title: "Idealne dla rodzin",
+    description: "Domki i udogodnienia dopasowane do rodzinnego pobytu nad morzem.",
   },
 ] as const;
 
