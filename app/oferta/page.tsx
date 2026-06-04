@@ -15,7 +15,7 @@ export default function OfertaPage() {
     <>
       <PageIntro
         h1={seo.h1}
-        lead="Komfortowe, murowane domki letniskowe z antresolą (37 m²) w Grzybowie nad morzem – zakwaterowanie dla 2–5 osób. Na parterze i antresoli: aneks kuchenny, łazienka, sprzęt plażowy i bogate wyposażenie. Obiekt ok. 500 m od morza, w spokojnej okolicy – w pobliżu sklep, przystanek autobusowy, poczta, apteka i kościół; szybki dojazd do Kołobrzegu."
+        lead="Oferujemy komfortowe, murowane domki letniskowe z antresolą o powierzchni 37 m², położone w spokojnej części Grzybowa, zaledwie około 500 metrów od szerokiej, piaszczystej plaży. Każdy domek został przygotowany z myślą o wygodnym wypoczynku od 2 do 5 osób i wyposażony jest we wszystko, co niezbędne do udanego pobytu nad morzem – funkcjonalny aneks kuchenny, łazienkę, sprzęt plażowy oraz praktyczne wyposażenie zapewniające komfort zarówno podczas krótkich, jak i dłuższych wakacji. Dogodna lokalizacja sprawia, że w najbliższej okolicy znajdują się sklep spożywczy, przystanek autobusowy, poczta, apteka oraz kościół. Dodatkowym atutem jest bliskość Kołobrzegu, do którego można szybko i wygodnie dotrzeć, korzystając z licznych atrakcji turystycznych, restauracji i nadmorskich spacerów."
         breadcrumbs={[
           { label: "Start", href: "/" },
           { label: "Oferta" },
