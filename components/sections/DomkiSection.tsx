@@ -4,14 +4,23 @@ export function DomkiSection() {
   return (
     <section id="domki" className="section-padding bg-cream">
       <div className="mx-auto max-w-7xl">
-        <h2 className="section-title">Domki w Grzybowie nad morzem</h2>
-        <p className="section-lead">
-          Oferujemy noclegi w Grzybowie w murowanych domkach letniskowych z antresolą (37 m²) dla
-          2, 3, 4 i 5 osób – każdy z własnym aneksem kuchennym, łazienką oraz wyposażeniem
-          parteru i antresoli, w tym sprzętem plażowym. Idealne na rodzinne wakacje nad Bałtykiem,
-          ok. 500 m od morza; w okolicy sklep, autobus, poczta, apteka i kościół, a Kołobrzeg w
-          zasięgu krótkiej przejażdżki.
-        </p>
+        <h2 className="section-title">Dlaczego warto nas wybrać?</h2>
+        <div className="section-lead max-w-3xl space-y-4">
+          <p>
+            Domki Viva to miejsce stworzone z myślą o spokojnym i komfortowym wypoczynku nad
+            Bałtykiem. Oferujemy przytulne, w pełni wyposażone domki z antresolą, które doskonale
+            sprawdzą się zarówno dla par, jak i rodzin z dziećmi. Kameralna atmosfera, spokojna
+            okolica oraz dogodna lokalizacja zaledwie około 500 metrów od szerokiej, piaszczystej
+            plaży sprawiają, że nasi Goście mogą w pełni cieszyć się urlopem bez codziennego
+            pośpiechu.
+          </p>
+          <p>
+            Na miejscu czeka bezpłatny parking, dostęp do Wi-Fi, plac zabaw dla najmłodszych, ogród
+            z miejscem do grillowania oraz praktyczne wyposażenie ułatwiające pobyt. Bliskość
+            sklepów, komunikacji miejskiej oraz atrakcji Grzybowa i Kołobrzegu sprawia, że Domki
+            Viva są doskonałą bazą wypadową do odkrywania uroków polskiego wybrzeża.
+          </p>
+        </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {COTTAGES.map((cottage) => (

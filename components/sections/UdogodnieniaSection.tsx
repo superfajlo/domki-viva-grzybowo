@@ -2,8 +2,15 @@ import { AMENITIES } from "@/lib/site";
 
 export function UdogodnieniaSection() {
   return (
-    <section id="udogodnienia" className="section-padding bg-background">
-      <div className="mx-auto max-w-7xl">
+    <section
+      id="udogodnienia"
+      className="section-padding relative overflow-hidden border-y border-sand-dark/40 bg-gradient-to-b from-sand via-white to-sand"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_55%_at_50%_0%,rgba(255,216,77,0.14),transparent_65%)]"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-7xl">
         <h2 className="section-title">Udogodnienia</h2>
         <p className="section-lead">
           W murowanych domkach letniskowych z antresolą (37 m²) czeka m.in. bezpłatne Wi-Fi,
@@ -15,7 +22,7 @@ export function UdogodnieniaSection() {
           {AMENITIES.map((item) => (
             <article
               key={item.title}
-              className="flex gap-4 rounded-2xl border border-sand-dark bg-cream/60 p-6"
+              className="flex gap-4 rounded-2xl border border-sand-dark/70 bg-white p-6 shadow-sm shadow-primary/5 transition hover:border-secondary/30 hover:shadow-md hover:shadow-primary/10"
             >
               <span className="text-3xl" aria-hidden>
                 {item.emoji}
