@@ -75,11 +75,8 @@ export const PRICING_JUNE = {
 export const PRICING_SUMMER = {
   monthLabel: "LIPIEC I SIERPIEŃ 2026",
   popularBadge: "Najpopularniejszy termin wakacyjny",
-  infoLines: [
-    "Cena za domek do 4 osób.",
-    "Maksymalnie 5 osób.",
-    "Dopłata za piątą osobę zgodnie z cennikiem.",
-  ],
+  priceBasisNote: "Cena za domek do 4 osób.",
+  infoLines: ["Maksymalnie 5 osób.", "Dopłata za piątą osobę zgodnie z cennikiem."],
   cards: [
     {
       id: "sum-1",
@@ -132,7 +129,7 @@ export const PRICING_IMPORTANT = {
     "Krótszy pobyt ustalany jest indywidualnie.",
     "Doba hotelowa rozpoczyna się o godzinie 15:00.",
     "Doba hotelowa kończy się o godzinie 10:00.",
-    "W sezonie obowiązują pobyty tygodniowe.",
+    "W sezonie letnim pobyt minimum 6 noclegów.",
     "Wyjazdy i przyjazdy odbywają się wyłącznie w soboty i niedziele.",
     "Obowiązuje opłata miejscowa (klimatyczna).",
   ],

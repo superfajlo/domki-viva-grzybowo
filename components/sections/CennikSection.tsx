@@ -177,11 +177,16 @@ export function CennikSection() {
                 </span>
               </div>
 
-              <ul className="mt-5 flex flex-wrap gap-2">
+              <p className="mt-5 inline-flex w-full flex-wrap items-center justify-center gap-2 rounded-2xl border-2 border-secondary/50 bg-gradient-to-r from-primary/25 via-primary/15 to-secondary/20 px-5 py-4 text-center font-display text-base font-bold tracking-tight text-ink shadow-md shadow-primary/15 sm:text-lg">
+                <PricingIcon name="home" className="h-5 w-5 shrink-0 text-secondary" />
+                {PRICING_SUMMER.priceBasisNote}
+              </p>
+
+              <ul className="mt-4 flex flex-wrap justify-center gap-2">
                 {PRICING_SUMMER.infoLines.map((line) => (
                   <li
                     key={line}
-                    className="rounded-full border border-sand-dark bg-surface/90 px-4 py-2 text-sm text-ink backdrop-blur-sm"
+                    className="rounded-full border border-sand-dark bg-surface/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm"
                   >
                     {line}
                   </li>
