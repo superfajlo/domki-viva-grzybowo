@@ -10,13 +10,14 @@ export function DomkiSection() {
             Domki Viva to miejsce stworzone z myślą o spokojnym i komfortowym wypoczynku nad
             Bałtykiem. Oferujemy przytulne, w pełni wyposażone domki z antresolą, które doskonale
             sprawdzą się zarówno dla par, jak i rodzin z dziećmi. Kameralna atmosfera, spokojna
-            okolica oraz dogodna lokalizacja zaledwie około 500 metrów od szerokiej, piaszczystej
+            okolica oraz dogodna lokalizacja zaledwie około 700 metrów od szerokiej, piaszczystej
             plaży sprawiają, że nasi Goście mogą w pełni cieszyć się urlopem bez codziennego
             pośpiechu.
           </p>
           <p>
-            Na miejscu czeka bezpłatny parking, dostęp do Wi-Fi, plac zabaw dla najmłodszych, ogród
-            z miejscem do grillowania oraz praktyczne wyposażenie ułatwiające pobyt. Bliskość
+            Na miejscu czeka bezpłatny parking, dostęp do Wi-Fi, plac zabaw i trampolina dla
+            najmłodszych, ogród z miejscem do grillowania oraz praktyczne wyposażenie ułatwiające
+            pobyt. Bliskość
             sklepów, komunikacji miejskiej oraz atrakcji Grzybowa i Kołobrzegu sprawia, że Domki
             Viva są doskonałą bazą wypadową do odkrywania uroków polskiego wybrzeża.
           </p>

@@ -1,9 +1,26 @@
-/** Kanoniczny adres strony (sitemap, robots, Open Graph, JSON-LD). */
-const DEFAULT_SITE_URL = "https://www.grzybowo-noclegi.pl";
+/** Kanoniczny adres produkcyjny (sitemap, robots, Open Graph, JSON-LD, GSC). */
+export const CANONICAL_HOST = "www.grzybowo-noclegi.pl";
+const DEFAULT_SITE_URL = `https://${CANONICAL_HOST}`;
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_URL).replace(
-  /\/+$/,
-  "",
+/** Normalizuje URL: https, bez końcowego /, www dla grzybowo-noclegi.pl */
+export function normalizeSiteUrl(raw: string): string {
+  const trimmed = raw.trim().replace(/\/+$/, "");
+  if (!trimmed) return DEFAULT_SITE_URL;
+  try {
+    const withProto = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+    const u = new URL(withProto);
+    u.protocol = "https:";
+    if (u.hostname === "grzybowo-noclegi.pl") {
+      u.hostname = CANONICAL_HOST;
+    }
+    return u.origin;
+  } catch {
+    return DEFAULT_SITE_URL;
+  }
+}
+
+export const SITE_URL = normalizeSiteUrl(
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_URL,
 );
 
 /** SEO strony głównej – nie zmieniać bez potrzeby */
@@ -112,7 +129,7 @@ export const AMENITIES = [
   },
   {
     emoji: "🌊",
-    title: "500 m od plaży",
+    title: "700 m od plaży",
     description: "Kilka minut spacerem do plaży w Grzybowie nad Bałtykiem.",
   },
   {
@@ -196,7 +213,7 @@ export const FAQ_ITEMS = [
   {
     question: "Jak daleko od plaży znajdują się domki Viva?",
     answer:
-      "Domki Viva w Grzybowie leżą około 500 metrów od plaży – to kilka minut spacerem nad morzem.",
+      "Domki Viva w Grzybowie leżą około 700 metrów od plaży – to kilka minut spacerem nad morzem.",
   },
   {
     question: "Ile osób mogą zakwaterować się w jednym domku?",
@@ -267,7 +284,7 @@ export const SEO_KEYWORDS = [
   "wakacje Grzybowo",
   "wakacje nad morzem",
   "rodzinne wakacje nad morzem",
-  "domki 500 m od plaży",
+  "domki 700 m od plaży",
   "Grzybowo",
   "Kołobrzeg",
   "Bałtyk",

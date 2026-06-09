@@ -11,20 +11,19 @@ export function HomeAboutGrzybowo() {
             <strong className="text-ink">Grzybowo</strong> to malowniczo usytuowana miejscowość
             letniskowa w bezpośrednim sąsiedztwie morza. Cicha, spokojna okolica przyciąga
             turystów szukających <strong className="text-ink">noclegów Grzybowo</strong> z łatwym
-            dostępem do plaży – Domki Viva leżą około 500 metrów od wybrzeża Bałtyku.
+            dostępem do plaży – Domki Viva leżą około 700 metrów od wybrzeża Bałtyku.
           </p>
           <p>
             Dodatkową zaletą pobytu jest bliskość <strong className="text-ink">Kołobrzegu</strong>{" "}
             – zaledwie ok. 5 km do centrum miasta uzdrowiskowego z wyjątkowym mikroklimatem,
-            deptakiem, molo i licznymi atrakcjami. To idealne połączenie dla osób planujących{" "}
-            <strong className="text-ink">domki nad morzem</strong> w spokojnej miejscowości oraz
-            wycieczki do <strong className="text-ink">domków w okolicy Kołobrzegu</strong>.
+            deptakiem, molo i licznymi atrakcjami. To idealne połączenie dla osób planujących
+            wypoczynek w <strong className="text-ink">domkach nad morzem</strong> w spokojnej
+            miejscowości Grzybowo w okolicy Kołobrzegu.
           </p>
           <p>
             Oferujemy komfortowe <strong className="text-ink">domki Grzybowo</strong> dla 2–5 osób –
-            z własnym aneksem kuchennym, ogrodem i placem zabaw. Zapraszamy na{" "}
-            <strong className="text-ink">wakacje Grzybowo</strong> i rodzinny wypoczynek nad
-            Bałtykiem.
+            z własnym aneksem kuchennym, ogrodem i placem zabaw. Zapraszamy na wakacje w Grzybowie
+            i rodzinny wypoczynek nad Bałtykiem.
           </p>
         </div>
       </div>
@@ -34,7 +33,7 @@ export function HomeAboutGrzybowo() {
 
 export function HomeAdvantages() {
   const items = [
-    { title: "500 m do plaży", text: "Krótki spacer do szerokiej, piaszczystej plaży w Grzybowie." },
+    { title: "700 m do plaży", text: "Krótki spacer do szerokiej, piaszczystej plaży w Grzybowie." },
     { title: "Domki 2–5 osób", text: "Własny aneks kuchenny i łazienka w każdym domku." },
     { title: "Ogród i plac zabaw", text: "Przestrzeń dla dzieci, grill i spokojna atmosfera." },
     { title: "Parking i Wi-Fi", text: "Bezpłatny parking (1 miejsce na domek) i internet." },

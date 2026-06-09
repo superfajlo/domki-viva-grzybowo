@@ -71,7 +71,7 @@ export const KONTAKT_FAQ = [
   },
   {
     question: "Gdzie znajduje się obiekt?",
-    answer: "Łąkowa 4A, 78-132 Grzybowo – ok. 500 m od plaży, woj. zachodniopomorskie.",
+    answer: "Łąkowa 4A, 78-132 Grzybowo – ok. 700 m od plaży, woj. zachodniopomorskie.",
   },
   {
     question: "Czy mogę wysłać zapytanie online?",

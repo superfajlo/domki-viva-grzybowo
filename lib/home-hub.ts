@@ -69,7 +69,7 @@ export const HOME_FAQ = [
   {
     question: "Gdzie znajdują się Domki Viva?",
     answer:
-      "Obiekt leży przy ul. Łąkowej 4A w Grzybowie (78-132), około 500 metrów od plaży i 5 km od centrum Kołobrzegu.",
+      "Obiekt leży przy ul. Łąkowej 4A w Grzybowie (78-132), około 700 metrów od plaży i 5 km od centrum Kołobrzegu.",
   },
   {
     question: "Dla kogo są idealne noclegi w Domkach Viva?",

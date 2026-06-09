@@ -9,7 +9,7 @@ export function SeoIntro() {
           <strong>noclegi w Grzybowie nad morzem</strong> –{" "}
           <strong>domki Grzybowo</strong> i <strong>domki nad morzem Grzybowo</strong> dla
           rodzin szukających <strong>domków letniskowych Grzybowo</strong> oraz{" "}
-          <strong>domków blisko plaży Grzybowo</strong>. Około 500 metrów dzieli Was od
+          <strong>domków blisko plaży Grzybowo</strong>. Około 700 metrów dzieli Was od
           plaży, a <strong>noclegi blisko Kołobrzegu</strong> ułatwiają zwiedzanie portu i
           molo. Zapraszamy na <strong>wakacje Grzybowo</strong>,{" "}
           <strong>wakacje nad morzem</strong> i <strong>rodzinne wakacje nad morzem</strong>{" "}

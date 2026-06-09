@@ -27,7 +27,7 @@ export const SEO_PAGES = {
     path: "/oferta/",
     title: "Oferta Domków Viva Grzybowo | Komfortowe Domki 2-5 Osób Nad Morzem",
     description:
-      "Poznaj ofertę Domków Viva w Grzybowie. Komfortowe domki 2-5 osobowe z aneksem kuchennym, placem zabaw, parkingiem i bezpłatnym Wi-Fi. 500 m od plaży.",
+      "Poznaj ofertę Domków Viva w Grzybowie. Komfortowe domki 2-5 osobowe z aneksem kuchennym, placem zabaw, parkingiem i bezpłatnym Wi-Fi. 700 m od plaży.",
     h1: "Oferta domków Viva w Grzybowie",
     primaryKeyword: "domki Grzybowo oferta",
     secondaryKeywords: [

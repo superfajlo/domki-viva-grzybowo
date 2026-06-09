@@ -30,13 +30,13 @@ export function Hero() {
 
       <div className="page-container relative z-10 mx-auto max-w-7xl pb-28 pt-[calc(var(--header-height)+1.25rem)] sm:pb-36 sm:pt-[calc(var(--header-height)+2rem)] lg:pb-48 lg:pt-[calc(var(--header-height)+2.5rem)]">
         <p className="mb-3 inline-flex max-w-full rounded-full border border-white/30 bg-black/25 px-3 py-1 text-xs font-medium backdrop-blur-sm sm:mb-4 sm:px-4 sm:text-sm">
-          Noclegi w Grzybowie · ok. 500 m od plaży
+          Noclegi w Grzybowie · ok. 700 m od plaży
         </p>
         <h1 className="font-display max-w-4xl text-[1.625rem] font-bold leading-[1.2] tracking-tight drop-shadow-sm sm:text-4xl md:text-5xl lg:text-6xl">
           Domki Viva Grzybowo – noclegi nad morzem
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/95 drop-shadow-sm sm:mt-6 sm:text-lg md:text-xl">
-          Komfortowe domki 2, 3, 4 i 5 osobowe z własnym aneksem kuchennym, około 500
+          Komfortowe domki 2, 3, 4 i 5 osobowe z własnym aneksem kuchennym, około 700
           metrów od plaży.
         </p>
         <div className="mt-8 flex w-full max-w-md flex-col gap-3 sm:mt-10 sm:max-w-none sm:flex-row sm:flex-wrap">

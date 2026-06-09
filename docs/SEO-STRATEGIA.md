@@ -34,7 +34,7 @@
 
 **Linkowanie wewnętrzne:** → `/oferta/`, `/cennik/`, `/galeria/`, `/atrakcje-okolicy/`, `/kontakt/`, `/regulamin-obiektu/`, kotwica `/#wirtualny-spacer`
 
-**Rekomendacje:** Nie rozbudowywać cennika ani regulaminu na hubie. Aktualizować sezonowe akcenty (Grzybowo, 500 m plaży) bez powielania H2 z podstron.
+**Rekomendacje:** Nie rozbudowywać cennika ani regulaminu na hubie. Aktualizować sezonowe akcenty (Grzybowo, 700 m plaży) bez powielania H2 z podstron.
 
 ---
 

@@ -15,7 +15,7 @@ export function UdogodnieniaSection() {
         <p className="section-lead">
           W murowanych domkach letniskowych z antresolą (37 m²) czeka m.in. bezpłatne Wi-Fi,
           parking, plac zabaw, ogród z grillem, sprzęt plażowy i pralka w każdym domku – wygodny
-          pobyt ok. 500 m od morza, w spokojnej okolicy Grzybowa.
+          pobyt ok. 700 m od morza, w spokojnej okolicy Grzybowa.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

@@ -2,7 +2,7 @@
 
 export const PRICING_INFO_BAR = [
   { icon: "calendar" as const, text: "Minimum 6 noclegów" },
-  { icon: "beach" as const, text: "Około 500 m do plaży" },
+  { icon: "beach" as const, text: "Około 700 m do plaży" },
   { icon: "home" as const, text: "Domki 2–5 osobowe" },
   { icon: "utilities" as const, text: "Media w cenie" },
   { icon: "phone" as const, text: "Rezerwacja telefoniczna" },

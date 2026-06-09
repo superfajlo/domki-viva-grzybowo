@@ -28,7 +28,7 @@ export function lodgingBusinessJsonLd() {
     },
     amenityFeature: [
       { "@type": "LocationFeatureSpecification", name: "Aneks kuchenny", value: true },
-      { "@type": "LocationFeatureSpecification", name: "500 m do plaży", value: true },
+      { "@type": "LocationFeatureSpecification", name: "700 m do plaży", value: true },
     ],
     areaServed: ["Grzybowo", "Kołobrzeg", "Bałtyk"],
     knowsAbout: [

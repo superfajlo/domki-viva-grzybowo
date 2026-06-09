@@ -11,7 +11,7 @@ export function Footer() {
             <LogoBrand variant="footer" linked={false} size="sm" className="!text-2xl" />
             <p className="mt-3 text-sm text-cream/90">
               Komfortowe noclegi w Grzybowie nad morzem – domki 2, 3, 4 i 5 osobowe około
-              500 metrów od plaży.
+              700 metrów od plaży.
             </p>
             <address className="mt-4 not-italic text-sm text-cream/85">
               {CONTACT.fullAddress}
