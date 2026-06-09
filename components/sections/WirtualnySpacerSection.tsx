@@ -8,6 +8,7 @@ import {
   VIRTUAL_TOUR_SEO_PHRASES,
   VIVA_VIRTUAL_TOUR_URL,
 } from "@/lib/site";
+import Link from "next/link";
 import { useState } from "react";
 
 export function WirtualnySpacerSection() {
@@ -32,8 +33,26 @@ export function WirtualnySpacerSection() {
           rodzin – idealne <strong className="font-semibold text-white">Grzybowo noclegi dla rodzin</strong>.
         </p>
 
+        <p
+          role="note"
+          className="mt-6 max-w-3xl rounded-xl border border-accent-glow/40 bg-white/10 px-4 py-3 text-sm leading-relaxed text-cream/95 sm:px-5 sm:py-4 sm:text-base"
+        >
+          <span className="mr-1.5" aria-hidden>
+            ℹ️
+          </span>
+          Wirtualny spacer został wykonany na początku powstania obiektu i nie obejmuje jeszcze
+          obecnego wyglądu ogrodu. Aktualne zdjęcia ogrodu znajdziesz w{" "}
+          <Link
+            href="/galeria/"
+            className="font-semibold text-accent-glow underline decoration-accent-glow/60 underline-offset-2 transition hover:text-white"
+          >
+            galerii
+          </Link>
+          .
+        </p>
+
         {!iframeBlocked && (
-          <div className="relative mt-10 overflow-hidden rounded-2xl border border-white/20 bg-black/20 shadow-2xl backdrop-blur-sm">
+          <div className="relative mt-8 overflow-hidden rounded-2xl border border-white/20 bg-black/20 shadow-2xl backdrop-blur-sm">
             <iframe
               title="Wirtualny spacer po Domkach Viva w Grzybowie"
               src={VIVA_VIRTUAL_TOUR_URL}
