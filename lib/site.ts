@@ -115,7 +115,8 @@ export const AMENITIES = [
   {
     emoji: "🍳",
     title: "Aneks kuchenny z pełnym wyposażeniem",
-    description: "Lodówka, płyta, naczynia i podstawowe AGD – samodzielne posiłki na miejscu.",
+    description:
+      "Lodówka, płyta grzewcza, kuchenka mikrofalowa, naczynia i podstawowe AGD – samodzielne posiłki na miejscu.",
   },
   {
     emoji: "📺",
