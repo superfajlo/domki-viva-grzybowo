@@ -34,20 +34,22 @@ export function Hero() {
         <p className="mb-3 inline-flex max-w-full rounded-full border border-white/30 bg-black/25 px-3 py-1 text-xs font-medium backdrop-blur-sm sm:mb-4 sm:px-4 sm:text-sm">
           Noclegi w Grzybowie · ok. 700 m od plaży
         </p>
-        <h1 className="font-display max-w-4xl text-[1.625rem] font-bold leading-[1.2] tracking-tight drop-shadow-sm sm:text-4xl md:text-5xl lg:text-6xl">
-          Domki Viva Grzybowo – noclegi nad morzem
-        </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/95 drop-shadow-sm sm:mt-6 sm:text-lg md:text-xl">
-          Komfortowe domki 2, 3, 4 i 5 osobowe z własnym aneksem kuchennym, około 700
-          metrów od plaży.
-        </p>
+        <div className="max-w-4xl rounded-2xl bg-black/20 px-4 py-3 backdrop-blur-[2px] sm:px-5 sm:py-4">
+          <h1 className="font-display text-[1.625rem] font-bold leading-[1.2] tracking-tight drop-shadow-sm sm:text-4xl md:text-5xl lg:text-6xl">
+            Domki Viva Grzybowo – noclegi nad morzem
+          </h1>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/95 drop-shadow-sm sm:mt-5 sm:text-lg md:text-xl">
+            Komfortowe domki 2, 3, 4 i 5 osobowe z własnym aneksem kuchennym, około 700
+            metrów od plaży.
+          </p>
+        </div>
         <div className="mt-8 flex w-full max-w-md flex-col gap-3 sm:mt-10 sm:max-w-none sm:flex-row sm:flex-wrap">
           <Link href="/kontakt/" className="btn-cta w-full sm:w-auto">
             Zapytaj o termin
           </Link>
           <Link
             href="/oferta/"
-            className="inline-flex min-h-11 w-full items-center justify-center rounded-full border-2 border-white/80 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/15 sm:w-auto sm:px-8"
+            className="inline-flex min-h-11 w-full items-center justify-center rounded-full border-2 border-white/80 bg-black/30 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition hover:border-white hover:bg-black/45 sm:w-auto sm:px-8"
           >
             Zobacz domki
           </Link>
