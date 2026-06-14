@@ -124,6 +124,21 @@ export const SEO_PAGES = {
     ],
     role: "cluster",
   },
+  wirtualnySpacer: {
+    path: "/wirtualny-spacer/",
+    title: "Wirtualny spacer | Domki ,,Viva''",
+    description:
+      "Wirtualny spacer Domków Viva w Grzybowie, kamera na żywo z plaży, panoramy Kołobrzegu 360° i widoki z lotu ptaka – zobacz okolicę przed przyjazdem.",
+    h1: "Wirtualny spacer i widoki okolicy",
+    primaryKeyword: "wirtualny spacer Grzybowo",
+    secondaryKeywords: [
+      "domki Grzybowo wirtualny spacer",
+      "kamera plaża Grzybowo",
+      "Kołobrzeg 360",
+      "noclegi Grzybowo blisko plaży",
+    ],
+    role: "cluster",
+  },
 } as const;
 
 export type SeoPageKey = keyof typeof SEO_PAGES;

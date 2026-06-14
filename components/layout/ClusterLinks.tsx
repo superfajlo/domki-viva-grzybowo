@@ -36,6 +36,11 @@ const RELATED: Record<string, { href: string; label: string }[]> = {
     { href: "/kontakt/", label: "Kontakt" },
     { href: "/oferta/", label: "Oferta" },
   ],
+  wirtualnySpacer: [
+    { href: "/galeria/", label: "Galeria" },
+    { href: "/atrakcje-okolicy/", label: "Atrakcje" },
+    { href: "/kontakt/", label: "Kontakt" },
+  ],
 };
 
 export function ClusterLinks({ page }: { page: keyof typeof RELATED }) {
