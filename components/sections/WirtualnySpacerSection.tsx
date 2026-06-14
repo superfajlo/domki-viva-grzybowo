@@ -22,24 +22,12 @@ export function WirtualnySpacerSection() {
     <section
       id="wirtualny-spacer"
       className="section-dark-warm section-padding premium-glow-bg"
-      aria-labelledby="wirtualny-spacer-heading"
+      aria-label="Wirtualny spacer i widoki okolicy"
     >
       <div className="mx-auto max-w-7xl">
-        <h2 id="wirtualny-spacer-heading" className="font-display text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-          Wirtualny spacer
-        </h2>
-        <p className="mt-3 max-w-2xl text-lg text-cream/90">
-          Poznaj obiekt i okolicę jeszcze przed przyjazdem –{" "}
-          <strong className="font-semibold text-white">wirtualny spacer Grzybowo</strong> oraz
-          panoramę Kołobrzegu. Domki Viva to{" "}
-          <strong className="font-semibold text-white">noclegi Grzybowo blisko plaży</strong> i{" "}
-          <strong className="font-semibold text-white">domki nad morzem Grzybowo</strong> dla
-          rodzin – idealne <strong className="font-semibold text-white">Grzybowo noclegi dla rodzin</strong>.
-        </p>
-
         <p
           role="note"
-          className="mt-6 max-w-3xl rounded-xl border border-accent-glow/40 bg-white/10 px-4 py-3 text-sm leading-relaxed text-cream/95 sm:px-5 sm:py-4 sm:text-base"
+          className="max-w-3xl rounded-xl border border-accent-glow/40 bg-white/10 px-4 py-3 text-sm leading-relaxed text-cream/95 sm:px-5 sm:py-4 sm:text-base"
         >
           <span className="mr-1.5" aria-hidden>
             ℹ️
