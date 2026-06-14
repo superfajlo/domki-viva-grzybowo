@@ -8,16 +8,18 @@ export function Hero() {
       id="start"
       className="relative flex min-h-[min(62dvh,560px)] flex-col justify-center overflow-hidden bg-ink text-white sm:min-h-[min(68dvh,620px)]"
     >
-      <Image
-        src={HERO_IMAGE}
-        alt="Domki Viva Grzybowo – widok obiektu, domki letniskowe nad morzem"
-        fill
-        priority
-        fetchPriority="high"
-        quality={95}
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+      <div className="absolute inset-x-0 -inset-y-[5%]">
+        <Image
+          src={HERO_IMAGE}
+          alt="Domki Viva Grzybowo – widok obiektu, domki letniskowe nad morzem"
+          fill
+          priority
+          fetchPriority="high"
+          quality={95}
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
       {/* Delikatny ciemny gradient – czytelność tekstu */}
       <div
         className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-black/15"
