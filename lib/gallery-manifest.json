@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T19:12:36.868Z",
+  "generatedAt": "2026-06-14T19:26:38.907Z",
   "heroImage": "/images/hero/domki-viva-glowne.webp",
   "sections": [
     {
@@ -123,6 +123,26 @@
           "src": "/images/viva/wnetrza/wnetrza-08.webp",
           "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 8",
           "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/wnetrza/wnetrza-09.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 9",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/wnetrza/wnetrza-10.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 10",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/wnetrza/wnetrza-11.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 11",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/wnetrza/wnetrza-12.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 12",
+          "orientation": "landscape"
         }
       ]
     }

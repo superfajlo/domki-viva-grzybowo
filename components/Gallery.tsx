@@ -4,10 +4,6 @@ import { GALLERY_IMAGES, GALLERY_SECTIONS } from "@/lib/gallery-images";
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-function tileAspect(orientation?: "landscape" | "portrait") {
-  return orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]";
-}
-
 export function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const hasImages = GALLERY_IMAGES.length > 0;
@@ -70,14 +66,14 @@ export function Gallery() {
                   <p className="mt-2 max-w-2xl text-sm text-ink-muted sm:text-base">
                     {section.description}
                   </p>
-                  <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+                  <ul className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
                     {section.images.map((img, indexInSection) => {
                       const index = start + indexInSection;
                       return (
                         <li key={img.src}>
                           <button
                             type="button"
-                            className={`group relative ${tileAspect(img.orientation)} w-full overflow-hidden rounded-xl ring-2 ring-transparent transition hover:ring-secondary focus:outline-none focus-visible:ring-secondary`}
+                            className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl ring-2 ring-transparent transition hover:ring-secondary focus:outline-none focus-visible:ring-secondary"
                             onClick={() => setActiveIndex(index)}
                           >
                             <Image
@@ -86,7 +82,7 @@ export function Gallery() {
                               fill
                               quality={85}
                               loading="lazy"
-                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw"
                               className="object-cover transition duration-300 group-hover:scale-105"
                             />
                             <span className="absolute inset-0 bg-primary/0 transition group-hover:bg-primary/25" />
