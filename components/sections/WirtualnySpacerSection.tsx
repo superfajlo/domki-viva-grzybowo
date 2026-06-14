@@ -14,6 +14,10 @@ import { useState } from "react";
 export function WirtualnySpacerSection() {
   const [iframeBlocked, setIframeBlocked] = useState(false);
 
+  const handleIframeError = () => {
+    requestAnimationFrame(() => setIframeBlocked(true));
+  };
+
   return (
     <section
       id="wirtualny-spacer"
@@ -59,7 +63,7 @@ export function WirtualnySpacerSection() {
               className="aspect-[16/10] w-full min-h-[320px] sm:min-h-[420px] lg:min-h-[520px]"
               allowFullScreen
               loading="lazy"
-              onError={() => setIframeBlocked(true)}
+              onError={handleIframeError}
             />
           </div>
         )}
