@@ -2,9 +2,10 @@ import { COTTAGES } from "@/lib/site";
 
 export function DomkiSection() {
   return (
-    <section id="domki" className="section-padding bg-cream">
-      <div className="mx-auto max-w-7xl">
-        <h2 className="section-title">Dlaczego warto nas wybrać?</h2>
+    <section id="domki" className="section-padding bg-white">
+      <div className="page-container mx-auto max-w-7xl">
+        <p className="badge-gold w-fit">Oferta</p>
+        <h2 className="section-title mt-4">Domki dla 2, 3, 4 i 5 osób</h2>
         <div className="section-lead max-w-3xl space-y-4">
           <p>
             Domki Viva to miejsce stworzone z myślą o spokojnym i komfortowym wypoczynku nad
@@ -27,7 +28,7 @@ export function DomkiSection() {
           {COTTAGES.map((cottage) => (
             <article
               key={cottage.title}
-              className="group flex flex-col rounded-2xl border border-sand-dark bg-surface p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-sand-dark bg-surface p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
             >
               <div className="icon-gold-bg mb-4 h-12 w-12 rounded-xl text-2xl">
                 🏡
