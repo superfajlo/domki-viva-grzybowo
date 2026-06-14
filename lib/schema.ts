@@ -11,6 +11,7 @@ export function lodgingBusinessJsonLd() {
     description: HOME_SEO.description,
     url: SITE_URL,
     telephone: CONTACT.phoneHref.replace("tel:", ""),
+    email: CONTACT.email,
     image: `${SITE_URL}/images/og-domki-viva.webp`,
     priceRange,
     address: {

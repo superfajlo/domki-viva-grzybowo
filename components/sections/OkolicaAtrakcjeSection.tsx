@@ -7,7 +7,7 @@ export function OkolicaAtrakcjeSection() {
   return (
     <section id="atrakcje-okolicy" className="section-padding bg-cream !pt-0">
       <div className="mx-auto max-w-7xl">
-        <h1 className="section-title">Atrakcje w okolicy</h1>
+        <h1 className="section-title">Atrakcje okolicy Grzybowo i Kołobrzeg</h1>
         <p className="section-lead">
           Grzybowo oraz pobliski Kołobrzeg oferują szerokie plaże, rodzinne atrakcje, liczne
           wydarzenia sezonowe oraz wiele możliwości aktywnego wypoczynku nad Bałtykiem.

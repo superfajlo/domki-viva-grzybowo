@@ -45,18 +45,12 @@ export function Gallery() {
   return (
     <section id="galeria" className="section-padding bg-white">
       <div className="mx-auto max-w-7xl">
-        <h2 className="section-title">Galeria</h2>
-        <p className="section-lead">
-          Zobacz domki Viva w Grzybowie – noclegi nad morzem, blisko plaży i atrakcji
-          wybrzeża Bałtyku.
-        </p>
-
         {!hasImages ? (
-          <p className="mt-12 rounded-2xl border border-dashed border-sand-dark bg-cream/50 px-6 py-10 text-center text-ink-muted">
+          <p className="rounded-2xl border border-dashed border-sand-dark bg-cream/50 px-6 py-10 text-center text-ink-muted">
             Galeria zostanie wkrótce uzupełniona o nowe zdjęcia obiektu i wnętrz domków.
           </p>
         ) : (
-          <div className="mt-12 space-y-16">
+          <div className="space-y-16">
             {sectionOffsets.map(({ section, start }) =>
               section.images.length === 0 ? null : (
                 <div key={section.id}>

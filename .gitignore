@@ -50,8 +50,7 @@ yarn-error.log*
 /upload/*
 !/upload/.gitkeep
 
-# spacer Panotour – wgrywany skryptem install:viva-tour (setki MB)
-/public/wirtualnyspacer/
+# spacer Panotour – pliki w public/wirtualnyspacer/ po install:viva-tour (commituj do Vercel)
 
 # JPG/PNG źródłowe galerii (WebP w repo / deploy)
 /public/images/viva/**/*.jpg
