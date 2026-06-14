@@ -198,7 +198,12 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 19,
-    blocks: [{ type: "paragraph", text: "Obiekt nie akceptuje zwierząt." }],
+    blocks: [
+      {
+        type: "paragraph",
+        text: "Brak możliwości pobytu ze zwierzętami tylko w okresie letnim.",
+      },
+    ],
   },
 ];
 
@@ -206,7 +211,7 @@ export const REGULAMIN_HIGHLIGHTS = [
   "Cisza nocna: 23:00–7:00",
   "Zakaz palenia papierosów",
   "Zakaz smażenia ryb",
-  "Brak możliwości pobytu ze zwierzętami",
+  "Brak możliwości pobytu ze zwierzętami tylko w okresie letnim",
   "Monitoring całodobowy",
   "Jedno miejsce parkingowe na domek",
   "Doba hotelowa: 15:00–10:00",

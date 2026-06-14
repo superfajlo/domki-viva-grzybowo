@@ -6,11 +6,11 @@ export function Hero() {
   return (
     <section
       id="start"
-      className="relative flex min-h-[min(88dvh,900px)] flex-col justify-center overflow-hidden text-white sm:min-h-[92vh]"
+      className="relative flex min-h-[min(62dvh,560px)] flex-col justify-center overflow-hidden text-white sm:min-h-[min(68dvh,620px)]"
     >
       <Image
         src={HERO_IMAGE}
-        alt="Widok z drona – plaża, las i morze Bałtyku w okolicy Grzybowa, noclegi Domki Viva nad morzem"
+        alt="Domki Viva Grzybowo – widok obiektu, domki letniskowe nad morzem"
         fill
         priority
         fetchPriority="high"
@@ -28,7 +28,7 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="page-container relative z-10 mx-auto max-w-7xl pb-28 pt-[calc(var(--header-height)+1.25rem)] sm:pb-36 sm:pt-[calc(var(--header-height)+2rem)] lg:pb-48 lg:pt-[calc(var(--header-height)+2.5rem)]">
+      <div className="page-container relative z-10 mx-auto max-w-7xl pb-20 pt-[calc(var(--header-height)+1rem)] sm:pb-24 sm:pt-[calc(var(--header-height)+1.5rem)] lg:pb-28 lg:pt-[calc(var(--header-height)+2rem)]">
         <p className="mb-3 inline-flex max-w-full rounded-full border border-white/30 bg-black/25 px-3 py-1 text-xs font-medium backdrop-blur-sm sm:mb-4 sm:px-4 sm:text-sm">
           Noclegi w Grzybowie · ok. 700 m od plaży
         </p>

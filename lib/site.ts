@@ -244,7 +244,7 @@ export const FAQ_ITEMS = [
   {
     question: "Czy mogę przyjechać z psem?",
     answer:
-      "Prosimy o kontakt telefoniczny lub przez formularz – ustalimy możliwość pobytu ze zwierzęciem indywidualnie.",
+      "W okresie letnim nie ma możliwości pobytu ze zwierzętami. Poza sezonem letnim prosimy o kontakt telefoniczny lub przez formularz – ustalimy warunki indywidualnie.",
   },
   {
     question: "Jak zarezerwować domek?",

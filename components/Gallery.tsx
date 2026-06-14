@@ -1,11 +1,16 @@
 "use client";
 
-import { GALLERY_IMAGES } from "@/lib/gallery-images";
+import { GALLERY_IMAGES, GALLERY_SECTIONS } from "@/lib/gallery-images";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+
+function tileAspect(orientation?: "landscape" | "portrait") {
+  return orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]";
+}
 
 export function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const hasImages = GALLERY_IMAGES.length > 0;
 
   const close = useCallback(() => setActiveIndex(null), []);
 
@@ -19,6 +24,15 @@ export function Gallery() {
     setActiveIndex((i) =>
       i === null ? null : i === GALLERY_IMAGES.length - 1 ? 0 : i + 1,
     );
+  }, []);
+
+  const sectionOffsets = useMemo(() => {
+    let offset = 0;
+    return GALLERY_SECTIONS.map((section) => {
+      const start = offset;
+      offset += section.images.length;
+      return { section, start };
+    });
   }, []);
 
   useEffect(() => {
@@ -41,31 +55,54 @@ export function Gallery() {
           wybrzeża Bałtyku.
         </p>
 
-        <ul className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
-          {GALLERY_IMAGES.map((img, index) => (
-            <li key={img.src}>
-              <button
-                type="button"
-                className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl ring-2 ring-transparent transition hover:ring-secondary focus:outline-none focus-visible:ring-secondary"
-                onClick={() => setActiveIndex(index)}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  quality={85}
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition duration-300 group-hover:scale-105"
-                />
-                <span className="absolute inset-0 bg-primary/0 transition group-hover:bg-primary/25" />
-              </button>
-            </li>
-          ))}
-        </ul>
+        {!hasImages ? (
+          <p className="mt-12 rounded-2xl border border-dashed border-sand-dark bg-cream/50 px-6 py-10 text-center text-ink-muted">
+            Galeria zostanie wkrótce uzupełniona o nowe zdjęcia obiektu i wnętrz domków.
+          </p>
+        ) : (
+          <div className="mt-12 space-y-16">
+            {sectionOffsets.map(({ section, start }) =>
+              section.images.length === 0 ? null : (
+                <div key={section.id}>
+                  <h3 className="font-display text-xl font-bold text-ink sm:text-2xl">
+                    {section.title}
+                  </h3>
+                  <p className="mt-2 max-w-2xl text-sm text-ink-muted sm:text-base">
+                    {section.description}
+                  </p>
+                  <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+                    {section.images.map((img, indexInSection) => {
+                      const index = start + indexInSection;
+                      return (
+                        <li key={img.src}>
+                          <button
+                            type="button"
+                            className={`group relative ${tileAspect(img.orientation)} w-full overflow-hidden rounded-xl ring-2 ring-transparent transition hover:ring-secondary focus:outline-none focus-visible:ring-secondary`}
+                            onClick={() => setActiveIndex(index)}
+                          >
+                            <Image
+                              src={img.src}
+                              alt={img.alt}
+                              fill
+                              quality={85}
+                              loading="lazy"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                              className="object-cover transition duration-300 group-hover:scale-105"
+                            />
+                            <span className="absolute inset-0 bg-primary/0 transition group-hover:bg-primary/25" />
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ),
+            )}
+          </div>
+        )}
       </div>
 
-      {activeIndex !== null && (
+      {activeIndex !== null && hasImages && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"
           role="dialog"

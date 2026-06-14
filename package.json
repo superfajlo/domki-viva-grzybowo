@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "optimize:gallery": "node scripts/optimize-gallery-viva.mjs",
+    "sync:gallery": "node scripts/sync-gallery.mjs",
     "optimize:hero": "node scripts/optimize-hero.mjs",
     "optimize:og": "node scripts/optimize-og.mjs",
     "generate:brand-assets": "node scripts/generate-favicons-og.mjs",

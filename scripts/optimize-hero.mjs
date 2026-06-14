@@ -10,10 +10,10 @@ import sharp from "sharp";
 const MAX_WIDTH = 2560;
 const WEBP_QUALITY = 94;
 const OUT_DIR = path.join(process.cwd(), "public", "images", "hero");
-const OUT_FILE = path.join(OUT_DIR, "grzybowo-wybrzeze-dron.webp");
-
 const source =
-  process.argv[2] || path.join(process.cwd(), "assets", "hero-drone-source.png");
+  process.argv[2] ||
+  path.join(process.cwd(), "public", "images", "viva", "glowne", "glowne_zdjecie.jpg");
+const OUT_FILE = path.join(OUT_DIR, "domki-viva-glowne.webp");
 
 if (!fs.existsSync(source)) {
   console.error("Brak pliku źródłowego:", source);

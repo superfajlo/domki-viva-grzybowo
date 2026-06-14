@@ -1,0 +1,130 @@
+{
+  "generatedAt": "2026-06-14T19:12:36.868Z",
+  "heroImage": "/images/hero/domki-viva-glowne.webp",
+  "sections": [
+    {
+      "id": "obiekt",
+      "title": "Obiekt",
+      "description": "Ogród, domki z zewnątrz, plac zabaw i teren Domków Viva w Grzybowie.",
+      "images": [
+        {
+          "src": "/images/viva/obiekt/obiekt-01.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 1",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-02.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 2",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-03.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 3",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-04.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 4",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-05.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 5",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-06.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 6",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-07.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 7",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-08.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 8",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-09.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 9",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-10.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 10",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-11.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 11",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-12.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 12",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-13.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 13",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-14.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 14",
+          "orientation": "portrait"
+        }
+      ]
+    },
+    {
+      "id": "wnetrza",
+      "title": "Wnętrza domków",
+      "description": "Pokoje, aneks kuchenny i łazienka w domkach letniskowych.",
+      "images": [
+        {
+          "src": "/images/viva/wnetrza/wnetrza-01.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 1",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/wnetrza/wnetrza-02.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 2",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/wnetrza/wnetrza-03.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 3",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/wnetrza/wnetrza-04.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 4",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/wnetrza/wnetrza-05.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 5",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/wnetrza/wnetrza-06.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 6",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/wnetrza/wnetrza-07.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 7",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/wnetrza/wnetrza-08.webp",
+          "alt": "Wnętrze domku Viva Grzybowo – zdjęcie 8",
+          "orientation": "portrait"
+        }
+      ]
+    }
+  ]
+}
