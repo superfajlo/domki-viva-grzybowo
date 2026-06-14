@@ -7,8 +7,8 @@ import fs from "fs";
 import path from "path";
 import sharp from "sharp";
 
-const MAX_WIDTH = 2560;
-const WEBP_QUALITY = 94;
+const MAX_WIDTH = 1600;
+const WEBP_QUALITY = 75;
 const OUT_DIR = path.join(process.cwd(), "public", "images", "hero");
 const source =
   process.argv[2] ||

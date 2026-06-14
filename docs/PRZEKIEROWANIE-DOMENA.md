@@ -30,7 +30,8 @@
 | Strona | `https://www.grzybowo-noclegi.pl` |
 | Sitemap | `https://www.grzybowo-noclegi.pl/sitemap.xml` |
 | Robots | `https://www.grzybowo-noclegi.pl/robots.txt` |
-| http → https, bez www → www | `middleware.ts` + `vercel.json` |
+| http → https | automatycznie na Vercel |
+| bez www → www | `vercel.json` (przekierowanie 308) |
 
 ---
 

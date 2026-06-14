@@ -12,12 +12,17 @@ const display = Plus_Jakarta_Sans({
   variable: "--font-display",
   subsets: ["latin", "latin-ext"],
   display: "swap",
+  weight: ["600", "700"],
+  adjustFontFallback: true,
 });
 
 const body = Source_Sans_3({
   variable: "--font-body",
   subsets: ["latin", "latin-ext"],
   display: "swap",
+  weight: ["400", "600"],
+  adjustFontFallback: true,
+  preload: false,
 });
 
 const googleVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();

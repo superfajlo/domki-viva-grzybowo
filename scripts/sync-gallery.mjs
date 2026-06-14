@@ -13,9 +13,9 @@ const HERO_SRC = path.join(VIVA, "glowne", "glowne_zdjecie.jpg");
 const HERO_OUT = path.join(ROOT, "public", "images", "hero", "domki-viva-glowne.webp");
 
 const MAX_WIDTH = 1600;
-const HERO_MAX_WIDTH = 1920;
+const HERO_MAX_WIDTH = 1600;
 const WEBP_QUALITY = 82;
-const HERO_QUALITY = 85;
+const HERO_QUALITY = 75;
 
 const SECTIONS = [
   {
