@@ -51,9 +51,25 @@ export function Hero() {
             href="/oferta/"
             className="inline-flex min-h-11 w-full items-center justify-center rounded-full border-2 border-white/80 bg-black/30 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition hover:border-white hover:bg-black/45 sm:w-auto sm:px-8"
           >
-            Zobacz domki
+            Poznaj ofertę
           </Link>
         </div>
+
+        <ul className="mt-10 flex flex-wrap gap-2 sm:gap-3">
+          {[
+            "700 m do plaży",
+            "Domki 2–5 osób",
+            "Parking i Wi-Fi",
+            "Plac zabaw",
+          ].map((label) => (
+            <li
+              key={label}
+              className="rounded-full border border-white/25 bg-black/25 px-3 py-1.5 text-xs font-medium backdrop-blur-sm sm:px-4 sm:text-sm"
+            >
+              {label}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div
