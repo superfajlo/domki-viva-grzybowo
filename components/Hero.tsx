@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="start"
-      className="relative flex min-h-[min(62dvh,560px)] flex-col justify-center overflow-hidden text-white sm:min-h-[min(68dvh,620px)]"
+      className="relative flex min-h-[min(62dvh,560px)] flex-col justify-center overflow-hidden bg-ink text-white sm:min-h-[min(68dvh,620px)]"
     >
       <Image
         src={HERO_IMAGE}
@@ -16,7 +16,7 @@ export function Hero() {
         fetchPriority="high"
         quality={95}
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-contain object-center"
       />
       {/* Delikatny ciemny gradient – czytelność tekstu, pełny kadr zdjęcia */}
       <div
