@@ -19,12 +19,14 @@ export type RegulaminBlock =
 
 export type RegulaminRule = {
   number: number;
+  title: string;
   blocks: RegulaminBlock[];
 };
 
 export const REGULAMIN_RULES: RegulaminRule[] = [
   {
     number: 1,
+    title: "Segregacja odpadów",
     blocks: [
       { type: "paragraph", text: "Obowiązuje segregacja odpadów." },
       {
@@ -41,6 +43,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 2,
+    title: "Cisza nocna",
     blocks: [
       { type: "paragraph", text: "Cisza nocna obowiązuje w godzinach:" },
       { type: "paragraph", text: "23:00 – 7:00." },
@@ -48,6 +51,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 3,
+    title: "Doba hotelowa",
     blocks: [
       {
         type: "paragraph",
@@ -57,6 +61,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 4,
+    title: "Opłata za pobyt",
     blocks: [
       {
         type: "paragraph",
@@ -66,6 +71,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 5,
+    title: "Niewykorzystany pobyt",
     blocks: [
       {
         type: "paragraph",
@@ -75,6 +81,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 6,
+    title: "Odwiedzający",
     blocks: [
       {
         type: "paragraph",
@@ -84,6 +91,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 7,
+    title: "Odpowiedzialność materialna",
     blocks: [
       {
         type: "paragraph",
@@ -93,6 +101,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 8,
+    title: "Dzieci i plac zabaw",
     blocks: [
       {
         type: "paragraph",
@@ -102,6 +111,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 9,
+    title: "Spokój innych gości",
     blocks: [
       {
         type: "paragraph",
@@ -119,6 +129,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 10,
+    title: "Meble i wyposażenie",
     blocks: [
       {
         type: "paragraph",
@@ -128,6 +139,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 11,
+    title: "Zakazane urządzenia",
     blocks: [
       { type: "paragraph", text: "Zabrania się używania i posiadania:" },
       {
@@ -146,6 +158,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 12,
+    title: "Zakaz palenia",
     blocks: [
       {
         type: "paragraph",
@@ -155,10 +168,12 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 13,
+    title: "Zakaz smażenia ryb",
     blocks: [{ type: "paragraph", text: "Obowiązuje zakaz smażenia ryb w domkach." }],
   },
   {
     number: 14,
+    title: "Teren ogrodu",
     blocks: [
       {
         type: "paragraph",
@@ -168,6 +183,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 15,
+    title: "Wartościowe przedmioty",
     blocks: [
       {
         type: "paragraph",
@@ -177,6 +193,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 16,
+    title: "Stan domku przy wyjeździe",
     blocks: [
       {
         type: "paragraph",
@@ -186,6 +203,7 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 17,
+    title: "Parking",
     blocks: [
       { type: "paragraph", text: "Parking dla gości jest:" },
       { type: "list", items: ["bezpłatny,", "niestrzeżony."] },
@@ -194,10 +212,12 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
   },
   {
     number: 18,
+    title: "Monitoring",
     blocks: [{ type: "paragraph", text: "Obiekt jest monitorowany całodobowo." }],
   },
   {
     number: 19,
+    title: "Zwierzęta",
     blocks: [
       {
         type: "paragraph",
