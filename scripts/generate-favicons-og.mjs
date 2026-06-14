@@ -5,10 +5,12 @@
 import fs from "fs";
 import path from "path";
 import sharp from "sharp";
+import toIco from "to-ico";
 
 const ROOT = process.cwd();
 const LOGO = path.join(ROOT, "public", "images", "logo.png");
 const PUBLIC = path.join(ROOT, "public");
+const APP = path.join(ROOT, "app");
 const OG_OUT = path.join(ROOT, "public", "images", "og-domki-viva.webp");
 
 /** Identyfikacja wizualna strony */
@@ -99,12 +101,22 @@ async function writeOgImage() {
   console.log("✓", path.relative(ROOT, OG_OUT), `(${(stat.size / 1024).toFixed(1)} KB)`);
 }
 
-/** favicon.ico – PNG 32×32 (sharp); 16×16 osobno w metadata */
-async function writeFaviconIco(png32Buffer) {
-  const icoPath = path.join(PUBLIC, "favicon.ico");
-  await sharp(png32Buffer).png().toFile(icoPath);
-  const stat = fs.statSync(icoPath);
-  console.log("✓", path.relative(ROOT, icoPath), `(${(stat.size / 1024).toFixed(1)} KB)`);
+/** Prawdziwy favicon.ico (16 + 32 px) – PNG pod .ico daje czarną/broken ikonę w części przeglądarek */
+async function writeFaviconIco(icon16, icon32) {
+  const ico = await toIco([icon16, icon32]);
+  for (const dir of [PUBLIC, APP]) {
+    const icoPath = path.join(dir, "favicon.ico");
+    fs.writeFileSync(icoPath, ico);
+    console.log("✓", path.relative(ROOT, icoPath), `(${(ico.length / 1024).toFixed(1)} KB)`);
+  }
+}
+
+async function writeAppIcons(icon32, icon180) {
+  fs.mkdirSync(APP, { recursive: true });
+  fs.writeFileSync(path.join(APP, "icon.png"), icon32);
+  fs.writeFileSync(path.join(APP, "apple-icon.png"), icon180);
+  console.log("✓", "app/icon.png", `(${(icon32.length / 1024).toFixed(1)} KB)`);
+  console.log("✓", "app/apple-icon.png", `(${(icon180.length / 1024).toFixed(1)} KB)`);
 }
 
 console.log("Źródło:", path.relative(ROOT, LOGO));
@@ -125,6 +137,7 @@ for (const [name, buf] of [
   console.log("✓", `public/${name}`, `(${(buf.length / 1024).toFixed(1)} KB)`);
 }
 
-await writeFaviconIco(icon32);
+await writeFaviconIco(icon16, icon32);
+await writeAppIcons(icon32, icon180);
 await writeOgImage();
 console.log("\nGotowe.");
