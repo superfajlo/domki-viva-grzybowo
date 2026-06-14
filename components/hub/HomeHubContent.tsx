@@ -12,7 +12,7 @@ const ATTRACTION_ICONS = ["🌊", "⛵", "🛶", "🗼", "🌲", "🎡"] as cons
 
 export function HomeAboutGrzybowo() {
   return (
-    <section className="section-padding sand-grain bg-cream">
+    <section id="o-obiekcie" className="section-padding sand-grain bg-cream scroll-mt-24">
       <div className="page-container mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
         <div>
           <p className="badge-gold w-fit">O obiekcie</p>
