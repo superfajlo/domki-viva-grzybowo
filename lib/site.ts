@@ -48,7 +48,7 @@ export const NAV_ITEMS = [
   { label: "Galeria", href: "/galeria" },
   { label: "Atrakcje okolicy", href: "/atrakcje-okolicy" },
   { label: "Wydarzenia", href: "/wydarzenia" },
-  { label: "Wirtualny spacer", href: "/#wirtualny-spacer" },
+  { label: "Wirtualny spacer", href: "/wirtualnyspacer/Kolor/ViVa.html" },
   { label: "Regulamin obiektu", href: "/regulamin-obiektu" },
   { label: "Kontakt", href: "/kontakt" },
 ] as const;

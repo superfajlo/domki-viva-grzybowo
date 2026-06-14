@@ -46,7 +46,7 @@ export const HOME_HUB_LINKS = [
     cta: "Poznaj okolicę",
   },
   {
-    href: "/wydarzenia",
+    href: "/wydarzenia/",
     title: "Wydarzenia",
     description: "Koncerty, kino, sport, kultura, teatr i stand-up – linki do kalendarza Kołobrzegu.",
     cta: "Sprawdź wydarzenia",
