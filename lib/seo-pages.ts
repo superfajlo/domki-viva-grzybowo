@@ -146,6 +146,7 @@ export type SeoPageKey = keyof typeof SEO_PAGES;
 export function pageMetadata(key: SeoPageKey, ogImage = OG_IMAGE): Metadata {
   const page = SEO_PAGES[key];
   const url = `${SITE_URL}${page.path === "/" ? "" : page.path}`;
+  const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${SITE_URL}${ogImage}`;
 
   return {
     title: page.title,
@@ -159,13 +160,13 @@ export function pageMetadata(key: SeoPageKey, ogImage = OG_IMAGE): Metadata {
       siteName: "Domki Viva Grzybowo",
       title: page.title,
       description: page.description,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: page.h1 }],
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: page.h1 }],
     },
     twitter: {
       card: "summary_large_image",
       title: page.title,
       description: page.description,
-      images: [ogImage],
+      images: [ogImageUrl],
     },
   };
 }

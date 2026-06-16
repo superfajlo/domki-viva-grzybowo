@@ -1,6 +1,7 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { OG_IMAGE } from "@/lib/gallery-images";
 import { SITE_URL } from "@/lib/site";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "Domki Viva Grzybowo",
     images: [
       {
-        url: "/images/og-domki-viva.webp",
+        url: `${SITE_URL}${OG_IMAGE}`,
         width: 1200,
         height: 630,
         alt: "Domki Viva Grzybowo – noclegi nad morzem",
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/og-domki-viva.webp"],
+    images: [`${SITE_URL}${OG_IMAGE}`],
   },
 };
 

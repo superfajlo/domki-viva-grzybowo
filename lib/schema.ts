@@ -1,4 +1,5 @@
 import { CONTACT, FAQ_ITEMS, HOME_SEO, PRICING, SITE_URL } from "./site";
+import { HERO_IMAGE, OG_IMAGE } from "./gallery-images";
 
 export function lodgingBusinessJsonLd() {
   const priceRange = `od ${PRICING[0].priceFrom} PLN`;
@@ -12,7 +13,10 @@ export function lodgingBusinessJsonLd() {
     url: SITE_URL,
     telephone: CONTACT.phoneHref.replace("tel:", ""),
     email: CONTACT.email,
-    image: `${SITE_URL}/images/og-domki-viva.webp`,
+    image: [
+      `${SITE_URL}${OG_IMAGE}`,
+      `${SITE_URL}${HERO_IMAGE}`,
+    ],
     priceRange,
     address: {
       "@type": "PostalAddress",

@@ -9,6 +9,7 @@ import toIco from "to-ico";
 
 const ROOT = process.cwd();
 const LOGO = path.join(ROOT, "public", "images", "logo.png");
+const HERO = path.join(ROOT, "public", "images", "hero", "domki-viva-glowne.webp");
 const PUBLIC = path.join(ROOT, "public");
 const APP = path.join(ROOT, "app");
 const OG_OUT = path.join(ROOT, "public", "images", "og-domki-viva.webp");
@@ -67,6 +68,18 @@ async function squareIcon(size) {
 async function writeOgImage() {
   const width = 1200;
   const height = 630;
+
+  if (fs.existsSync(HERO)) {
+    await sharp(HERO)
+      .resize(width, height, { fit: "cover", position: "centre" })
+      .webp({ quality: 85 })
+      .toFile(OG_OUT);
+
+    const stat = fs.statSync(OG_OUT);
+    console.log("✓", path.relative(ROOT, OG_OUT), `z hero (${(stat.size / 1024).toFixed(1)} KB)`);
+    return;
+  }
+
   const logoMax = 320;
 
   const logoSrc = await logoWithTransparentBg();
