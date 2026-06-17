@@ -32,8 +32,10 @@ export function Header() {
 
   const linkClass = (active: boolean, desktop: boolean) => {
     if (desktop) {
-      return `relative z-10 shrink-0 rounded-full px-2.5 py-2 text-sm font-semibold transition-colors xl:px-3 ${
-        active ? "bg-sand text-ink" : "text-ink-muted hover:bg-sand hover:text-ink"
+      return `relative z-10 shrink-0 rounded-full px-2.5 py-2 text-sm font-semibold transition-colors duration-200 xl:px-3 ${
+        active
+          ? "bg-sand-dark text-ink"
+          : "text-ink-muted hover:bg-sand-dark hover:text-ink"
       }`;
     }
     return `relative z-10 flex min-h-11 items-center rounded-lg px-3 text-base font-semibold ${
