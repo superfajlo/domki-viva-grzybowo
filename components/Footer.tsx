@@ -49,7 +49,7 @@ export function Footer() {
 
         <FooterNocowanieBadge />
 
-        <p className="mt-8 border-t border-white/10 pt-6 text-center text-xs text-cream/70">
+        <p className="mt-6 border-t border-white/10 pt-5 text-center text-xs text-cream/70">
           © {new Date().getFullYear()} Domki Viva Grzybowo. Wszelkie prawa zastrzeżone.
         </p>
       </div>

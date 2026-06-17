@@ -22,21 +22,34 @@ type NocowaniePlBadgeProps = {
 export function NocowaniePlBadge({ variant = "footer" }: NocowaniePlBadgeProps) {
   if (variant === "card") {
     return (
-      <div className="flex flex-col items-center rounded-2xl border border-sand-dark bg-white p-5 text-center shadow-sm sm:p-6">
-        <p className="mb-4 text-xs font-bold uppercase tracking-wide text-ink-muted">
-          Zweryfikowany obiekt na Nocowanie.pl
-        </p>
-        <div id={NOCOWANIE_KEY} className="min-h-[80px] w-full" />
+      <div className="rounded-2xl border border-secondary/35 bg-gradient-to-br from-primary/30 via-cream to-white p-6 shadow-md sm:p-7">
+        <div className="flex items-start gap-4">
+          <span className="icon-gold-bg h-12 w-12 shrink-0 rounded-xl text-xl" aria-hidden>
+            ✓
+          </span>
+          <div>
+            <h2 className="font-display text-xl font-bold text-ink sm:text-2xl">
+              Zweryfikowany obiekt
+            </h2>
+            <p className="mt-1 text-base font-medium text-ink sm:text-lg">
+              Profil na{" "}
+              <span className="font-bold text-secondary">Nocowanie.pl</span>
+            </p>
+          </div>
+        </div>
+        <div className="mt-5 flex justify-center">
+          <div id={NOCOWANIE_KEY} className="nocowanie-badge-slot w-auto max-w-full" />
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="mt-10 flex flex-col items-center border-t border-white/10 pt-8">
-      <p className="mb-4 text-xs font-medium uppercase tracking-wide text-cream/60">
-        Obiekt na Nocowanie.pl
+    <div className="mt-8 flex flex-col items-center gap-3 border-t border-white/10 pt-6">
+      <p className="text-sm font-semibold text-cream/80">
+        Obiekt na <span className="text-brand-light">Nocowanie.pl</span>
       </p>
-      <div id={NOCOWANIE_KEY} className="min-h-[80px]" />
+      <div id={NOCOWANIE_KEY} className="nocowanie-badge-slot w-auto max-w-full leading-none" />
     </div>
   );
 }

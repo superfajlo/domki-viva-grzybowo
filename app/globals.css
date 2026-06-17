@@ -151,6 +151,20 @@ body {
   }
 }
 
+/* Odznaka Nocowanie.pl – bez zbędnej pustej przestrzeni wokół widgetu */
+.nocowanie-badge-slot {
+  line-height: 0;
+}
+
+.nocowanie-badge-slot:empty {
+  display: none;
+}
+
+.nocowanie-badge-slot > * {
+  margin: 0 !important;
+  line-height: normal;
+}
+
 .sand-grain {
   position: relative;
 }
