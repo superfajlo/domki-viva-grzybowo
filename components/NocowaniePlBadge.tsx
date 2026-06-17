@@ -2,6 +2,8 @@ import Script from "next/script";
 
 export const NOCOWANIE_KEY = "1fa017ad2cee2ebf25739acc49002973_";
 export const NOCOWANIE_LOCATION_ID = "103987";
+export const NOCOWANIE_OFFER_URL =
+  "https://www.nocowanie.pl/noclegi/grzybowo/domki/103987/";
 
 /** Skrypt Nocowanie.pl – raz na całą stronę (layout). */
 export function NocowaniePlScripts() {
@@ -40,6 +42,19 @@ export function NocowaniePlBadge({ variant = "footer" }: NocowaniePlBadgeProps) 
         <div className="mt-5 flex justify-center">
           <div id={NOCOWANIE_KEY} className="nocowanie-badge-slot w-auto max-w-full" />
         </div>
+        <div className="mt-6 flex flex-col items-stretch gap-3 sm:items-start">
+          <a
+            href={NOCOWANIE_OFFER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-cta w-full text-center sm:w-auto sm:px-8"
+          >
+            Zobacz ofertę
+          </a>
+          <p className="text-center text-xs leading-relaxed text-ink-muted sm:text-left">
+            Potwierdzona prezentacja obiektu w serwisie Nocowanie.pl
+          </p>
+        </div>
       </div>
     );
   }
@@ -50,6 +65,14 @@ export function NocowaniePlBadge({ variant = "footer" }: NocowaniePlBadgeProps) 
         Obiekt na <span className="text-brand-light">Nocowanie.pl</span>
       </p>
       <div id={NOCOWANIE_KEY} className="nocowanie-badge-slot w-auto max-w-full leading-none" />
+      <a
+        href={NOCOWANIE_OFFER_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-cta-outline border-accent-glow/80 px-5 py-2 text-sm text-white hover:border-amber-hover hover:bg-primary/25 hover:text-white"
+      >
+        Zobacz ofertę
+      </a>
     </div>
   );
 }

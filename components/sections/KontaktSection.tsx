@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { FajneWczasyVerificationCard } from "@/components/FajneWczasyVerification";
 import { NocowaniePlBadge } from "@/components/NocowaniePlBadge";
 import { CONTACT } from "@/lib/site";
 import Link from "next/link";
@@ -113,6 +114,8 @@ export function KontaktSection() {
                 </li>
               </ul>
             </div>
+
+            <FajneWczasyVerificationCard />
 
             <NocowaniePlBadge variant="card" />
 

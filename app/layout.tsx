@@ -1,4 +1,5 @@
 import { Footer } from "@/components/Footer";
+import { FajneWczasyTrustBar } from "@/components/FajneWczasyVerification";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { NocowaniePlScripts } from "@/components/NocowaniePlBadge";
@@ -74,6 +75,7 @@ export default function RootLayout({
         <JsonLd />
         <Header />
         <main>{children}</main>
+        <FajneWczasyTrustBar />
         <Footer />
         <Analytics />
         <SpeedInsights />
