@@ -22,14 +22,14 @@ export function HomeGalleryPreview() {
               Ogród, domki z zewnątrz i wnętrza – zanim zdecydujesz się na termin pobytu.
             </p>
           </div>
-          <Link href="/galeria/" className="btn-cta-outline shrink-0">
+          <Link href="/galeria" className="btn-cta-outline shrink-0">
             Cała galeria
           </Link>
         </div>
 
         <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:grid-rows-2">
           <Link
-            href="/galeria/"
+            href="/galeria"
             className="group relative col-span-2 row-span-2 min-h-[220px] overflow-hidden rounded-3xl sm:min-h-[320px] lg:min-h-[380px]"
           >
             <Image
@@ -47,7 +47,7 @@ export function HomeGalleryPreview() {
           {rest.map((img) => (
             <Link
               key={img.src}
-              href="/galeria/"
+              href="/galeria"
               className="group relative aspect-[4/3] overflow-hidden rounded-2xl lg:aspect-auto lg:min-h-[180px]"
             >
               <Image

@@ -2,44 +2,44 @@ import Link from "next/link";
 
 const RELATED: Record<string, { href: string; label: string }[]> = {
   oferta: [
-    { href: "/cennik/", label: "Cennik" },
-    { href: "/galeria/", label: "Galeria" },
-    { href: "/kontakt/", label: "Kontakt" },
+    { href: "/cennik", label: "Cennik" },
+    { href: "/galeria", label: "Galeria" },
+    { href: "/kontakt", label: "Kontakt" },
   ],
   cennik: [
-    { href: "/oferta/", label: "Oferta" },
-    { href: "/regulamin-obiektu/", label: "Regulamin" },
-    { href: "/kontakt/", label: "Rezerwacja" },
+    { href: "/oferta", label: "Oferta" },
+    { href: "/regulamin-obiektu", label: "Regulamin" },
+    { href: "/kontakt", label: "Rezerwacja" },
   ],
   galeria: [
-    { href: "/oferta/", label: "Oferta" },
-    { href: "/atrakcje-okolicy/", label: "Atrakcje" },
-    { href: "/kontakt/", label: "Kontakt" },
+    { href: "/oferta", label: "Oferta" },
+    { href: "/atrakcje-okolicy", label: "Atrakcje" },
+    { href: "/kontakt", label: "Kontakt" },
   ],
   atrakcje: [
     { href: "/", label: "Strona główna" },
-    { href: "/wydarzenia/", label: "Wydarzenia" },
-    { href: "/kontakt/", label: "Kontakt" },
+    { href: "/wydarzenia", label: "Wydarzenia" },
+    { href: "/kontakt", label: "Kontakt" },
   ],
   wydarzenia: [
-    { href: "/atrakcje-okolicy/", label: "Atrakcje okolicy" },
-    { href: "/oferta/", label: "Oferta" },
-    { href: "/kontakt/", label: "Kontakt" },
+    { href: "/atrakcje-okolicy", label: "Atrakcje okolicy" },
+    { href: "/oferta", label: "Oferta" },
+    { href: "/kontakt", label: "Kontakt" },
   ],
   kontakt: [
-    { href: "/oferta/", label: "Oferta" },
-    { href: "/cennik/", label: "Cennik" },
-    { href: "/regulamin-obiektu/", label: "Regulamin" },
+    { href: "/oferta", label: "Oferta" },
+    { href: "/cennik", label: "Cennik" },
+    { href: "/regulamin-obiektu", label: "Regulamin" },
   ],
   regulamin: [
-    { href: "/cennik/", label: "Cennik" },
-    { href: "/kontakt/", label: "Kontakt" },
-    { href: "/oferta/", label: "Oferta" },
+    { href: "/cennik", label: "Cennik" },
+    { href: "/kontakt", label: "Kontakt" },
+    { href: "/oferta", label: "Oferta" },
   ],
   wirtualnySpacer: [
-    { href: "/galeria/", label: "Galeria" },
-    { href: "/atrakcje-okolicy/", label: "Atrakcje" },
-    { href: "/kontakt/", label: "Kontakt" },
+    { href: "/galeria", label: "Galeria" },
+    { href: "/atrakcje-okolicy", label: "Atrakcje" },
+    { href: "/kontakt", label: "Kontakt" },
   ],
 };
 

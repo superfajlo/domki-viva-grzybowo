@@ -44,11 +44,11 @@ export function Hero() {
           </p>
         </div>
         <div className="mt-8 flex w-full max-w-md flex-col gap-3 sm:mt-10 sm:max-w-none sm:flex-row sm:flex-wrap">
-          <Link href="/kontakt/" className="btn-cta w-full sm:w-auto">
+          <Link href="/kontakt" className="btn-cta w-full sm:w-auto">
             Zapytaj o termin
           </Link>
           <Link
-            href="/oferta/"
+            href="/oferta"
             className="inline-flex min-h-11 w-full items-center justify-center rounded-full border-2 border-white/80 bg-black/30 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition hover:border-white hover:bg-black/45 sm:w-auto sm:px-8"
           >
             Poznaj ofertę

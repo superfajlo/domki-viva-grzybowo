@@ -22,43 +22,43 @@ export const HOME_ATTRACTION_TEASERS = [
 
 export const HOME_HUB_LINKS = [
   {
-    href: "/oferta/",
+    href: "/oferta",
     title: "Oferta domków",
     description: "Domki 2–5 osób z aneksem kuchennym, plac zabaw i Wi-Fi – poznaj szczegóły wyposażenia.",
     cta: "Zobacz ofertę",
   },
   {
-    href: "/cennik/",
+    href: "/cennik",
     title: "Cennik 2026",
     description: "Aktualne stawki za dobę, terminy sezonowe i zasady pobytu tygodniowego.",
     cta: "Sprawdź cennik",
   },
   {
-    href: "/galeria/",
+    href: "/galeria",
     title: "Galeria zdjęć",
     description: "Zdjęcia domków, wnętrz i terenu obiektu – zobacz, jak wygląda pobyt u nas.",
     cta: "Otwórz galerię",
   },
   {
-    href: "/atrakcje-okolicy/",
+    href: "/atrakcje-okolicy",
     title: "Atrakcje okolicy",
     description: "Plaża, Kołobrzeg, rejsy i rodzinne atrakcje nad Bałtykiem.",
     cta: "Poznaj okolicę",
   },
   {
-    href: "/wydarzenia/",
+    href: "/wydarzenia",
     title: "Wydarzenia",
     description: "Koncerty, kino, sport, kultura, teatr i stand-up – linki do kalendarza Kołobrzegu.",
     cta: "Sprawdź wydarzenia",
   },
   {
-    href: "/kontakt/",
+    href: "/kontakt",
     title: "Kontakt i rezerwacja",
     description: "Telefon, adres w Grzybowie i formularz zapytania o wolny termin.",
     cta: "Skontaktuj się",
   },
   {
-    href: "/regulamin-obiektu/",
+    href: "/regulamin-obiektu",
     title: "Regulamin obiektu",
     description: "Zasady pobytu, doba hotelowa, parking i informacje organizacyjne.",
     cta: "Przeczytaj regulamin",

@@ -108,7 +108,7 @@ export function KontaktSection() {
                 <li className="flex items-start gap-3">
                   <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-secondary" aria-hidden />
                   Aktualny cennik znajdziesz na stronie{" "}
-                  <Link href="/cennik/" className="font-semibold text-secondary hover:text-amber-hover hover:underline">
+                  <Link href="/cennik" className="font-semibold text-secondary hover:text-amber-hover hover:underline">
                     Cennik
                   </Link>
                 </li>

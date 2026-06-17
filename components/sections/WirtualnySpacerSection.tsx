@@ -35,7 +35,7 @@ export function WirtualnySpacerSection() {
           Wirtualny spacer został wykonany na początku powstania obiektu i nie obejmuje jeszcze
           obecnego wyglądu ogrodu. Aktualne zdjęcia ogrodu znajdziesz w{" "}
           <Link
-            href="/galeria/"
+            href="/galeria"
             className="font-semibold text-accent-glow underline decoration-accent-glow/60 underline-offset-2 transition hover:text-white"
           >
             galerii

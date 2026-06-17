@@ -34,7 +34,7 @@ export function HomeAboutGrzybowo() {
               z własnym aneksem kuchennym, ogrodem i placem zabaw.
             </p>
           </div>
-          <Link href="/oferta/" className="btn-cta mt-8 inline-flex">
+          <Link href="/oferta" className="btn-cta mt-8 inline-flex">
             Poznaj ofertę domków
           </Link>
         </div>
@@ -113,7 +113,7 @@ export function HomePricingTeaser() {
               Stawki zależą od wielkości domku i terminu – pełny cennik sezonowy na osobnej stronie.
             </p>
           </div>
-          <Link href="/cennik/" className="btn-cta shrink-0">
+          <Link href="/cennik" className="btn-cta shrink-0">
             Zobacz cennik 2026
           </Link>
         </div>
@@ -171,7 +171,7 @@ export function HomeAttractionsPreview() {
           ))}
         </ul>
         <p className="mt-10 text-center">
-          <Link href="/atrakcje-okolicy/" className="btn-cta-outline">
+          <Link href="/atrakcje-okolicy" className="btn-cta-outline">
             Wszystkie atrakcje okolicy
           </Link>
         </p>
@@ -255,7 +255,7 @@ export function HomeFaqSection() {
           ))}
         </div>
         <p className="mt-8 text-center">
-          <Link href="/kontakt/" className="btn-cta">
+          <Link href="/kontakt" className="btn-cta">
             Zapytaj o termin
           </Link>
         </p>

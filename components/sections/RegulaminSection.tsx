@@ -132,7 +132,7 @@ export function RegulaminSection({ showHeader = true }: { showHeader?: boolean }
           <p className="text-ink-muted">
             Masz pytania do regulaminu lub warunków pobytu?
           </p>
-          <Link href="/kontakt/" className="btn-cta mt-4 inline-flex">
+          <Link href="/kontakt" className="btn-cta mt-4 inline-flex">
             Skontaktuj się z nami
           </Link>
         </div>

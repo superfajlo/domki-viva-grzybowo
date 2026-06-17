@@ -24,7 +24,7 @@ export const SEO_PAGES = {
     role: "hub",
   },
   oferta: {
-    path: "/oferta/",
+    path: "/oferta",
     title: "Oferta Domków Viva Grzybowo | Komfortowe Domki 2-5 Osób Nad Morzem",
     description:
       "Poznaj ofertę Domków Viva w Grzybowie. Komfortowe domki 2-5 osobowe z aneksem kuchennym, placem zabaw, parkingiem i bezpłatnym Wi-Fi. 700 m od plaży.",
@@ -39,7 +39,7 @@ export const SEO_PAGES = {
     role: "cluster",
   },
   cennik: {
-    path: "/cennik/",
+    path: "/cennik",
     title: "Cennik | Dom Gościnny Viva - Grzybowo | Domki ,,Viva''",
     description:
       "Cennik. Wczasy w Grzybowie - w pokojach domu gościnnego Viva. Miła atmosfera, przepiękna okolica, zdrowe powietrze oraz bliskość polskiego morza. Zapraszamy.",
@@ -53,7 +53,7 @@ export const SEO_PAGES = {
     role: "cluster",
   },
   galeria: {
-    path: "/galeria/",
+    path: "/galeria",
     title: "Galeria | Dom Gościnny Viva - Grzybowo | Domki ,,Viva''",
     description:
       "Galeria. Wczasy w Grzybowie - w pokojach domu gościnnego Viva. Miła atmosfera, przepiękna okolica, zdrowe powietrze oraz bliskość polskiego morza. Zapraszamy.",
@@ -67,7 +67,7 @@ export const SEO_PAGES = {
     role: "cluster",
   },
   wydarzenia: {
-    path: "/wydarzenia/",
+    path: "/wydarzenia",
     title: "Wydarzenia | Domki Viva Grzybowo",
     description:
       "Wydarzenia w Grzybowie i Kołobrzegu – koncerty, kino, sport, kultura, teatr i stand-up. Linki do oficjalnego kalendarza i-kolobrzeg.pl.",
@@ -82,7 +82,7 @@ export const SEO_PAGES = {
     role: "cluster",
   },
   atrakcje: {
-    path: "/atrakcje-okolicy/",
+    path: "/atrakcje-okolicy",
     title: "Atrakcje okolicy | Domki ,,Viva''",
     description:
       "Poznaj atrakcje Grzybowa i okolic. Szeroka plaża, ścieżki rowerowe, Kołobrzeg, port morski, rejsy statkiem oraz liczne miejsca idealne na rodzinny wypoczynek nad Bałtykiem.",
@@ -97,7 +97,7 @@ export const SEO_PAGES = {
     role: "cluster",
   },
   kontakt: {
-    path: "/kontakt/",
+    path: "/kontakt",
     title: "Kontakt | Domki Viva - Grzybowo | Domki ,,Viva''",
     description:
       "Kontakt. Wczasy w Grzybowie - w domkach Viva. Miła atmosfera, przepiękna okolica, zdrowe powietrze oraz bliskość polskiego morza. Zapraszamy.",
@@ -111,7 +111,7 @@ export const SEO_PAGES = {
     role: "cluster",
   },
   regulamin: {
-    path: "/regulamin-obiektu/",
+    path: "/regulamin-obiektu",
     title: "REGULAMIN OBIEKTU | Domki ,,Viva''",
     description:
       "Zapoznaj się z regulaminem Domków Viva w Grzybowie. Sprawdź zasady pobytu, warunki rezerwacji, korzystania z obiektu oraz informacje dla naszych Gości.",
@@ -125,7 +125,7 @@ export const SEO_PAGES = {
     role: "cluster",
   },
   wirtualnySpacer: {
-    path: "/wirtualny-spacer/",
+    path: "/wirtualny-spacer",
     title: "Wirtualny spacer | Domki ,,Viva''",
     description:
       "Wirtualny spacer Domków Viva w Grzybowie, kamera na żywo z plaży, panoramy Kołobrzegu 360° i widoki z lotu ptaka – zobacz okolicę przed przyjazdem.",

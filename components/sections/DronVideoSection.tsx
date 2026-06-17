@@ -66,7 +66,7 @@ export function DronVideoSection() {
           >
             Otwórz film na YouTube
           </a>
-          <Link href="/kontakt/" className="btn-cta w-full sm:w-auto">
+          <Link href="/kontakt" className="btn-cta w-full sm:w-auto">
             Zapytaj o termin
           </Link>
         </div>

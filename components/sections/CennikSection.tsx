@@ -269,7 +269,7 @@ export function CennikSection() {
               <PricingIcon name="phone" className="h-5 w-5" />
               {CONTACT.phone}
             </a>
-            <Link href="/kontakt/" className="btn-cta-outline">
+            <Link href="/kontakt" className="btn-cta-outline">
               Formularz kontaktowy
             </Link>
           </div>
