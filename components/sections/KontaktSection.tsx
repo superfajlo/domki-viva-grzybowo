@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { NocowaniePlBadge } from "@/components/NocowaniePlBadge";
 import { CONTACT } from "@/lib/site";
 import Link from "next/link";
 
@@ -112,6 +113,8 @@ export function KontaktSection() {
                 </li>
               </ul>
             </div>
+
+            <NocowaniePlBadge variant="card" />
 
             <div className="overflow-hidden rounded-2xl border border-sand-dark bg-surface shadow-md">
               <iframe

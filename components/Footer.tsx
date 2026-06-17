@@ -1,4 +1,5 @@
 import { LogoBrand } from "@/components/LogoBrand";
+import { FooterNocowanieBadge } from "@/components/FooterNocowanieBadge";
 import { CONTACT, NAV_ITEMS, SEO_KEYWORDS } from "@/lib/site";
 import Link from "next/link";
 
@@ -46,7 +47,9 @@ export function Footer() {
           </div>
         </div>
 
-        <p className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-cream/70">
+        <FooterNocowanieBadge />
+
+        <p className="mt-8 border-t border-white/10 pt-6 text-center text-xs text-cream/70">
           © {new Date().getFullYear()} Domki Viva Grzybowo. Wszelkie prawa zastrzeżone.
         </p>
       </div>

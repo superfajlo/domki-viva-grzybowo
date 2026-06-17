@@ -1,6 +1,7 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { NocowaniePlScripts } from "@/components/NocowaniePlBadge";
 import { OG_IMAGE } from "@/lib/gallery-images";
 import { SITE_URL } from "@/lib/site";
 import { Analytics } from "@vercel/analytics/next";
@@ -76,6 +77,7 @@ export default function RootLayout({
         <Footer />
         <Analytics />
         <SpeedInsights />
+        <NocowaniePlScripts />
       </body>
     </html>
   );
