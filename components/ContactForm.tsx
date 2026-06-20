@@ -26,7 +26,7 @@ const initial: FormState = {
   message: "",
 };
 
-export function ContactForm() {
+export function ContactForm({ fillHeight = false }: { fillHeight?: boolean }) {
   const [form, setForm] = useState<FormState>(initial);
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -94,7 +94,11 @@ export function ContactForm() {
     "w-full min-h-11 rounded-xl border border-sand-dark bg-surface px-4 py-3 text-base text-ink outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/25 disabled:opacity-60 sm:text-sm";
 
   return (
-    <form onSubmit={handleSubmit} className="relative space-y-4" noValidate>
+    <form
+      onSubmit={handleSubmit}
+      className={`relative space-y-4 ${fillHeight ? "lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:gap-4 lg:space-y-0" : ""}`}
+      noValidate
+    >
       {/* Honeypot – ukryte przed botami */}
       <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden>
         <label>
@@ -190,7 +194,7 @@ export function ContactForm() {
         </label>
       </div>
 
-      <label className="block">
+      <label className={fillHeight ? "block lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : "block"}>
         <span className="mb-1 block text-sm font-medium text-ink">Treść wiadomości</span>
         <textarea
           name="message"
@@ -198,7 +202,7 @@ export function ContactForm() {
           minLength={1}
           maxLength={5000}
           rows={5}
-          className={inputClass}
+          className={`${inputClass} ${fillHeight ? "lg:min-h-[8rem] lg:flex-1 lg:resize-none" : ""}`}
           disabled={status === "loading"}
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -208,7 +212,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="btn-cta w-full sm:w-auto sm:px-10"
+        className={`btn-cta w-full sm:w-auto sm:px-10 ${fillHeight ? "shrink-0" : ""}`}
       >
         {status === "loading" ? "Wysyłanie…" : "Wyślij wiadomość"}
       </button>

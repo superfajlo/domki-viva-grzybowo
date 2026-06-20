@@ -79,21 +79,21 @@ export function KontaktSection() {
           </article>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start lg:gap-10">
-          <div className="lg:col-span-7">
-            <div className="card-surface p-6 shadow-md sm:p-8">
+        <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-7 lg:flex lg:h-full lg:flex-col">
+            <div className="card-surface flex h-full flex-col p-6 shadow-md sm:p-8">
               <p className="badge-gold w-fit">Formularz</p>
               <h2 className="font-display mt-4 text-2xl font-bold text-ink">Napisz do nas</h2>
               <p className="mt-2 text-sm text-ink-muted">
                 Podaj preferowany termin i liczbę osób – wrócimy z informacją o wolnych domkach.
               </p>
-              <div className="mt-6">
-                <ContactForm />
+              <div className="mt-6 flex min-h-0 flex-1 flex-col">
+                <ContactForm fillHeight />
               </div>
             </div>
           </div>
 
-          <aside className="flex flex-col gap-6 lg:col-span-5">
+          <aside className="flex h-full min-h-0 flex-col gap-6 lg:col-span-5">
             <div className="rounded-2xl border border-sand-dark bg-gradient-to-br from-primary/20 via-cream to-white p-5 sm:p-6">
               <h2 className="font-display text-lg font-bold text-ink">Przed wysłaniem zapytania</h2>
               <ul className="mt-4 space-y-3 text-sm text-ink-muted">
@@ -119,10 +119,10 @@ export function KontaktSection() {
 
             <NocowaniePlBadge variant="card" />
 
-            <div className="overflow-hidden rounded-2xl border border-sand-dark bg-surface shadow-md">
+            <div className="flex min-h-64 flex-1 flex-col overflow-hidden rounded-2xl border border-sand-dark bg-surface shadow-md lg:min-h-0">
               <iframe
                 title="Mapa – Domki Viva Grzybowo, Łąkowa 4A"
-                className="h-64 w-full border-0 lg:h-80"
+                className="h-full min-h-64 w-full flex-1 border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 src={`https://maps.google.com/maps?q=${encodeURIComponent(CONTACT.fullAddress)}&z=14&output=embed`}
