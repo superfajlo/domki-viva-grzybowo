@@ -79,9 +79,9 @@ export function KontaktSection() {
           </article>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
+        <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start lg:gap-10">
           <div className="lg:col-span-7">
-            <div className="card-surface h-full p-6 shadow-md sm:p-8">
+            <div className="card-surface p-6 shadow-md sm:p-8">
               <p className="badge-gold w-fit">Formularz</p>
               <h2 className="font-display mt-4 text-2xl font-bold text-ink">Napisz do nas</h2>
               <p className="mt-2 text-sm text-ink-muted">
@@ -122,7 +122,7 @@ export function KontaktSection() {
             <div className="overflow-hidden rounded-2xl border border-sand-dark bg-surface shadow-md">
               <iframe
                 title="Mapa – Domki Viva Grzybowo, Łąkowa 4A"
-                className="h-64 w-full border-0 lg:h-full lg:min-h-[320px]"
+                className="h-64 w-full border-0 lg:h-80"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 src={`https://maps.google.com/maps?q=${encodeURIComponent(CONTACT.fullAddress)}&z=14&output=embed`}
