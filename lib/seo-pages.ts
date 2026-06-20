@@ -40,9 +40,9 @@ export const SEO_PAGES = {
   },
   cennik: {
     path: "/cennik",
-    title: "Cennik | Dom Gościnny Viva - Grzybowo | Domki ,,Viva''",
+    title: "Cennik | Domki Viva Grzybowo | Noclegi nad morzem",
     description:
-      "Cennik. Wczasy w Grzybowie - w pokojach domu gościnnego Viva. Miła atmosfera, przepiękna okolica, zdrowe powietrze oraz bliskość polskiego morza. Zapraszamy.",
+      "Cennik pobytu w Domkach Viva w Grzybowie – domki 2–5 osobowe ok. 700 m od plaży. Sprawdź ceny sezonowe i zapytaj o wolne terminy nad Bałtykiem.",
     h1: "Cennik pobytu w Domkach Viva",
     primaryKeyword: "cennik noclegów Grzybowo",
     secondaryKeywords: [
@@ -54,9 +54,9 @@ export const SEO_PAGES = {
   },
   galeria: {
     path: "/galeria",
-    title: "Galeria | Dom Gościnny Viva - Grzybowo | Domki ,,Viva''",
+    title: "Galeria | Domki Viva Grzybowo | Noclegi nad morzem",
     description:
-      "Galeria. Wczasy w Grzybowie - w pokojach domu gościnnego Viva. Miła atmosfera, przepiękna okolica, zdrowe powietrze oraz bliskość polskiego morza. Zapraszamy.",
+      "Galeria zdjęć Domków Viva w Grzybowie – domki od zewnątrz, wnętrza, okolica i plaża. Zobacz obiekt przed rezerwacją noclegu nad morzem.",
     h1: "Galeria Domków Viva w Grzybowie",
     primaryKeyword: "galeria domków Grzybowo",
     secondaryKeywords: [

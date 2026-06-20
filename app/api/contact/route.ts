@@ -1,4 +1,5 @@
 import { CONTACT } from "@/lib/site";
+import { getClientIp, isRateLimited } from "@/lib/contact-rate-limit";
 import {
   CONTACT_MAIL_VERSION,
   getContactMailMeta,
@@ -22,8 +23,12 @@ function noStoreJson(body: unknown, status = 200) {
   });
 }
 
-/** Diagnostyka: otwórz w przeglądarce /api/contact – sprawdź, czy produkcja ma nowy kod. */
+/** Diagnostyka tylko poza produkcją – otwórz /api/contact lokalnie. */
 export async function GET() {
+  if (process.env.NODE_ENV === "production") {
+    return noStoreJson({ error: "Not found" }, 404);
+  }
+
   const { configured } = getSmtpConfig();
   return noStoreJson({
     ...getContactMailMeta(),
@@ -32,6 +37,16 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  const clientIp = getClientIp(request);
+  if (isRateLimited(clientIp)) {
+    return NextResponse.json(
+      {
+        error: `Zbyt wiele wiadomości z tego adresu. Spróbuj później lub zadzwoń: ${CONTACT.phone}.`,
+      },
+      { status: 429 },
+    );
+  }
+
   let body: ContactPayload;
   try {
     body = await request.json();

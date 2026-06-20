@@ -16,7 +16,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     title: "Ośrodek Jeździecki Kaja",
     description:
       "Popularna stadnina koni w Grzybowie oferująca jazdy konne, naukę jazdy oraz atrakcje dla całej rodziny.",
-    href: "http://www.konie-grzybowo.pl/",
+    href: "https://www.konie-grzybowo.pl/",
     icon: "🐴",
     image: "/images/atrakcje/konie-kaja.webp",
     imageAlt: "Ośrodek Jeździecki Kaja – jazda konna w Grzybowie",
@@ -26,7 +26,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     title: "Molo w Kołobrzegu",
     description:
       "Jedna z najbardziej rozpoznawalnych atrakcji regionu. Idealne miejsce na spacery i podziwianie zachodów słońca.",
-    href: "http://visitkolobrzeg.com/atrakcje/molo",
+    href: "https://visitkolobrzeg.com/atrakcje/molo",
     icon: "🌊",
     image: "/images/atrakcje/molo-kolobrzeg.webp",
     imageAlt: "Molo w Kołobrzegu nocą – iluminacja i spacer nad morzem",
@@ -66,7 +66,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     title: "Muzeum Oręża Polskiego",
     description:
       "Jedno z najciekawszych muzeów militarnych w Polsce prezentujące historię Wojska Polskiego oraz regionu.",
-    href: "http://www.muzeum.kolobrzeg.pl/pl/",
+    href: "https://www.muzeum.kolobrzeg.pl/pl/",
     icon: "🏛️",
     image: "/images/atrakcje/muzeum-oreza.webp",
     imageAlt: "Muzeum Oręża Polskiego w Kołobrzegu",
@@ -84,7 +84,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     id: "kajaki",
     title: "Spływy Kajakowe Parsętą",
     description: "Malownicze trasy kajakowe prowadzące przez piękne tereny Pomorza.",
-    href: "http://www.piraci-parsety.pl/",
+    href: "https://www.piraci-parsety.pl/",
     icon: "🛶",
     image: "/images/atrakcje/splywy-parseta.webp",
     imageAlt: "Spływ kajakowy Parsętą – rzeka wśród lasu",
@@ -94,7 +94,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     title: "Sala Zabaw Piotruś Pan",
     description:
       "Nowoczesna sala zabaw dla dzieci z wielopoziomowymi torami przeszkód, basenami z kulkami, zjeżdżalniami oraz atrakcjami dla najmłodszych.",
-    href: "http://sala-zabaw-piotrus-pan.pl/",
+    href: "https://sala-zabaw-piotrus-pan.pl/",
     icon: "🎠",
     image: "/images/atrakcje/piotrus-pan.webp",
     imageAlt: "Wnętrze sali zabaw Piotruś Pan – place zabaw i konstrukcje dla dzieci",

@@ -18,12 +18,16 @@ export function AnimateIn({
     const el = ref.current;
     if (!el) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true);
-      return;
-    }
-
     let active = true;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      requestAnimationFrame(() => {
+        if (active) setVisible(true);
+      });
+      return () => {
+        active = false;
+      };
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {

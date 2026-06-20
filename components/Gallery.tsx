@@ -23,12 +23,20 @@ export function Gallery() {
   }, []);
 
   const sectionOffsets = useMemo(() => {
-    let offset = 0;
-    return GALLERY_SECTIONS.map((section) => {
-      const start = offset;
-      offset += section.images.length;
-      return { section, start };
-    });
+    const { items } = GALLERY_SECTIONS.reduce<{
+      items: { section: (typeof GALLERY_SECTIONS)[number]; start: number }[];
+      offset: number;
+    }>(
+      (acc, section) => {
+        const start = acc.offset;
+        return {
+          items: [...acc.items, { section, start }],
+          offset: acc.offset + section.images.length,
+        };
+      },
+      { items: [], offset: 0 },
+    );
+    return items;
   }, []);
 
   useEffect(() => {

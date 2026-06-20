@@ -1,7 +1,7 @@
 "use client";
 
 import { LogoBrand } from "@/components/LogoBrand";
-import { NAV_ITEMS } from "@/lib/site";
+import { CONTACT, NAV_ITEMS } from "@/lib/site";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -72,10 +72,10 @@ export function Header() {
 
         <div className="ml-auto flex shrink-0 items-center gap-2 lg:ml-0 lg:gap-3">
           <a
-            href="tel:+48507130571"
+            href={CONTACT.phoneHref}
             className="btn-cta relative z-10 hidden min-h-11 !px-4 !py-2 !text-sm md:inline-flex"
           >
-            507 130 571
+            {CONTACT.phone}
           </a>
 
           <button
@@ -121,10 +121,10 @@ export function Header() {
             })}
             <li className="mt-2 border-t border-sand-dark pt-3">
               <a
-                href="tel:+48507130571"
+                href={CONTACT.phoneHref}
                 className="btn-cta flex min-h-11 w-full items-center justify-center !rounded-xl"
               >
-                Zadzwoń: 507 130 571
+                Zadzwoń: {CONTACT.phone}
               </a>
             </li>
           </ul>
