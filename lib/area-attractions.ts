@@ -110,6 +110,16 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     imageAlt: "Park Rozrywki Dziki Zachód w Zieleniewo – wioska indiańska i tipi",
   },
   {
+    id: "hortulus",
+    title: "Ogrody tematyczne w Dobrzycy",
+    description:
+      "Hortulus Spectabilis – rozległe ogrody tematyczne z labiryntem z żywopłotu, alejkami, rabatami kwiatowymi i atrakcjami dla całej rodziny. Spokojna wycieczka poza nadmorskim szlakiem.",
+    href: "https://hortulus.com.pl/",
+    icon: "🌿",
+    image: "/images/atrakcje/hortulus-dobrzyca.webp",
+    imageAlt: "Ogrody Hortulus w Dobrzycy – labirynt z żywopłotu i alejki ogrodowe",
+  },
+  {
     id: "basen",
     title: "Basen / Aquapark Kołobrzeg",
     description:
