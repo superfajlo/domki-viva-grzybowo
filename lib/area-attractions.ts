@@ -52,6 +52,16 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     imageAlt: "Port morski w Kołobrzegu – latarnia, falochrony i wejście do portu",
   },
   {
+    id: "rejs-zachod",
+    title: "Rejs statkiem na zachód słońca z dancingiem",
+    description:
+      "Półtoragodzinny rejs z portu w Kołobrzegu – widok zachodu słońca nad Bałtykiem, muzyka i dancing na pokładzie. Niedaleko Grzybowa, idealna wieczorna atrakcja nad morzem.",
+    href: "https://kzp.kolobrzeg.pl/",
+    icon: "🌅",
+    image: "/images/atrakcje/rejs-zachod-sloneca.webp",
+    imageAlt: "Rejs statkiem na zachód słońca w Kołobrzegu – statek, zachód słońca i widok na port",
+  },
+  {
     id: "muzeum",
     title: "Muzeum Oręża Polskiego",
     description:
