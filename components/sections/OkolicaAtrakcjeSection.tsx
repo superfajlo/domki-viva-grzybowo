@@ -27,7 +27,7 @@ export function OkolicaAtrakcjeSection() {
 
         <ul className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {AREA_ATTRACTIONS.map((attraction) => (
-            <li key={attraction.id}>
+            <li key={attraction.id} className="flex">
               <AttractionCard attraction={attraction} />
             </li>
           ))}
