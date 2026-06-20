@@ -100,6 +100,16 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     imageAlt: "Wnętrze sali zabaw Piotruś Pan – place zabaw i konstrukcje dla dzieci",
   },
   {
+    id: "dziki-zachod",
+    title: "Dziki Zachód – Park Rozrywki Zieleniewo",
+    description:
+      "Największy park rozrywki w okolicy Kołobrzegu – mnóstwo atrakcji dla dzieci i dorosłych: wioska indiańska, western city, lunapark, motopark, mini zoo i wiele więcej. W Zieleniewie, niedaleko Grzybowa.",
+    href: "https://dzikizachod.com.pl/",
+    icon: "🤠",
+    image: "/images/atrakcje/dziki-zachod.webp",
+    imageAlt: "Park Rozrywki Dziki Zachód w Zieleniewo – wioska indiańska i tipi",
+  },
+  {
     id: "basen",
     title: "Basen / Aquapark Kołobrzeg",
     description:
