@@ -8,9 +8,9 @@ export function Footer() {
     <footer className="section-dark-warm border-t border-sand-dark">
       <div className="section-padding mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <LogoBrand variant="footer" linked={false} size="sm" />
-            <p className="mt-3 text-sm text-cream/90">
+          <div className="lg:col-span-1">
+            <LogoBrand variant="footer" linked={false} className="-mt-1 sm:-mt-2" />
+            <p className="mt-4 text-sm text-cream/90">
               Komfortowe noclegi w Grzybowie nad morzem – domki 2, 3, 4 i 5 osobowe około
               700 metrów od plaży.
             </p>

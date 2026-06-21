@@ -19,7 +19,7 @@ export function LogoBrand({
 }: LogoBrandProps) {
   const heightClass =
     variant === "footer"
-      ? "h-16 sm:h-[4.5rem] md:h-20"
+      ? "h-auto w-full"
       : size === "xl"
         ? "h-14 sm:h-16 md:h-[4.5rem]"
         : size === "lg"
@@ -30,7 +30,7 @@ export function LogoBrand({
 
   const maxWidthClass =
     variant === "footer"
-      ? "max-w-[min(100%,24rem)] sm:max-w-[28rem] md:max-w-[32rem]"
+      ? "max-w-full"
       : size === "xl"
         ? "max-w-[min(100%,18rem)] sm:max-w-[22rem] md:max-w-[26rem] lg:max-w-[28rem]"
         : "max-w-[min(100%,14rem)] sm:max-w-[16rem] md:max-w-[18rem]";
@@ -47,7 +47,10 @@ export function LogoBrand({
     />
   );
 
-  const wrapClass = `inline-flex min-w-0 max-w-full items-center ${className}`;
+  const wrapClass =
+    variant === "footer"
+      ? `block w-full ${className}`
+      : `inline-flex min-w-0 max-w-full items-center ${className}`;
 
   if (!linked) {
     return <div className={wrapClass}>{content}</div>;
