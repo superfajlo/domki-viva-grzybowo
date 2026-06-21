@@ -23,8 +23,8 @@ if (!fs.existsSync(LOGO)) {
 }
 
 /** Logo z przezroczystym czarnym tłem – tylko do eksportu favicon/OG */
-function logoWithTransparentBg() {
-  return sharp(LOGO).ensureAlpha().png().toBuffer().then(async (png) => {
+function logoWithTransparentBg(input = sharp(LOGO)) {
+  return input.ensureAlpha().png().toBuffer().then(async (png) => {
     const { data, info } = await sharp(png)
       .raw()
       .toBuffer({ resolveWithObject: true });
@@ -44,11 +44,27 @@ function logoWithTransparentBg() {
   });
 }
 
+/** Z poziomego logo wycinamy górną część z domkami – czytelniejszy favicon */
+async function logoForIcon() {
+  const meta = await sharp(LOGO).metadata();
+  const w = meta.width ?? 1024;
+  const h = meta.height ?? 682;
+
+  if (w > h * 1.15) {
+    const cropH = Math.round(h * 0.58);
+    return logoWithTransparentBg(
+      sharp(LOGO).extract({ left: 0, top: 0, width: w, height: cropH }),
+    );
+  }
+
+  return logoWithTransparentBg();
+}
+
 async function squareIcon(size) {
   const padding = Math.max(2, Math.round(size * 0.1));
   const inner = size - padding * 2;
 
-  const logoSrc = await logoWithTransparentBg();
+  const logoSrc = await logoForIcon();
   const logo = await logoSrc
     .resize(inner, inner, {
       fit: "contain",
@@ -80,11 +96,11 @@ async function writeOgImage() {
     return;
   }
 
-  const logoMax = 320;
+  const logoMax = 900;
 
   const logoSrc = await logoWithTransparentBg();
   const logo = await logoSrc
-    .resize(logoMax, logoMax, {
+    .resize(logoMax, Math.round(logoMax * 0.66), {
       fit: "contain",
       background: { r: 0, g: 0, b: 0, alpha: 0 },
     })

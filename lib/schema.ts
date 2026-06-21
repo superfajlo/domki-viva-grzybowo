@@ -1,6 +1,8 @@
 import { CONTACT, FAQ_ITEMS, HOME_SEO, PRICING, SITE_URL } from "./site";
 import { HERO_IMAGE, OG_IMAGE } from "./gallery-images";
 
+const LOGO_IMAGE = "/images/logo.png";
+
 export function lodgingBusinessJsonLd() {
   const priceRange = `od ${PRICING[0].priceFrom} PLN`;
 
@@ -16,7 +18,9 @@ export function lodgingBusinessJsonLd() {
     image: [
       `${SITE_URL}${OG_IMAGE}`,
       `${SITE_URL}${HERO_IMAGE}`,
+      `${SITE_URL}${LOGO_IMAGE}`,
     ],
+    logo: `${SITE_URL}${LOGO_IMAGE}`,
     priceRange,
     address: {
       "@type": "PostalAddress",
