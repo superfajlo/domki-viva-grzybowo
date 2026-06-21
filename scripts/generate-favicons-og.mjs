@@ -9,16 +9,14 @@ import toIco from "to-ico";
 
 const ROOT = process.cwd();
 const LOGO = path.join(ROOT, "public", "images", "logo.png");
+const HEADER_LOGO = path.join(ROOT, "public", "images", "logo-header.webp");
 const HERO = path.join(ROOT, "public", "images", "hero", "domki-viva-glowne.webp");
 const PUBLIC = path.join(ROOT, "public");
 const APP = path.join(ROOT, "app");
 const OG_OUT = path.join(ROOT, "public", "images", "og-domki-viva.webp");
 
-/** Identyfikacja wizualna strony */
-const BRAND_CREAM = { r: 255, g: 249, b: 232, alpha: 1 };
-
-if (!fs.existsSync(LOGO)) {
-  console.error("Brak logo:", LOGO);
+if (!fs.existsSync(LOGO) && !fs.existsSync(HEADER_LOGO)) {
+  console.error("Brak logo:", LOGO, "lub", HEADER_LOGO);
   process.exit(1);
 }
 
@@ -44,8 +42,16 @@ function logoWithTransparentBg(input = sharp(LOGO)) {
   });
 }
 
-/** Z poziomego logo wycinamy górną część z domkami – czytelniejszy favicon */
+/** Ikona do favicon – domki z poziomego logo header lub fallback logo.png */
 async function logoForIcon() {
+  if (fs.existsSync(HEADER_LOGO)) {
+    const meta = await sharp(HEADER_LOGO).metadata();
+    const w = meta.width ?? 1024;
+    const h = meta.height ?? 511;
+    const cropW = Math.round(w * 0.42);
+    return sharp(HEADER_LOGO).extract({ left: 0, top: 0, width: cropW, height: h }).ensureAlpha();
+  }
+
   const meta = await sharp(LOGO).metadata();
   const w = meta.width ?? 1024;
   const h = meta.height ?? 682;
@@ -58,6 +64,23 @@ async function logoForIcon() {
   }
 
   return logoWithTransparentBg();
+}
+
+function iconBackgroundSvg(size) {
+  const radius = Math.round(size * 0.2);
+  const stroke = Math.max(1, Math.round(size / 28));
+  return `
+    <svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#ffd84d"/>
+          <stop offset="45%" style="stop-color:#f7c600"/>
+          <stop offset="100%" style="stop-color:#e5a800"/>
+        </linearGradient>
+      </defs>
+      <rect width="${size}" height="${size}" rx="${radius}" fill="url(#g)"/>
+      <rect width="${size}" height="${size}" rx="${radius}" fill="none" stroke="#c98900" stroke-width="${stroke}"/>
+    </svg>`;
 }
 
 async function squareIcon(size) {
@@ -73,12 +96,9 @@ async function squareIcon(size) {
     .png()
     .toBuffer();
 
-  return sharp({
-    create: { width: size, height: size, channels: 4, background: BRAND_CREAM },
-  })
-    .composite([{ input: logo, gravity: "centre" }])
-    .png()
-    .toBuffer();
+  const bg = await sharp(Buffer.from(iconBackgroundSvg(size))).png().toBuffer();
+
+  return sharp(bg).composite([{ input: logo, gravity: "centre" }]).png().toBuffer();
 }
 
 async function writeOgImage() {
@@ -148,7 +168,10 @@ async function writeAppIcons(icon32, icon180) {
   console.log("✓", "app/apple-icon.png", `(${(icon180.length / 1024).toFixed(1)} KB)`);
 }
 
-console.log("Źródło:", path.relative(ROOT, LOGO));
+console.log(
+  "Źródło:",
+  fs.existsSync(HEADER_LOGO) ? path.relative(ROOT, HEADER_LOGO) : path.relative(ROOT, LOGO),
+);
 
 const icon16 = await squareIcon(16);
 const icon32 = await squareIcon(32);
