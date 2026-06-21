@@ -12,7 +12,7 @@
     "optimize:hero": "node scripts/optimize-hero.mjs",
     "optimize:og": "node scripts/optimize-og.mjs",
     "generate:brand-assets": "node scripts/process-logo-bg.mjs && node scripts/generate-favicons-og.mjs",
-    "process:home-hero": "node scripts/process-home-hero-banner.mjs",
+    "process:header-logo": "node scripts/process-header-logo.mjs",
     "optimize:atrakcje": "node scripts/optimize-attractions.mjs",
     "check:smtp": "node scripts/check-env-smtp.mjs",
     "download:gallery": "node scripts/download-images.mjs",

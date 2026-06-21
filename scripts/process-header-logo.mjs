@@ -1,6 +1,6 @@
 /**
- * Hero banner strony głównej – usuwa białe tło (flood fill od krawędzi), zapis WebP.
- * node scripts/process-home-hero-banner.mjs [źródło.png]
+ * Logo w menu – usuwa białe tło (flood fill), zapis WebP.
+ * node scripts/process-header-logo.mjs [źródło.png]
  */
 import fs from "fs";
 import path from "path";
@@ -8,8 +8,8 @@ import sharp from "sharp";
 import { fileURLToPath } from "url";
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const OUT = path.join(ROOT, "public", "images", "hero", "domki-viva-home-banner.webp");
-const DEFAULT_SRC = path.join(ROOT, "public", "images", "hero", "domki-viva-home-banner-source.png");
+const OUT = path.join(ROOT, "public", "images", "logo-header.webp");
+const DEFAULT_SRC = path.join(ROOT, "public", "images", "logo-header-source.png");
 
 const input = process.argv[2] || DEFAULT_SRC;
 
@@ -70,8 +70,7 @@ while (queue.length) {
 await sharp(data, {
   raw: { width: w, height: h, channels: 4 },
 })
-  .webp({ quality: 88, effort: 6 })
+  .webp({ quality: 90, effort: 6 })
   .toFile(OUT);
 
-const stat = fs.statSync(OUT);
-console.log("✓", path.relative(ROOT, OUT), `${w}×${h}`, `(${(stat.size / 1024).toFixed(1)} KB)`);
+console.log("✓", path.relative(ROOT, OUT), `${w}×${h}`);

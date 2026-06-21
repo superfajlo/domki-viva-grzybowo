@@ -1,4 +1,4 @@
-import { HOME_HERO_BANNER } from "@/lib/site";
+import { HERO_IMAGE } from "@/lib/gallery-images";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,25 +8,25 @@ export function Hero() {
       id="start"
       className="relative flex min-h-[min(62dvh,560px)] flex-col justify-center overflow-hidden bg-ink text-white sm:min-h-[min(68dvh,620px)]"
     >
-      <div className="absolute inset-x-0 -inset-y-[5%] flex items-center justify-center px-4 sm:justify-end sm:px-8 lg:px-12">
+      <div className="absolute inset-x-0 -inset-y-[5%]">
         <Image
-          src={HOME_HERO_BANNER}
-          alt="Domki Viva Grzybowo – domki letniskowe nad morzem"
-          width={1024}
-          height={511}
+          src={HERO_IMAGE}
+          alt="Domki Viva Grzybowo – widok obiektu, domki letniskowe nad morzem"
+          fill
           priority
           fetchPriority="high"
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 85vw, 1100px"
-          className="h-full max-h-[min(72dvh,520px)] w-full max-w-5xl object-contain object-center sm:max-w-4xl sm:object-right lg:max-w-5xl"
+          quality={78}
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1280px"
+          className="object-cover object-center"
         />
       </div>
-      {/* Delikatny gradient – czytelność tekstu po lewej */}
+      {/* Delikatny ciemny gradient – czytelność tekstu */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10"
+        className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-black/15"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/55"
+        className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55"
         aria-hidden
       />
 

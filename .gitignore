@@ -23,7 +23,7 @@
 # źródła grafik (opublikowany plik jest w public/)
 /assets/hero-source.png
 /assets/hero-drone-source.png
-/public/images/hero/domki-viva-home-banner-source.png
+/public/images/logo-header-source.png
 /assets/mapa-grzybowo-source.png
 
 # lokalne artefakty (wydarzenia cache są w pamięci /tmp, nie tutaj)

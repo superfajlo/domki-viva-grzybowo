@@ -30,8 +30,8 @@ export const HOME_SEO = {
     "W naszej ofercie znajdziecie Państwo domki 2, 3, 4, 5 osobowe posiadające własny aneks kuchenny oraz bogate wyposażenie.",
 } as const;
 
-/** Grafika hero na stronie głównej (tylko wyświetlanie – nie OG / Google) */
-export const HOME_HERO_BANNER = "/images/hero/domki-viva-home-banner.webp";
+/** Logo w menu (pozioma grafika – tylko header) */
+export const HEADER_LOGO = "/images/logo-header.webp";
 
 export const CONTACT = {
   phone: "507 130 571",
