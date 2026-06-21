@@ -120,6 +120,26 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     imageAlt: "Ogrody Hortulus w Dobrzycy – labirynt z żywopłotu i alejki ogrodowe",
   },
   {
+    id: "hossoland",
+    title: "Park rozrywki Hossoland",
+    description:
+      "Nowoczesny park rozrywki w Brojcu – cztery tematyczne strefy inspirowane legendami Bałtyku: Kraina Wikingów, Miasto Syrenki, Smocza Dolina i wiele atrakcji dla dzieci i dorosłych. Idealny na całodniową wycieczkę z Grzybowa.",
+    href: "https://hossoland.pl/",
+    icon: "🎢",
+    image: "/images/atrakcje/hossoland.webp",
+    imageAlt: "Park rozrywki Hossoland – Kraina Wikingów, latarnia i statek wikingów",
+  },
+  {
+    id: "pomerania",
+    title: "Pomerania Fun Park",
+    description:
+      "Całoroczny park rozrywki w Dygowie, ok. 15 min od Kołobrzegu – karuzele, hala zabaw, wioska wikingów, mini zoo i atrakcje wodne. Świetny pomysł na wycieczkę z Grzybowa dla całej rodziny, także przy niepogodzie.",
+    href: "https://parkpomerania.pl/",
+    icon: "🎡",
+    image: "/images/atrakcje/pomerania-fun-park.webp",
+    imageAlt: "Pomerania Fun Park w Dygowie – karuzele i atrakcje rodzinne koło Kołobrzegu",
+  },
+  {
     id: "basen",
     title: "Basen / Aquapark Kołobrzeg",
     description:
