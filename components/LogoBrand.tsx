@@ -30,9 +30,7 @@ export function LogoBrand({
       alt="Domki Viva Grzybowo – logo"
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
-      className={`${heightClass} w-auto max-w-[min(100%,14rem)] shrink-0 object-contain object-left sm:max-w-[16rem] md:max-w-[18rem] ${
-        variant === "footer" ? "brightness-110" : ""
-      }`}
+      className={`${heightClass} w-auto max-w-[min(100%,14rem)] shrink-0 object-contain object-left sm:max-w-[16rem] md:max-w-[18rem]`}
       priority={linked}
       unoptimized
     />

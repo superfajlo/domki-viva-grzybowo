@@ -11,7 +11,7 @@
     "sync:gallery": "node scripts/sync-gallery.mjs",
     "optimize:hero": "node scripts/optimize-hero.mjs",
     "optimize:og": "node scripts/optimize-og.mjs",
-    "generate:brand-assets": "node scripts/generate-favicons-og.mjs",
+    "generate:brand-assets": "node scripts/process-logo-bg.mjs && node scripts/generate-favicons-og.mjs",
     "optimize:atrakcje": "node scripts/optimize-attractions.mjs",
     "check:smtp": "node scripts/check-env-smtp.mjs",
     "download:gallery": "node scripts/download-images.mjs",
