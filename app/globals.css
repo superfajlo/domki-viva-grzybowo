@@ -32,7 +32,13 @@
   --seafoam: var(--accent-glow);
   --warm-dark: #2b2b2b;
   --warm-dark-mid: #5c4a20;
-  --header-height: 4.25rem;
+  --header-height: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-height: 5rem;
+  }
 }
 
 @theme inline {

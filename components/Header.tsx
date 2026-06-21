@@ -49,7 +49,7 @@ export function Header() {
       style={{ backgroundColor: "#FFFFFF" }}
     >
       <div className="page-container flex h-[var(--header-height)] max-w-7xl items-center gap-2 py-0 sm:gap-3">
-        <LogoBrand variant="dark" size="lg" className="max-w-[min(100%,14rem)] shrink-0 sm:max-w-none" />
+        <LogoBrand variant="dark" size="xl" className="shrink-0" />
 
         <nav
           className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 overflow-x-auto overscroll-x-contain px-1 lg:flex [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"

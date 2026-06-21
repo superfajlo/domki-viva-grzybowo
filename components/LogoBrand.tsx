@@ -5,7 +5,7 @@ type LogoBrandProps = {
   variant?: "light" | "dark" | "footer";
   className?: string;
   linked?: boolean;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
 };
 
 const LOGO_WIDTH = 1024;
@@ -20,16 +20,20 @@ export function LogoBrand({
   const heightClass =
     variant === "footer"
       ? "h-16 sm:h-[4.5rem] md:h-20"
-      : size === "lg"
-        ? "h-12 sm:h-14 md:h-16"
-        : size === "sm"
-          ? "h-9 sm:h-10"
-          : "h-11 sm:h-12";
+      : size === "xl"
+        ? "h-14 sm:h-16 md:h-[4.5rem]"
+        : size === "lg"
+          ? "h-12 sm:h-14 md:h-16"
+          : size === "sm"
+            ? "h-9 sm:h-10"
+            : "h-11 sm:h-12";
 
   const maxWidthClass =
     variant === "footer"
       ? "max-w-[min(100%,24rem)] sm:max-w-[28rem] md:max-w-[32rem]"
-      : "max-w-[min(100%,14rem)] sm:max-w-[16rem] md:max-w-[18rem]";
+      : size === "xl"
+        ? "max-w-[min(100%,18rem)] sm:max-w-[22rem] md:max-w-[26rem] lg:max-w-[28rem]"
+        : "max-w-[min(100%,14rem)] sm:max-w-[16rem] md:max-w-[18rem]";
 
   const content = (
     <Image
