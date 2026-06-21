@@ -19,7 +19,7 @@ export function LogoBrand({
 }: LogoBrandProps) {
   const heightClass =
     variant === "footer"
-      ? "h-14 sm:h-16 md:h-[4.5rem]"
+      ? "h-16 sm:h-[4.5rem] md:h-20"
       : size === "lg"
         ? "h-12 sm:h-14 md:h-16"
         : size === "sm"
@@ -28,7 +28,7 @@ export function LogoBrand({
 
   const maxWidthClass =
     variant === "footer"
-      ? "max-w-[min(100%,20rem)] sm:max-w-[24rem]"
+      ? "max-w-[min(100%,24rem)] sm:max-w-[28rem] md:max-w-[32rem]"
       : "max-w-[min(100%,14rem)] sm:max-w-[16rem] md:max-w-[18rem]";
 
   const content = (
