@@ -18,11 +18,18 @@ export function LogoBrand({
   size = "md",
 }: LogoBrandProps) {
   const heightClass =
-    size === "lg"
-      ? "h-12 sm:h-14 md:h-16"
-      : size === "sm"
-        ? "h-9 sm:h-10"
-        : "h-11 sm:h-12";
+    variant === "footer"
+      ? "h-14 sm:h-16 md:h-[4.5rem]"
+      : size === "lg"
+        ? "h-12 sm:h-14 md:h-16"
+        : size === "sm"
+          ? "h-9 sm:h-10"
+          : "h-11 sm:h-12";
+
+  const maxWidthClass =
+    variant === "footer"
+      ? "max-w-[min(100%,20rem)] sm:max-w-[24rem]"
+      : "max-w-[min(100%,14rem)] sm:max-w-[16rem] md:max-w-[18rem]";
 
   const content = (
     <Image
@@ -30,7 +37,7 @@ export function LogoBrand({
       alt="Domki Viva Grzybowo – logo"
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
-      className={`${heightClass} w-auto max-w-[min(100%,14rem)] shrink-0 object-contain object-left sm:max-w-[16rem] md:max-w-[18rem]`}
+      className={`${heightClass} w-auto ${maxWidthClass} shrink-0 object-contain object-left`}
       priority={linked}
       unoptimized
     />
