@@ -8,7 +8,7 @@ export function Hero() {
       id="start"
       className="relative flex min-h-[min(62dvh,560px)] flex-col justify-center overflow-hidden bg-ink text-white sm:min-h-[min(68dvh,620px)]"
     >
-      <div className="absolute inset-x-0 -inset-y-[5%]">
+      <div className="absolute -inset-[14%]">
         <Image
           src={HERO_IMAGE}
           alt="Domki Viva Grzybowo – widok obiektu, domki letniskowe nad morzem"

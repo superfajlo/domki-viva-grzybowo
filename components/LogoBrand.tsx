@@ -29,7 +29,7 @@ export function LogoBrand({
     variant === "footer"
       ? "h-auto w-full"
       : variant === "header"
-        ? "h-full w-full max-h-[3.25rem] sm:max-h-[3.75rem] lg:max-h-[4.25rem]"
+        ? "h-[calc(var(--header-height)-0.35rem)] w-auto max-h-[4.5rem] sm:max-h-[5rem] lg:max-h-[5.75rem]"
         : size === "xl"
         ? "h-14 sm:h-16 md:h-[4.5rem]"
         : size === "lg"
@@ -42,7 +42,7 @@ export function LogoBrand({
     variant === "footer"
       ? "max-w-full"
       : variant === "header"
-        ? "max-w-none"
+        ? "max-w-[min(78vw,24rem)] sm:max-w-[28rem] md:max-w-[32rem] lg:max-w-[36rem]"
         : size === "xl"
         ? "max-w-[min(100%,18rem)] sm:max-w-[22rem] md:max-w-[26rem] lg:max-w-[28rem]"
         : "max-w-[min(100%,14rem)] sm:max-w-[16rem] md:max-w-[18rem]";
@@ -68,7 +68,7 @@ export function LogoBrand({
     variant === "footer"
       ? `block w-full ${className}`
       : variant === "header"
-        ? `header-logo-badge inline-flex h-[calc(var(--header-height)-0.5rem)] min-w-[11rem] max-w-[min(52vw,20rem)] items-center justify-center rounded-2xl border border-sand-dark/70 bg-gradient-to-br from-sand via-white to-primary/20 px-2 py-0.5 shadow-[0_4px_14px_rgba(247,198,0,0.18)] transition hover:border-secondary/40 hover:shadow-[0_6px_18px_rgba(247,198,0,0.28)] sm:min-w-[13rem] sm:max-w-[min(48vw,22rem)] sm:px-2.5 md:min-w-[15rem] md:max-w-[24rem] lg:min-w-[17rem] lg:max-w-[26rem] lg:px-3 ${className}`
+        ? `inline-flex shrink-0 items-center transition-opacity hover:opacity-90 ${className}`
         : `inline-flex min-w-0 max-w-full items-center ${className}`;
 
   if (!linked) {
