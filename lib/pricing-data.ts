@@ -64,7 +64,7 @@ export const PRICING_JUNE = {
       id: "jun-4",
       period: "21 czerwca – 28 czerwca",
       lines: [
-        { label: "do 4 osób", value: "220 zł / doba" },
+        { label: "2 osoby", value: "220 zł / doba" },
         { label: "kolejna osoba", value: "25 zł / doba" },
       ],
     },
