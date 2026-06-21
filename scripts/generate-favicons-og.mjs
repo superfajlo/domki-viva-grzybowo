@@ -10,13 +10,14 @@ import toIco from "to-ico";
 const ROOT = process.cwd();
 const LOGO = path.join(ROOT, "public", "images", "logo.png");
 const HEADER_LOGO = path.join(ROOT, "public", "images", "logo-header.webp");
+const FAVICON_ICON = path.join(ROOT, "public", "images", "favicon-icon.webp");
 const HERO = path.join(ROOT, "public", "images", "hero", "domki-viva-glowne.webp");
 const PUBLIC = path.join(ROOT, "public");
 const APP = path.join(ROOT, "app");
 const OG_OUT = path.join(ROOT, "public", "images", "og-domki-viva.webp");
 
-if (!fs.existsSync(LOGO) && !fs.existsSync(HEADER_LOGO)) {
-  console.error("Brak logo:", LOGO, "lub", HEADER_LOGO);
+if (!fs.existsSync(FAVICON_ICON) && !fs.existsSync(LOGO) && !fs.existsSync(HEADER_LOGO)) {
+  console.error("Brak favicon-icon.webp, logo.png lub logo-header.webp");
   process.exit(1);
 }
 
@@ -42,8 +43,12 @@ function logoWithTransparentBg(input = sharp(LOGO)) {
   });
 }
 
-/** Ikona do favicon – domki z poziomego logo header lub fallback logo.png */
+/** Ikona do favicon – ilustracja domków (WebP) lub fallback */
 async function logoForIcon() {
+  if (fs.existsSync(FAVICON_ICON)) {
+    return sharp(FAVICON_ICON).ensureAlpha();
+  }
+
   if (fs.existsSync(HEADER_LOGO)) {
     const meta = await sharp(HEADER_LOGO).metadata();
     const w = meta.width ?? 1024;
@@ -68,23 +73,23 @@ async function logoForIcon() {
 
 function iconBackgroundSvg(size) {
   const radius = Math.round(size * 0.2);
-  const stroke = Math.max(1, Math.round(size / 28));
+  const stroke = Math.max(1, Math.round(size / 32));
   return `
     <svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#ffd84d"/>
-          <stop offset="45%" style="stop-color:#f7c600"/>
-          <stop offset="100%" style="stop-color:#e5a800"/>
+          <stop offset="0%" style="stop-color:#d8f0ff"/>
+          <stop offset="50%" style="stop-color:#7ec8f8"/>
+          <stop offset="100%" style="stop-color:#3d9be0"/>
         </linearGradient>
       </defs>
       <rect width="${size}" height="${size}" rx="${radius}" fill="url(#g)"/>
-      <rect width="${size}" height="${size}" rx="${radius}" fill="none" stroke="#c98900" stroke-width="${stroke}"/>
+      <rect width="${size}" height="${size}" rx="${radius}" fill="none" stroke="#2b7cb8" stroke-width="${stroke}"/>
     </svg>`;
 }
 
 async function squareIcon(size) {
-  const padding = Math.max(2, Math.round(size * 0.1));
+  const padding = Math.max(1, Math.round(size * 0.06));
   const inner = size - padding * 2;
 
   const logoSrc = await logoForIcon();
@@ -170,7 +175,11 @@ async function writeAppIcons(icon32, icon180) {
 
 console.log(
   "Źródło:",
-  fs.existsSync(HEADER_LOGO) ? path.relative(ROOT, HEADER_LOGO) : path.relative(ROOT, LOGO),
+  fs.existsSync(FAVICON_ICON)
+    ? path.relative(ROOT, FAVICON_ICON)
+    : fs.existsSync(HEADER_LOGO)
+      ? path.relative(ROOT, HEADER_LOGO)
+      : path.relative(ROOT, LOGO),
 );
 
 const icon16 = await squareIcon(16);
