@@ -1,6 +1,7 @@
 import { PageFaq } from "@/components/faq/PageFaq";
 import { ClusterLinks } from "@/components/layout/ClusterLinks";
 import { PageIntro } from "@/components/layout/PageIntro";
+import { LogoBrand } from "@/components/LogoBrand";
 import { KontaktSection } from "@/components/sections/KontaktSection";
 import { KONTAKT_FAQ } from "@/lib/page-faqs";
 import { pageMetadata, SEO_PAGES } from "@/lib/seo-pages";
@@ -18,6 +19,7 @@ export default function KontaktPage() {
           { label: "Start", href: "/" },
           { label: "Kontakt" },
         ]}
+        aside={<LogoBrand variant="footer" linked={false} className="mx-auto lg:mx-0" />}
       />
       <KontaktSection />
       <PageFaq title="Pytania przed rezerwacją" items={KONTAKT_FAQ} />
