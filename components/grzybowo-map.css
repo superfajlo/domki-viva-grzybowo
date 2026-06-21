@@ -1,0 +1,101 @@
+#grzybowo-map {
+  width: 100%;
+  height: min(720px, 70vh);
+  min-height: 360px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+  z-index: 0;
+}
+
+.viva-house-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.viva-house-marker img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.28));
+  animation: viva-marker-float 2.8s ease-in-out infinite;
+}
+
+@keyframes viva-marker-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.leaflet-tooltip.viva-tooltip {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 7px 10px;
+  font-family: var(--font-body, Arial, Helvetica, sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: #2b2b2b;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+}
+
+.leaflet-tooltip.viva-tooltip::before {
+  display: none;
+}
+
+#grzybowo-map .leaflet-popup-content-wrapper {
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+}
+
+#grzybowo-map .leaflet-popup-content {
+  margin: 12px;
+}
+
+.house-popup {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 220px;
+}
+
+.house-thumb {
+  width: 64px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 10px;
+  flex: 0 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
+}
+
+.house-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.15;
+}
+
+.house-title {
+  font: 700 14px var(--font-body, Arial, Helvetica, sans-serif);
+  color: #2b2b2b;
+}
+
+.house-subtitle {
+  font: 12px var(--font-body, Arial, Helvetica, sans-serif);
+  color: #666;
+}
+
+#grzybowo-map .leaflet-control-attribution {
+  font-size: 11px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viva-house-marker img {
+    animation: none;
+  }
+}

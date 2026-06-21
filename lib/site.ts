@@ -180,12 +180,13 @@ export const KOLOBRZEG_BIRDS_EYE_YOUTUBE_URL =
 /** Oficjalny kalendarz wydarzeń Gminy Kołobrzeg */
 export const GMINA_EVENTS_URL = "https://www.gmina.kolobrzeg.pl/wydarzenia.html";
 
-/** Mapa turystyczna Grzybowa – załącznik właściciela */
+/** Mapa interaktywna Grzybowa (Leaflet) – marker Domków Viva */
 export const GRZYBOWO_MAP = {
-  src: "/images/atrakcje/mapa-grzybowo.webp",
-  alt: "Mapa Grzybowa i okolic – plaża, ulice, atrakcje, dojazd do Kołobrzegu i Dźwirzyna",
-  width: 936,
-  height: 566,
+  marker: "/images/mapa/domki-viva-marker.webp",
+  popupThumb: "/images/mapa/domki-viva-popup.webp",
+  lat: 54.1609915,
+  lng: 15.4900945,
+  alt: "Mapa Grzybowa i okolic – lokalizacja Domków Viva, plaża i dojazd do Kołobrzegu",
 } as const;
 /** Film z drona – Domki VIVA (strona główna, sekcja pod Hero) */
 export const VIVA_DRONE_YOUTUBE_ID = "ZKmK1X9qkPE";
