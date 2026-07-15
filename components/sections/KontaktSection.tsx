@@ -103,10 +103,6 @@ export function KontaktSection() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-secondary" aria-hidden />
-                  W sezonie letnim pobyt ze zwierzętami nie jest możliwy
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-secondary" aria-hidden />
                   Aktualny cennik znajdziesz na stronie{" "}
                   <Link href="/cennik" className="font-semibold text-secondary hover:text-amber-hover hover:underline">
                     Cennik

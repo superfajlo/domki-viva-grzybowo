@@ -215,23 +215,12 @@ export const REGULAMIN_RULES: RegulaminRule[] = [
     title: "Monitoring",
     blocks: [{ type: "paragraph", text: "Obiekt jest monitorowany całodobowo." }],
   },
-  {
-    number: 19,
-    title: "Zwierzęta",
-    blocks: [
-      {
-        type: "paragraph",
-        text: "Brak możliwości pobytu ze zwierzętami tylko w okresie letnim.",
-      },
-    ],
-  },
 ];
 
 export const REGULAMIN_HIGHLIGHTS = [
   "Cisza nocna: 23:00–7:00",
   "Zakaz palenia papierosów",
   "Zakaz smażenia ryb",
-  "Brak możliwości pobytu ze zwierzętami tylko w okresie letnim",
   "Monitoring całodobowy",
   "Jedno miejsce parkingowe na domek",
   "Doba hotelowa: 15:00–10:00",

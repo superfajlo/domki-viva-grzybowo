@@ -246,11 +246,6 @@ export const FAQ_ITEMS = [
       "Kołobrzeg jest w zasięgu krótkiej przejażdżki samochodem – port, molo i latarnia to popularne kierunki wycieczek.",
   },
   {
-    question: "Czy mogę przyjechać z psem?",
-    answer:
-      "W okresie letnim nie ma możliwości pobytu ze zwierzętami. Poza sezonem letnim prosimy o kontakt telefoniczny lub przez formularz – ustalimy warunki indywidualnie.",
-  },
-  {
     question: "Jak zarezerwować domek?",
     answer:
       "Najszybciej zadzwonicie pod numer 507 130 571 lub wypełnicie formularz kontaktowy z preferowanym terminem pobytu.",
