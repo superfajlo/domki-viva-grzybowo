@@ -141,6 +141,6 @@ const manifest = {
 fs.writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2));
 console.log("\nManifest:", path.relative(ROOT, MANIFEST));
 console.log(
-  `Galeria: ${sections[0].images.length} obiekt + ${sections[1].images.length} wnętrza`,
+  `Galeria: ${sections.map((s) => `${s.images.length} ${s.id}`).join(" + ")}`,
 );
 console.log("Gotowe.");

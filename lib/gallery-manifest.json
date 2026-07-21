@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T20:51:45.029Z",
+  "generatedAt": "2026-07-21T13:39:20.694Z",
   "heroImage": "/images/hero/domki-viva-glowne.webp",
   "sections": [
     {
@@ -65,6 +65,31 @@
         {
           "src": "/images/viva/obiekt/obiekt-12.webp",
           "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 12",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-13.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 13",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-14.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 14",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-15.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 15",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-16.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 16",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/images/viva/obiekt/obiekt-17.webp",
+          "alt": "Domki Viva Grzybowo – widok obiektu – zdjęcie 17",
           "orientation": "landscape"
         }
       ]
